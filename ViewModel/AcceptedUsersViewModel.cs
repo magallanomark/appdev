@@ -16,7 +16,7 @@ public class AcceptUsersViewModel
 
     public AcceptUsersViewModel()
     {
-        //Users = new ObservableCollection<UserModel>(userList ?? new List<UserModel>());
+       
         AcceptedUsers = UserStore.AcceptedUsers;
 
         ViewCommand = new Command<UserModel>(OnAcceptUser);

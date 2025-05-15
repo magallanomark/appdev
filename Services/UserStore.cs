@@ -10,5 +10,6 @@ namespace Saha.Services
 
         // Accepted users list
         public static ObservableCollection<UserModel> AcceptedUsers { get; set; } = new ObservableCollection<UserModel>();
+        
     }
 }
