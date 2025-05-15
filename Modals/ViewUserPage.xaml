@@ -140,30 +140,52 @@
         <CollectionView ItemsSource="{Binding AcceptedUsers}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Grid ColumnDefinitions="2*,2*,2*,1*,1*,2*,2*,Auto"
-                          Padding="10" BackgroundColor="#1A1A2E" Margin="0,1">
-                        <Label Text="{Binding FullName}" TextColor="White" FontSize="13"/>
+                    <Grid ColumnDefinitions="2*,2*,2*,1*,1*,2*,2*,2*,2*"
+                        Padding="10" BackgroundColor="#1A1A2E" Margin="0,1">
+                        
+                        <Label Text="{Binding FullName}" TextColor="White" FontSize="13" Grid.Column="0"/>
                         <Label Text="{Binding Email}" Grid.Column="1" TextColor="White" FontSize="13"/>
                         <Label Text="{Binding PhoneNumber}" Grid.Column="2" TextColor="White" FontSize="13"/>
                         <Label Text="{Binding Age}" Grid.Column="3" TextColor="White" FontSize="13"/>
                         <Label Text="{Binding Gender}" Grid.Column="4" TextColor="White" FontSize="13"/>
                         <Label Text="{Binding FitnessGoal}" Grid.Column="5" TextColor="White" FontSize="13"/>
                         <Label Text="{Binding MedicalCondition}" Grid.Column="6" TextColor="White" FontSize="13"/>
+                        <Label Text="{Binding Role}" Grid.Column="7" TextColor="White" FontSize="13"/>
 
-                        <!-- Action Button -->
-                        <Button Text="Update"
-                                Grid.Column="7"
-                                FontSize="12"
-                                Padding="8,4"
-                                BackgroundColor="#FFDF8728"
-                                TextColor="White"
-                                CornerRadius="12"
-                                Command="{Binding Source={x:Reference ViewUser}, Path=BindingContext.EditCommand}"
-                                CommandParameter="{Binding}"/>
+                        <!-- Responsive Button Layout -->
+                        <HorizontalStackLayout Grid.Column="8"
+                                            Spacing="5"
+                                            HorizontalOptions="Fill"
+                                            VerticalOptions="Center">
+
+                            <!-- Update Button -->
+                            <Button Text="Update"
+                                    FontSize="12"
+                                    Padding="8,4"
+                                    BackgroundColor="#FFDF8728"
+                                    TextColor="White"
+                                    CornerRadius="12"
+                                    HorizontalOptions="FillAndExpand"
+                                    Command="{Binding Source={x:Reference ViewUser}, Path=BindingContext.EditCommand}"
+                                    CommandParameter="{Binding}" />
+
+                            <!-- Delete Button -->
+                            <Button Text="Delete"
+                                    FontSize="12"
+                                    Padding="8,4"
+                                    BackgroundColor="#FF3B3B"
+                                    TextColor="White"
+                                    CornerRadius="12"
+                                    HorizontalOptions="FillAndExpand"
+                                    Command="{Binding Source={x:Reference ViewUser}, Path=BindingContext.DeleteCommand}"
+                                    CommandParameter="{Binding}" />
+                        </HorizontalStackLayout>
+
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
+
 
     </VerticalStackLayout>
 </ScrollView>

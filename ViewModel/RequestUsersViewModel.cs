@@ -38,7 +38,8 @@ namespace Saha.ViewModel
                 Age = requestUser.Age,
                 Gender = requestUser.Gender,
                 FitnessGoal = requestUser.FitnessGoal,
-                MedicalCondition = requestUser.MedicalCondition
+                MedicalCondition = requestUser.MedicalCondition,
+                Role = requestUser.Role
             };
 
             _dbService.AddUser(acceptedUser);

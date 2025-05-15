@@ -59,7 +59,9 @@ namespace Saha.ViewModel
         {
             if (requestUser == null) return;
 
-            
+            _dbService.DeleteUser(requestUser);
+            AcceptedUsers.Remove(requestUser);
+
         }
     }
 }

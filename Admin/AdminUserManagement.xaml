@@ -181,7 +181,8 @@
                             <Button Text="View" TextColor="White" BackgroundColor="#0056b3" Clicked="OnViewUserClicked"/>
                         </StackLayout>
                     </Frame>
-
+                   
+                
                 </Grid>
 
             </VerticalStackLayout>

@@ -16,13 +16,13 @@ namespace Saha.Admin
         }
 
 
-        public void OnDashboardClicked(object sender, EventArgs e)
+        public async void OnDashboardClicked(object sender, EventArgs e)
         {
-           // await Navigation.PushAsync(new UserListPage());
+            await Navigation.PushAsync(new AdminDashboardPage());
         }
-        public void OnUsersClicked(object sender, EventArgs e)
+        public async void OnUsersClicked(object sender, EventArgs e)
         {
-            //await Navigation.PushAsync(new UserListPage());
+            await Navigation.PushAsync(new AdminUserManagement());
         }
          public async void OnProgramListClicked(object sender, EventArgs e)
         {

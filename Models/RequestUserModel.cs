@@ -15,5 +15,6 @@ namespace Saha.Models
         public string Gender { get; set; }
         public string FitnessGoal { get; set; }
         public string MedicalCondition { get; set; }
+        public string Role { get; set; } = "User"; // Default role
     }
 }

@@ -12,6 +12,6 @@ namespace Saha.Models
         public string Trainer { get; set; }
         public string Price { get; set; }
         public string Schedule { get; set; }
-
+      
     }
 }
