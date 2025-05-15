@@ -28,6 +28,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = Saha.Admin.AdminDashboardP
 build_metadata.AdditionalFiles.TargetPath = Admin\AdminDashboardPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Admin\AdminDashboardPage.xaml
 
+[C:/Users/marka/OneDrive/Desktop/AppDev/Saha/Admin/AdminProgram.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Saha.Admin.AdminProgram.xaml
+build_metadata.AdditionalFiles.TargetPath = Admin\AdminProgram.xaml
+build_metadata.AdditionalFiles.RelativePath = Admin\AdminProgram.xaml
+
 [C:/Users/marka/OneDrive/Desktop/AppDev/Saha/Admin/AdminUserManagement.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Saha.Admin.AdminUserManagement.xaml
@@ -64,6 +70,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = Saha.MainPage.xaml
 build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
 
+[C:/Users/marka/OneDrive/Desktop/AppDev/Saha/Modals/AddProgram.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Saha.Modals.AddProgram.xaml
+build_metadata.AdditionalFiles.TargetPath = Modals\AddProgram.xaml
+build_metadata.AdditionalFiles.RelativePath = Modals\AddProgram.xaml
+
 [C:/Users/marka/OneDrive/Desktop/AppDev/Saha/Modals/ProgramDetailsPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Saha.Modals.ProgramDetailsPage.xaml
@@ -75,6 +87,12 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Saha.Modals.RequestUsers.xaml
 build_metadata.AdditionalFiles.TargetPath = Modals\RequestUsers.xaml
 build_metadata.AdditionalFiles.RelativePath = Modals\RequestUsers.xaml
+
+[C:/Users/marka/OneDrive/Desktop/AppDev/Saha/Modals/UpdateUserPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Saha.Modals.UpdateUserPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Modals\UpdateUserPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Modals\UpdateUserPage.xaml
 
 [C:/Users/marka/OneDrive/Desktop/AppDev/Saha/Modals/ViewUserPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml

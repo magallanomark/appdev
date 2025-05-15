@@ -1,47 +1,57 @@
 using System.Collections.ObjectModel;
-using System.Diagnostics;
 using System.Windows.Input;
 using Saha.Models;
 using Saha.Services;
 
-namespace Saha.ViewModel;
-
-public class RequestUsersViewModel
+namespace Saha.ViewModel
 {
-    public ObservableCollection<UserModel> RequestedUsers { get; }
-
-
-    public ICommand ViewCommand { get; }
-    public ICommand DeleteCommand { get; }
-
-    public RequestUsersViewModel()
+    public class RequestUsersViewModel
     {
-        //Users = new ObservableCollection<UserModel>(userList ?? new List<UserModel>());
-        RequestedUsers = UserStore.RequestedUsers;
+        private SQLiteService _dbService;
 
-        ViewCommand = new Command<UserModel>(OnAcceptUser);
-        DeleteCommand = new Command<UserModel>(OnDeleteUser);
-    }
+        public ObservableCollection<RequestUserModel> RequestUsers { get; set; }
 
-    private void OnAcceptUser(UserModel user)
-    {
-        if (user == null)
-            return;
+        public ICommand AcceptCommand { get; }
+        public ICommand DeleteCommand { get; }
 
-        if (RequestedUsers.Contains(user))
+        public RequestUsersViewModel()
         {
-            RequestedUsers.Remove(user);
-            UserStore.AcceptedUsers.Add(user);       
+            _dbService = new SQLiteService();
+            
+            RequestUsers = new ObservableCollection<RequestUserModel>(_dbService.GetRequestUsers());
 
+            AcceptCommand = new Command<RequestUserModel>(OnAcceptUser);
+            DeleteCommand = new Command<RequestUserModel>(OnDeleteUser);
         }
-    }
 
-    private void OnDeleteUser(UserModel user)
-    {
-        if (user != null && RequestedUsers.Contains(user))
+        private void OnAcceptUser(RequestUserModel requestUser)
         {
-            RequestedUsers.Remove(user);
-            Debug.WriteLine($"Deleted: {user.FullName}");
+            if (requestUser == null) return;
+
+            // Move to main users table
+            var acceptedUser = new UserModel
+            {
+                FullName = requestUser.FullName,
+                Email = requestUser.Email,
+                Password = requestUser.Password,
+                PhoneNumber = requestUser.PhoneNumber,
+                Age = requestUser.Age,
+                Gender = requestUser.Gender,
+                FitnessGoal = requestUser.FitnessGoal,
+                MedicalCondition = requestUser.MedicalCondition
+            };
+
+            _dbService.AddUser(acceptedUser);
+            _dbService.DeleteRequestUser(requestUser);
+            RequestUsers.Remove(requestUser);
+        }
+
+        private void OnDeleteUser(RequestUserModel requestUser)
+        {
+            if (requestUser == null) return;
+
+            _dbService.DeleteRequestUser(requestUser);
+            RequestUsers.Remove(requestUser);
         }
     }
 }

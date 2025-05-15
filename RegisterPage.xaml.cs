@@ -12,12 +12,13 @@ namespace Saha
          public static List<UserModel> UserList = new List<UserModel>();
 
         public static List<UserModel> RequestUser = new List<UserModel>();
+        private SQLiteService _db = new SQLiteService();
 
 
         public RegisterPage()
         {
             InitializeComponent();
-            
+
         }
 
         private async void OnRegisterClicked(object sender, EventArgs e)
@@ -74,7 +75,7 @@ namespace Saha
             }
 
           
-            UserModel newUser = new UserModel
+            RequestUserModel newUser = new RequestUserModel
             {
                 FullName = name,
                 Email = email,
@@ -87,11 +88,12 @@ namespace Saha
 
             };
 
-            UserStore.RequestedUsers.Add(newUser);
+           // UserStore.RequestedUsers.Add(newUser);
 
+            _db.AddRequestUser(newUser);
             //RequestUser.Add(newUser);
 
-          
+
             await DisplayAlert("Success", "User registered successfully!", "OK");
 
 

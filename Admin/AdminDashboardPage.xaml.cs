@@ -20,9 +20,9 @@ namespace Saha.Admin
         {
             await Navigation.PushAsync(new AdminUserManagement());
         }
-        public void OnRequestListClicked(object sender, EventArgs e)
+        public async void OnProgramListClicked(object sender, EventArgs e)
         {
-            //await Navigation.PushAsync(new RequestListPage());
+            await Navigation.PushAsync(new AdminProgram());
         }
         public void OnReportsClicked(object sender, EventArgs e)
         {

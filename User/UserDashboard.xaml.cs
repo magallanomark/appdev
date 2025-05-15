@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using Saha.Admin;
+
+namespace Saha.User
+{
+    public partial class UserDashboard : ContentPage
+    {
+        public UserDashboard()
+        {
+            InitializeComponent();
+        }
+
+
+        public void OnDashboardClicked(object sender, EventArgs e)
+        {
+           // await Navigation.PushAsync(new UserListPage());
+        }
+        public async void OnUsersClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AdminUserManagement());
+        }
+        public void OnRequestListClicked(object sender, EventArgs e)
+        {
+            //await Navigation.PushAsync(new RequestListPage());
+        }
+        public void OnReportsClicked(object sender, EventArgs e)
+        {
+            //await Navigation.PushAsync(new SettingsPage());
+        }
+        public void OnSettingsClicked(object sender, EventArgs e)
+        {
+            //await Navigation.PushAsync(new SettingsPage());
+        }
+        public void OnLogoutClicked(object sender, EventArgs e)
+        {
+            //await Navigation.PushAsync(new LoginPage());
+        }
+
+
+        // 
+       
+    }
+}

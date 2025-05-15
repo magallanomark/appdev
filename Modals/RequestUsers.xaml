@@ -137,10 +137,10 @@
         </Grid>
 
         <!-- CollectionView Rows -->
-        <CollectionView ItemsSource="{Binding RequestedUsers}">
+        <CollectionView ItemsSource="{Binding RequestUsers}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Grid ColumnDefinitions="2*,2*,2*,1*,1*,2*,2*,Auto"
+                    <Grid ColumnDefinitions="2*,2*,2*,1*,1*,2*,2*,Auto,Auto"
                           Padding="10" BackgroundColor="#1A1A2E" Margin="0,1">
                         <Label Text="{Binding FullName}" TextColor="White" FontSize="13"/>
                         <Label Text="{Binding Email}" Grid.Column="1" TextColor="White" FontSize="13"/>
@@ -158,8 +158,18 @@
                                 BackgroundColor="#0056b3"
                                 TextColor="White"
                                 CornerRadius="12"
-                                Command="{Binding Source={x:Reference RequestUsersPage}, Path=BindingContext.ViewCommand}"
+                                Command="{Binding Source={x:Reference RequestUsersPage}, Path=BindingContext.AcceptCommand}"
                                 CommandParameter="{Binding}"/>
+                        <Button Text="Reject"
+                            Grid.Column="7"
+                            FontSize="12"
+                            Padding="8,4"
+                            Margin="5,0,0,0"
+                            BackgroundColor="#FFB30000"
+                            TextColor="White"
+                            CornerRadius="12"
+                            Command="{Binding Source={x:Reference RequestUsersPage}, Path=BindingContext.DeleteCommand}"
+                            CommandParameter="{Binding}"/>
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>

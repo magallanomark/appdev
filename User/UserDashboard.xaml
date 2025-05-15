@@ -2,7 +2,6 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Saha.User.UserDashboard"
-             x:DataType="local:User.UserDashboard"
              BackgroundColor="Black">
     <!-- 
         Ensure x:Class="Saha.LoginPage" correctly matches your namespace and class name.
@@ -153,22 +152,7 @@
                 <!-- Horizontal Grid for 3 Columns -->
                  <Grid ColumnDefinitions="*, *" RowDefinitions="Auto" RowSpacing="10" ColumnSpacing="10" >
             
-                    <!-- Card for Request -->
-                    <Frame CornerRadius="15" Padding="20" Margin="0,10" HasShadow="True" BackgroundColor="#1A596E" Grid.Column="0" >
-                        <StackLayout>
-                            <Label Text="Request" TextColor="White" FontSize="22" HorizontalOptions="Center"/>
-                            <Button Text="View Requests" TextColor="White" BackgroundColor="#0056b3" Clicked="OnViewRequestsClicked"/>
-                        </StackLayout>
-                    </Frame>
-
-                    <!-- Card for Add -->
-                    <Frame CornerRadius="15" Padding="20" Margin="0,10" HasShadow="True" BackgroundColor="#00807E" Grid.Column="1">
-                        <StackLayout>
-                            <Label Text="VIew Users" TextColor="White" FontSize="22" HorizontalOptions="Center"/>
-                            <Button Text="View" TextColor="White" BackgroundColor="#0056b3" Clicked="OnViewUserClicked"/>
-                        </StackLayout>
-                    </Frame>
-
+                    
                 </Grid>
 
             </VerticalStackLayout>

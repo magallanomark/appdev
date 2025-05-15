@@ -132,7 +132,7 @@
             
 
            <Border Stroke="#88FFFFFF" StrokeThickness="1" Padding="5">
-                <Button Text="Dashboard" TextColor="White" BackgroundColor="Transparent" Clicked="OnDashboardClicked"/>
+                <Button Text="Dashboard" TextColor="White" BackgroundColor="Gray" Clicked="OnDashboardClicked"/>
             </Border>
 
             <Border Stroke="#88FFFFFF" StrokeThickness="1" Padding="5">
@@ -140,7 +140,7 @@
             </Border>
 
             <Border Stroke="#88FFFFFF" StrokeThickness="1" Padding="5">
-                <Button Text="Request" TextColor="White" BackgroundColor="Transparent" Clicked="OnRequestListClicked"/>
+                <Button Text="Program" TextColor="White" BackgroundColor="Transparent" Clicked="OnProgramListClicked"/>
             </Border>
 
             <Border Stroke="#88FFFFFF" StrokeThickness="1" Padding="5">

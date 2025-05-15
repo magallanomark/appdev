@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Name="RequestUsersPage" 
+             x:Name="ViewUser" 
              x:Class="Saha.Modals.ViewUserPage" 
              BackgroundColor="Black">
     <!-- 
@@ -151,14 +151,14 @@
                         <Label Text="{Binding MedicalCondition}" Grid.Column="6" TextColor="White" FontSize="13"/>
 
                         <!-- Action Button -->
-                        <Button Text="View"
+                        <Button Text="Update"
                                 Grid.Column="7"
                                 FontSize="12"
                                 Padding="8,4"
-                                BackgroundColor="#0056b3"
+                                BackgroundColor="#FFDF8728"
                                 TextColor="White"
                                 CornerRadius="12"
-                                Command="{Binding Source={x:Reference RequestUsersPage}, Path=BindingContext.ViewCommand}"
+                                Command="{Binding Source={x:Reference ViewUser}, Path=BindingContext.EditCommand}"
                                 CommandParameter="{Binding}"/>
                     </Grid>
                 </DataTemplate>

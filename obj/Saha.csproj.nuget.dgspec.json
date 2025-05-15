@@ -88,6 +88,10 @@
             "MySqlConnector": {
               "target": "Package",
               "version": "[2.4.0, )"
+            },
+            "sqlite-net-pcl": {
+              "target": "Package",
+              "version": "[1.9.172, )"
             }
           },
           "imports": [
@@ -141,6 +145,10 @@
             "MySqlConnector": {
               "target": "Package",
               "version": "[2.4.0, )"
+            },
+            "sqlite-net-pcl": {
+              "target": "Package",
+              "version": "[1.9.172, )"
             }
           },
           "imports": [
@@ -194,6 +202,10 @@
             "MySqlConnector": {
               "target": "Package",
               "version": "[2.4.0, )"
+            },
+            "sqlite-net-pcl": {
+              "target": "Package",
+              "version": "[1.9.172, )"
             }
           },
           "imports": [
@@ -242,6 +254,10 @@
             "MySqlConnector": {
               "target": "Package",
               "version": "[2.4.0, )"
+            },
+            "sqlite-net-pcl": {
+              "target": "Package",
+              "version": "[1.9.172, )"
             }
           },
           "imports": [
