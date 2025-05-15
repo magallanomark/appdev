@@ -1,0 +1,97 @@
+using Microsoft.Maui.Controls;
+using System;
+using System.Diagnostics; // For Debug.WriteLine
+using Saha.Models; // Assuming UserModel is in Saha.Models
+using Saha.Admin;
+using System.Linq; // To use LINQ for finding the user in the list
+using System.Collections.Generic; // For List<T>
+using Saha.Services; // For UserStore
+
+namespace Saha
+{
+    public partial class LoginPage : ContentPage
+    {
+        // Access the static list of users from RegisterPage
+        public static List<UserModel> _userList = RegisterPage.UserList;  // Reference the same list used in RegisterPage
+
+        public LoginPage()
+        {
+            InitializeComponent();
+        }
+
+        private async void OnLoginClicked(object sender, EventArgs e)
+        {
+            string emailFromUI = emailEntry.Text.ToString();
+            string passwordFromUI = passwordEntry.Text.ToString();
+
+
+            if(emailFromUI == "admin" && passwordFromUI == "admin")
+            {
+                await Navigation.PushAsync(new AdminDashboardPage());
+                return;
+            }
+            
+
+            Debug.WriteLine("--- Login Attempt Diagnostics ---");
+            Debug.WriteLine($"Raw Email from UI: '{emailFromUI}' (Length: {emailFromUI?.Length ?? 0})");
+            Debug.WriteLine($"Raw Password from UI: '{passwordFromUI}' (Length: {passwordFromUI?.Length ?? 0})");
+
+            if (emailFromUI == null || passwordFromUI == null)
+            {
+                Debug.WriteLine("ERROR: Email or password entry field is null in C#. Check x:Name attributes in XAML.");
+                await DisplayAlert("Input Error", "Could not read input fields.", "OK");
+                return;
+            }
+
+            string processedEmail = emailFromUI.Trim();
+            string processedPassword = passwordFromUI; // For this test, direct use. Real passwords shouldn't typically be trimmed if spaces are significant.
+
+            Debug.WriteLine($"Processed Email for comparison: '{processedEmail}'");
+            Debug.WriteLine($"Processed Password for comparison: '{processedPassword}'");
+
+            // Try to find the user in the static list
+             var user = UserStore.AcceptedUsers.FirstOrDefault(u => u.Email.Equals(emailFromUI, StringComparison.OrdinalIgnoreCase));
+            //var user = _userList.FirstOrDefault(u => u.Email.Equals(processedEmail, StringComparison.OrdinalIgnoreCase));
+
+            if (user != null && user.Password == processedPassword)  // In a real app, compare the hashed password!
+            {
+                Debug.WriteLine("Login Successful!");
+                await DisplayAlert("Login Success", "Welcome back!", "OK");
+
+                // TODO: Navigate to the main app page after login success
+                // Example for MAUI Shell
+                if (Shell.Current != null)
+                {
+                   await Shell.Current.GoToAsync("//MainPage"); // Replace "//MainPage" with your actual main page route
+                }
+            }
+            else
+            {
+                string errorMessage = "Invalid email or password. Please try again.";
+                if (user == null)
+                {
+                    errorMessage = $"The email entered ('{processedEmail}') does not match our records. Check for typos.";
+                }
+                else if (user != null && user.Password != processedPassword)
+                {
+                    errorMessage = "The password entered is incorrect. Remember it's case-sensitive.";
+                }
+
+                Debug.WriteLine($"Login Failed: {errorMessage}");
+                await DisplayAlert("Login Failed", errorMessage, "OK");
+            }
+        }
+
+        private async void OnForgotPasswordTapped(object sender, TappedEventArgs e)
+        {
+            Debug.WriteLine("Forgot Password link tapped.");
+            await DisplayAlert("Forgot Password", "This feature is not yet implemented.", "OK");
+        }
+
+        private async void OnSignUpTapped(object sender, TappedEventArgs e)
+        {
+            Debug.WriteLine("Sign Up link tapped.");
+            await DisplayAlert("Sign Up", "This feature is not yet implemented.", "OK");
+        }
+    }
+}

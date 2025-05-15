@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:local="clr-namespace:Saha" 
+             x:Class="Saha.MainPage"
+             x:DataType="local:MainPage"
+             BackgroundColor="Black">
+<ContentPage.Resources>
+        <ResourceDictionary>
+
+            <!-- Gradient Background -->
+            <LinearGradientBrush x:Key="GradientBackground" StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#00807E" Offset="0.1"/>
+                <GradientStop Color="#1A596E" Offset="0.5"/>
+                <GradientStop Color="#342758" Offset="1.0"/>
+            </LinearGradientBrush>
+
+            <!-- Custom Button Style -->
+            <Style x:Key="CustomButtonStyle" TargetType="Button">
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="CornerRadius" Value="25"/>
+                <Setter Property="Padding" Value="15"/>
+                <Setter Property="Margin" Value="12"/>
+                <Setter Property="WidthRequest" Value="280"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="BackgroundColor" Value="Transparent"/>
+                <Setter Property="BorderColor" Value="White"/>
+                <Setter Property="BorderWidth" Value="2"/>
+                <Setter Property="Shadow">
+                    <Setter.Value>
+                        <Shadow Brush="Black" Opacity="0.5" Offset="4,4"/>
+                    </Setter.Value>
+                </Setter>
+                <Style.Triggers>
+                    <DataTrigger TargetType="Button" Binding="{Binding IsPressed, Source={RelativeSource Self}}" Value="True">
+                        <Setter Property="Scale" Value="0.95"/>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+
+            <!-- Headline Style -->
+            <Style x:Key="Headline" TargetType="Label">
+                <Setter Property="FontSize" Value="70"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="FontFamily" Value="Arial"/>
+            </Style>
+
+            <!-- SubHeadline Style -->
+            <Style x:Key="SubHeadline" TargetType="Label">
+                <Setter Property="FontSize" Value="48"/>
+                <Setter Property="FontAttributes" Value="Italic"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="FontFamily" Value="Arial"/>
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <!-- Apply the Gradient Background -->
+    <ContentPage.Background>
+        <StaticResource Key="GradientBackground"/>
+    </ContentPage.Background>
+
+    <ScrollView>
+    <VerticalStackLayout Padding="30,0" Spacing="30"
+                         VerticalOptions="Center" HorizontalOptions="Center">
+
+        <!-- Community Logo Image -->
+        <Image Source="icon_gym2.png"
+               HeightRequest="300"
+               Aspect="AspectFit"
+               SemanticProperties.Description="Gym Logo" />
+
+        <!-- Heading -->
+        <Label Text="Welcome to GymIMS"
+               Style="{StaticResource Headline}"
+               SemanticProperties.HeadingLevel="Level1"/>
+
+        <!-- Subheading -->
+        <Label Text="Effortlessly manage your gym's members, trainers, and schedules." 
+       HorizontalOptions="Center"
+       HorizontalTextAlignment="Center"
+       FontSize="30"
+       Style="{StaticResource SubHeadline}"
+       Margin="0,11,0,20"/>
+
+        <!-- Vertical Stack for Buttons (Changed to Vertical) -->
+        <VerticalStackLayout Spacing="5" HorizontalOptions="Center">
+            <Button Text="Register"
+                    Clicked="OnRequestHelpClicked"
+                    Pressed="OnButtonPressed"
+                    Released="OnButtonReleased"
+                    BackgroundColor="#F39C12"
+                    Style="{StaticResource CustomButtonStyle}"/>
+
+            <Button Text="Log In"
+                    Clicked="OnVolunteerClicked"
+                    Pressed="OnButtonPressed"
+                    Released="OnButtonReleased"
+                    BackgroundColor="#0056b3"
+                    Style="{StaticResource CustomButtonStyle}"/>
+
+            <Button Text="View as Guest"
+                    Clicked="OnChatClicked"
+                    Pressed="OnButtonPressed"
+                    Released="OnButtonReleased"
+                    BackgroundColor="#FF5F5D5D"
+                    Style="{StaticResource CustomButtonStyle}"/>
+
+        </VerticalStackLayout>
+
+    </VerticalStackLayout>
+</ScrollView>
+
+</ContentPage>

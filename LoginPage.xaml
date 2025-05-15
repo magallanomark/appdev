@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Saha" 
+             x:Class="Saha.LoginPage"
+             x:DataType="local:LoginPage"      
+             BackgroundColor="Black">
+    <!-- 
+        Ensure x:Class="Saha.LoginPage" correctly matches your namespace and class name.
+        If LoginPage.xaml is in a "Pages" subfolder and your root namespace is "Saha",
+        then it should be x:Class="Saha.Pages.LoginPage".
+        The namespace in LoginPage.xaml.cs must also match (e.g., namespace Saha.Pages).
+    -->
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <!-- Gradient Background from MainPage.xaml -->
+            <LinearGradientBrush x:Key="PageGradientBackground" StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#00807E" Offset="0.1"/>
+                <GradientStop Color="#1A596E" Offset="0.5"/>
+                <GradientStop Color="#342758" Offset="1.0"/>
+            </LinearGradientBrush>
+
+            <!-- Headline Style - Colors adapted from MainPage -->
+            <Style x:Key="Headline" TargetType="Label">
+                <Setter Property="FontSize" Value="36"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="TextColor" Value="White"/> <!-- MainPage Headline TextColor -->
+                <Setter Property="Margin" Value="0,0,0,20"/>
+            </Style>
+
+            <!-- Input Entry Border Style - Colors adapted for dark theme -->
+            <Style x:Key="InputEntryBorderStyle" TargetType="Border">
+                <Setter Property="StrokeThickness" Value="1"/>
+                <Setter Property="Stroke" Value="#88FFFFFF"/> <!-- Semi-transparent white border -->
+                <Setter Property="BackgroundColor" Value="#33FFFFFF"/> <!-- Semi-transparent white background for field -->
+                <Setter Property="Padding" Value="12,8"/>
+                <Setter Property="Margin" Value="10,0"/>
+                <Setter Property="StrokeShape">
+                    <RoundRectangle CornerRadius="28"/>
+                </Setter>
+                <Setter Property="Shadow"> <!-- Keeping original shadow, can be tweaked if needed -->
+                    <Setter.Value>
+                        <Shadow Brush="Black" Opacity="0.2" Offset="2,2" Radius="5"/>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <!-- Input Entry Style (for the Entry control itself) - Colors adapted for dark theme -->
+            <Style x:Key="InputEntryStyle" TargetType="Entry">
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="PlaceholderColor" Value="#A0FFFFFF"/> <!-- Lighter placeholder for dark background -->
+                <Setter Property="TextColor" Value="White"/> <!-- Input text color -->
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="BackgroundColor" Value="Transparent"/> <!-- Entry itself is transparent -->
+                <Setter Property="Margin" Value="0"/>
+                <Setter Property="HeightRequest" Value="30"/>
+            </Style>
+
+            <!-- Primary Action Button Style - Adapted from MainPage's blue "Log In" button -->
+            <Style x:Key="PrimaryActionButtonStyle" TargetType="Button">
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="Padding" Value="15"/>
+                <Setter Property="Margin" Value="12,20,12,12"/>
+                <Setter Property="HeightRequest" Value="55"/>
+                <Setter Property="CornerRadius" Value="28"/>
+                <Setter Property="Shadow"> <!-- Shadow from MainPage's CustomButtonStyle (can be adjusted) -->
+                    <Setter.Value>
+                        <Shadow Brush="Black" Opacity="0.5" Offset="4,4"/>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="BackgroundColor" Value="#0056b3"/> <!-- Blue from MainPage's Log In button -->
+                <!-- <Setter Property="BorderColor" Value="White"/> Optional, if you want a white border like MainPage buttons -->
+                <!-- <Setter Property="BorderWidth" Value="2"/> -->
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal" />
+                            <VisualState x:Name="Pressed">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="#004085"/> <!-- Darker blue for pressed -->
+                                    <Setter Property="Scale" Value="0.98" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Disabled">
+                                <VisualState.Setters>
+                                    <Setter Property="Background" Value="#555555"/> <!-- Dark gray for disabled -->
+                                    <Setter Property="Opacity" Value="0.7"/>
+                                    <Setter Property="TextColor" Value="#AAAAAA"/> <!-- Light gray text for disabled -->
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+
+            <!-- Link Text Style - Color adapted for dark theme -->
+            <Style x:Key="LinkTextStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="#ADD8E6"/> <!-- Light blue, common for links on dark -->
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="TextDecorations" Value="Underline"/>
+            </Style>
+
+            <!-- Icon Style for Path - Color adapted for dark theme -->
+            <Style x:Key="IconPathStyle" TargetType="Path">
+                <Setter Property="Fill" Value="White"/> <!-- White icons for visibility -->
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="HeightRequest" Value="20"/>
+                <Setter Property="WidthRequest" Value="20"/>
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <!-- Apply the Gradient Background from MainPage -->
+    <ContentPage.Background>
+        <StaticResource Key="PageGradientBackground"/>
+    </ContentPage.Background>
+
+    <ScrollView VerticalOptions="FillAndExpand">
+        <VerticalStackLayout Padding="25,40" Spacing="18" 
+                             VerticalOptions="CenterAndExpand" 
+                             HorizontalOptions="FillAndExpand"
+                             MaximumWidthRequest="450">
+            
+            <!-- Optional: You could add a logo here if desired, like in MainPage.xaml -->
+            <!-- <Image Source="icon_gym2.png" HeightRequest="150" Aspect="AspectFit" Margin="0,0,0,30"/> -->
+            
+            <Label Text="Welcome Back!" Style="{StaticResource Headline}"/>
+            <Label Text="Login to continue" 
+                   HorizontalOptions="Center" 
+                   TextColor="WhiteSmoke" 
+                   FontSize="16"
+                   Margin="0,-15,0,25"/>
+
+            <!-- Email Entry -->
+            <Border Style="{StaticResource InputEntryBorderStyle}">
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10" Padding="10,0"> <!-- Internal padding to space icon -->
+                    <Path Grid.Column="0" Style="{StaticResource IconPathStyle}"
+                          Data="M6,4H18C19.1,4 20,4.9 20,6V18C20,19.1 19.1,20 18,20H6C4.9,20 4,19.1 4,18V6C4,4.9 4.9,4 6,4ZM18,8L12,13L6,8V6L12,11L18,6V8Z"/>
+                    <Entry x:Name="emailEntry" Grid.Column="1" Placeholder="Email Address" Style="{StaticResource InputEntryStyle}" Keyboard="Email" AutomationId="EmailEntry"/>
+                </Grid>
+            </Border>
+
+            <!-- Password Entry -->
+            <Border Style="{StaticResource InputEntryBorderStyle}">
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10" Padding="10,0"> <!-- Internal padding -->
+                     <Path Grid.Column="0" Style="{StaticResource IconPathStyle}"
+                           Data="M12,17C13.1,17 14,16.1 14,15C14,13.9 13.1,13 12,13C10.9,13 10,13.9 10,15C10,16.1 10.9,17 12,17M18,8H17V6C17,3.24 14.76,1 12,1C9.24,1 7,3.24 7,6V8H6C4.9,8 4,8.9 4,10V20C4,21.1 4.9,22 6,22H18C19.1,22 20,21.1 20,20V10C20,8.9 19.1,8 18,8M15.65,8H8.35V6C8.35,4.03 10,2.38 12,2.38C14,2.38 15.65,4.03 15.65,6V8Z" />
+                    <Entry x:Name="passwordEntry" Grid.Column="1" Placeholder="Password" Style="{StaticResource InputEntryStyle}" IsPassword="True" AutomationId="PasswordEntry"/>
+                </Grid>
+            </Border>
+            
+            <Button Text="Log In" Style="{StaticResource PrimaryActionButtonStyle}" Clicked="OnLoginClicked" AutomationId="LoginButton"/>
+
+            <Label Text="Forgot Password?" Style="{StaticResource LinkTextStyle}" Margin="0,10,0,0">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnForgotPasswordTapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+            
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="5" Margin="0,20,0,0">
+                <Label Text="Don't have an account?" TextColor="WhiteSmoke" FontSize="14"/> <!-- Light gray text -->
+                <Label Text="Sign Up" Style="{StaticResource LinkTextStyle}"> <!-- Consistent Link Style -->
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnSignUpTapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

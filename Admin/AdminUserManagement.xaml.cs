@@ -1,0 +1,57 @@
+using System;
+using System.Collections.Generic;
+using Saha.Admin;
+using Saha.Modals;
+
+namespace Saha.Admin
+{
+    public partial class AdminUserManagement : ContentPage
+    {
+        public AdminUserManagement()
+        {
+            InitializeComponent();
+        }
+
+
+        public void OnDashboardClicked(object sender, EventArgs e)
+        {
+           // await Navigation.PushAsync(new UserListPage());
+        }
+        public void OnUsersClicked(object sender, EventArgs e)
+        {
+            //await Navigation.PushAsync(new UserListPage());
+        }
+        public async void OnRequestListClicked(object sender, EventArgs e)
+        {
+            
+        }
+        public void OnReportsClicked(object sender, EventArgs e)
+        {
+            //await Navigation.PushAsync(new SettingsPage());
+        }
+        public void OnSettingsClicked(object sender, EventArgs e)
+        {
+            //await Navigation.PushAsync(new SettingsPage());
+        }
+        public void OnLogoutClicked(object sender, EventArgs e)
+        {
+            //await Navigation.PushAsync(new LoginPage());
+        }
+
+
+        //User Management
+        private async void OnViewRequestsClicked(object sender, EventArgs e)
+        {
+           await Navigation.PushAsync(new RequestUsers());
+        }
+        private async void OnEditUserClicked(object sender, EventArgs e)
+        {
+            //await Navigation.PushAsync(new AddUserPage());
+        }
+        private async void OnViewUserClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ViewUserPage());
+        }
+       
+    }
+}

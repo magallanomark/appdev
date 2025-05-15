@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Saha"
+    x:Class="Saha.AppShell"
+    Shell.FlyoutBehavior="Flyout"
+    >
+
+ <ShellContent
+        ContentTemplate="{DataTemplate local:Admin.AdminDashboardPage}"
+        Title="Admin Dashboard"
+        Route="AdminDashboardPage" />
+    <ShellContent
+        ContentTemplate="{DataTemplate local:GuestViewPage}"
+        Title="Guest View"
+        Route="GuestViewPage" />
+    
+    <ShellContent
+        ContentTemplate="{DataTemplate local:Modals.RequestUsers}"
+        Route="RequestUsers" 
+        Title="Request Users" />
+        
+
+    <!-- Home Page -->
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+
+    <!-- Register Page -->
+    <ShellContent
+        Title="Register"
+        ContentTemplate="{DataTemplate local:RegisterPage}"
+        Route="RegisterPage" />
+
+    <!-- Login Page -->
+    <ShellContent
+        Title="Login"
+        ContentTemplate="{DataTemplate local:LoginPage}"
+        Route="LoginPage" />
+
+    <!-- Guest View Page -->
+    
+
+    
+
+    
+</Shell>

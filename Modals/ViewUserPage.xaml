@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Name="RequestUsersPage" 
+             x:Class="Saha.Modals.ViewUserPage" 
+             BackgroundColor="Black">
+    <!-- 
+        Ensure x:Class="Saha.LoginPage" correctly matches your namespace and class name.
+        If LoginPage.xaml is in a "Pages" subfolder and your root namespace is "Saha",
+        then it should be x:Class="Saha.Pages.LoginPage".
+        The namespace in LoginPage.xaml.cs must also match (e.g., namespace Saha.Pages).
+    -->
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <!-- Gradient Background from MainPage.xaml -->
+            <LinearGradientBrush x:Key="PageGradientBackground" StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#00807E" Offset="0.1"/>
+                <GradientStop Color="#1A596E" Offset="0.5"/>
+                <GradientStop Color="#342758" Offset="1.0"/>
+            </LinearGradientBrush>
+
+            <!-- Headline Style - Colors adapted from MainPage -->
+            <Style x:Key="Headline" TargetType="Label">
+                <Setter Property="FontSize" Value="36"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="TextColor" Value="White"/> <!-- MainPage Headline TextColor -->
+                <Setter Property="Margin" Value="0,0,0,20"/>
+            </Style>
+
+            <!-- Input Entry Border Style - Colors adapted for dark theme -->
+            <Style x:Key="InputEntryBorderStyle" TargetType="Border">
+                <Setter Property="StrokeThickness" Value="1"/>
+                <Setter Property="Stroke" Value="#88FFFFFF"/> <!-- Semi-transparent white border -->
+                <Setter Property="BackgroundColor" Value="#33FFFFFF"/> <!-- Semi-transparent white background for field -->
+                <Setter Property="Padding" Value="12,8"/>
+                <Setter Property="Margin" Value="10,0"/>
+                <Setter Property="StrokeShape">
+                    <RoundRectangle CornerRadius="28"/>
+                </Setter>
+                <Setter Property="Shadow"> <!-- Keeping original shadow, can be tweaked if needed -->
+                    <Setter.Value>
+                        <Shadow Brush="Black" Opacity="0.2" Offset="2,2" Radius="5"/>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <!-- Input Entry Style (for the Entry control itself) - Colors adapted for dark theme -->
+            <Style x:Key="InputEntryStyle" TargetType="Entry">
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="PlaceholderColor" Value="#A0FFFFFF"/> <!-- Lighter placeholder for dark background -->
+                <Setter Property="TextColor" Value="White"/> <!-- Input text color -->
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="BackgroundColor" Value="Transparent"/> <!-- Entry itself is transparent -->
+                <Setter Property="Margin" Value="0"/>
+                <Setter Property="HeightRequest" Value="30"/>
+            </Style>
+
+            <!-- Primary Action Button Style - Adapted from MainPage's blue "Log In" button -->
+            <Style x:Key="PrimaryActionButtonStyle" TargetType="Button">
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="Padding" Value="15"/>
+                <Setter Property="Margin" Value="12,20,12,12"/>
+                <Setter Property="HeightRequest" Value="55"/>
+                <Setter Property="CornerRadius" Value="28"/>
+                <Setter Property="Shadow"> <!-- Shadow from MainPage's CustomButtonStyle (can be adjusted) -->
+                    <Setter.Value>
+                        <Shadow Brush="Black" Opacity="0.5" Offset="4,4"/>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="BackgroundColor" Value="#0056b3"/> <!-- Blue from MainPage's Log In button -->
+                <!-- <Setter Property="BorderColor" Value="White"/> Optional, if you want a white border like MainPage buttons -->
+                <!-- <Setter Property="BorderWidth" Value="2"/> -->
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal" />
+                            <VisualState x:Name="Pressed">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="#004085"/> <!-- Darker blue for pressed -->
+                                    <Setter Property="Scale" Value="0.98" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Disabled">
+                                <VisualState.Setters>
+                                    <Setter Property="Background" Value="#555555"/> <!-- Dark gray for disabled -->
+                                    <Setter Property="Opacity" Value="0.7"/>
+                                    <Setter Property="TextColor" Value="#AAAAAA"/> <!-- Light gray text for disabled -->
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+
+            <!-- Link Text Style - Color adapted for dark theme -->
+            <Style x:Key="LinkTextStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="#ADD8E6"/> <!-- Light blue, common for links on dark -->
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="TextDecorations" Value="Underline"/>
+            </Style>
+
+            <!-- Icon Style for Path - Color adapted for dark theme -->
+            <Style x:Key="IconPathStyle" TargetType="Path">
+                <Setter Property="Fill" Value="White"/> <!-- White icons for visibility -->
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="HeightRequest" Value="20"/>
+                <Setter Property="WidthRequest" Value="20"/>
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <!-- Apply the Gradient Background from MainPage -->
+    <ContentPage.Background>
+        <StaticResource Key="PageGradientBackground"/>
+    </ContentPage.Background>
+    
+<ScrollView>
+    <VerticalStackLayout Padding="20" Spacing="10">
+
+        <!-- Header Row -->
+        <Grid ColumnDefinitions="2*,2*,2*,1*,1*,2*,2*,Auto" Padding="10" BackgroundColor="#333">
+            <Label Text="Name" TextColor="White" FontAttributes="Bold" FontSize="14"/>
+            <Label Text="Email" Grid.Column="1" TextColor="White" FontAttributes="Bold" FontSize="14"/>
+            <Label Text="Phone" Grid.Column="2" TextColor="White" FontAttributes="Bold" FontSize="14"/>
+            <Label Text="Age" Grid.Column="3" TextColor="White" FontAttributes="Bold" FontSize="14"/>
+            <Label Text="Gender" Grid.Column="4" TextColor="White" FontAttributes="Bold" FontSize="14"/>
+            <Label Text="Goal" Grid.Column="5" TextColor="White" FontAttributes="Bold" FontSize="14"/>
+            <Label Text="Medical" Grid.Column="6" TextColor="White" FontAttributes="Bold" FontSize="14"/>
+            <Label Text="Action" Grid.Column="7" TextColor="White" FontAttributes="Bold" FontSize="14"/>
+        </Grid>
+
+        <!-- CollectionView Rows -->
+        <CollectionView ItemsSource="{Binding AcceptedUsers}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid ColumnDefinitions="2*,2*,2*,1*,1*,2*,2*,Auto"
+                          Padding="10" BackgroundColor="#1A1A2E" Margin="0,1">
+                        <Label Text="{Binding FullName}" TextColor="White" FontSize="13"/>
+                        <Label Text="{Binding Email}" Grid.Column="1" TextColor="White" FontSize="13"/>
+                        <Label Text="{Binding PhoneNumber}" Grid.Column="2" TextColor="White" FontSize="13"/>
+                        <Label Text="{Binding Age}" Grid.Column="3" TextColor="White" FontSize="13"/>
+                        <Label Text="{Binding Gender}" Grid.Column="4" TextColor="White" FontSize="13"/>
+                        <Label Text="{Binding FitnessGoal}" Grid.Column="5" TextColor="White" FontSize="13"/>
+                        <Label Text="{Binding MedicalCondition}" Grid.Column="6" TextColor="White" FontSize="13"/>
+
+                        <!-- Action Button -->
+                        <Button Text="View"
+                                Grid.Column="7"
+                                FontSize="12"
+                                Padding="8,4"
+                                BackgroundColor="#0056b3"
+                                TextColor="White"
+                                CornerRadius="12"
+                                Command="{Binding Source={x:Reference RequestUsersPage}, Path=BindingContext.ViewCommand}"
+                                CommandParameter="{Binding}"/>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </VerticalStackLayout>
+</ScrollView>
+
+
+</ContentPage>

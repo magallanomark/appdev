@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Saha" 
+             x:Class="Saha.RegisterPage"
+             x:DataType="local:RegisterPage"  
+             Title="Create Account"
+             Shell.NavBarIsVisible="False">
+    <!-- 
+        IMPORTANT: 
+        Ensure x:Class="Saha.RegisterPage" correctly matches your namespace and class name.
+        If RegisterPage.xaml is in a "Pages" subfolder and your root namespace is "Saha",
+        then it should be x:Class="Saha.Pages.RegisterPage".
+        The namespace in RegisterPage.xaml.cs must also match (e.g., namespace Saha.Pages).
+    -->
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <!-- Gradient Background (Copied from LoginPage/MainPage) -->
+            <LinearGradientBrush x:Key="PageGradientBackground" StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#00807E" Offset="0.1"/>
+                <GradientStop Color="#1A596E" Offset="0.5"/>
+                <GradientStop Color="#342758" Offset="1.0"/>
+            </LinearGradientBrush>
+
+            <!-- Headline Style (Same as LoginPage) -->
+            <Style x:Key="Headline" TargetType="Label">
+                <Setter Property="FontSize" Value="36"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="TextColor" Value="White"/> 
+                <Setter Property="Margin" Value="0,0,0,20"/>
+            </Style>
+
+            <!-- Input Entry Border Style (Same as LoginPage) -->
+            <Style x:Key="InputEntryBorderStyle" TargetType="Border">
+                <Setter Property="StrokeThickness" Value="1"/>
+                <Setter Property="Stroke" Value="#88FFFFFF"/>
+                <Setter Property="BackgroundColor" Value="#33FFFFFF"/>
+                <Setter Property="Padding" Value="8,8"/>
+                <Setter Property="Margin" Value="10,0"/>
+                <Setter Property="StrokeShape">
+                    <RoundRectangle CornerRadius="28"/>
+                </Setter>
+                <Setter Property="Shadow">
+                    <Setter.Value>
+                        <Shadow Brush="Black" Opacity="0.2" Offset="2,2" Radius="5"/>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <!-- Input Entry Style (Same as LoginPage) -->
+            <Style x:Key="InputEntryStyle" TargetType="Entry">
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="PlaceholderColor" Value="#A0FFFFFF"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="BackgroundColor" Value="Transparent"/>
+                <Setter Property="Margin" Value="0"/>
+                <Setter Property="HeightRequest" Value="30"/>
+            </Style>
+
+            <!-- Primary Action Button Style (Same as LoginPage's PrimaryActionButtonStyle) -->
+            <Style x:Key="PrimaryActionButtonStyle" TargetType="Button">
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="Padding" Value="15"/>
+                <Setter Property="Margin" Value="12,20,12,12"/>
+                <Setter Property="HeightRequest" Value="55"/>
+                <Setter Property="CornerRadius" Value="28"/>
+                <Setter Property="Shadow">
+                    <Setter.Value>
+                        <Shadow Brush="Black" Opacity="0.4" Offset="4,4" Radius="8"/>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="BackgroundColor" Value="#0056b3"/>
+                <Setter Property="BorderColor" Value="#004085"/>
+                <Setter Property="BorderWidth" Value="1"/>
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal" />
+                            <VisualState x:Name="Pressed">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="#004085"/>
+                                    <Setter Property="Scale" Value="0.98" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Disabled">
+                                <VisualState.Setters>
+                                    <Setter Property="Background" Value="#555555"/> <!-- Changed from BackgroundColor to Background for wider compatibility -->
+                                    <Setter Property="Opacity" Value="0.7"/>
+                                    <Setter Property="TextColor" Value="#AAAAAA"/>
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+
+            <!-- Link Text Style (Same as LoginPage) -->
+            <Style x:Key="LinkTextStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="#ADD8E6"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="TextDecorations" Value="Underline"/>
+            </Style>
+
+            <!-- Icon Style for Path (Same as LoginPage) -->
+            <Style x:Key="IconPathStyle" TargetType="Path">
+                <Setter Property="Fill" Value="White"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="HeightRequest" Value="20"/>
+                <Setter Property="WidthRequest" Value="20"/>
+            </Style>
+            
+            <!-- Style for regular text within the form for labels or secondary info -->
+            <Style x:Key="FormTextStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="WhiteSmoke" />
+                <Setter Property="FontSize" Value="14" />
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Background>
+        <StaticResource Key="PageGradientBackground"/>
+    </ContentPage.Background>
+
+    <ScrollView VerticalOptions="FillAndExpand">
+        <VerticalStackLayout Padding="25,40" Spacing="15" 
+                             VerticalOptions="CenterAndExpand" 
+                             HorizontalOptions="FillAndExpand"
+                             MaximumWidthRequest="450">
+            
+            <!-- <Image Source="icon_gym2.png" HeightRequest="120" Aspect="AspectFit" Margin="0,0,0,20"/> -->
+            
+            <Label Text="Create Your Account" Style="{StaticResource Headline}" Margin="0,0,0,25"/>
+
+            <!-- Full Name Entry -->
+            <Border Style="{StaticResource InputEntryBorderStyle}">
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10" Padding="10,0">
+                     <!-- User Icon Path Data -->
+                    <Path Grid.Column="0" Style="{StaticResource IconPathStyle}"
+                          Data="M12,19.2C9.5,19.2 7.29,17.92 6,16C6.03,14 10,12.9 12,12.9C14,12.9 17.97,14 18,16C16.71,17.92 14.5,19.2 12,19.2M12,5A3,3 0 0,1 15,8A3,3 0 0,1 12,11A3,3 0 0,1 9,8A3,3 0 0,1 12,5M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12C22,6.47 17.5,2 12,2Z" />
+                    <Entry x:Name="nameEntry" Grid.Column="1" Placeholder="Full Name" Style="{StaticResource InputEntryStyle}" Keyboard="Text" AutomationId="NameEntry"/>
+                </Grid>
+            </Border>
+
+            <!-- Email Entry -->
+            <Border Style="{StaticResource InputEntryBorderStyle}">
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10" Padding="10,0">
+                    <Path Grid.Column="0" Style="{StaticResource IconPathStyle}"
+                          Data="M6,4H18C19.1,4 20,4.9 20,6V18C20,19.1 19.1,20 18,20H6C4.9,20 4,19.1 4,18V6C4,4.9 4.9,4 6,4ZM18,8L12,13L6,8V6L12,11L18,6V8Z"/>
+                    <Entry x:Name="emailEntry" Grid.Column="1" Placeholder="Email Address" Style="{StaticResource InputEntryStyle}" Keyboard="Email" AutomationId="EmailEntry"/>
+                </Grid>
+            </Border>
+
+            <!-- Password Entry -->
+            <Border Style="{StaticResource InputEntryBorderStyle}">
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10" Padding="10,0">
+                     <Path Grid.Column="0" Style="{StaticResource IconPathStyle}"
+                           Data="M12,17C13.1,17 14,16.1 14,15C14,13.9 13.1,13 12,13C10.9,13 10,13.9 10,15C10,16.1 10.9,17 12,17M18,8H17V6C17,3.24 14.76,1 12,1C9.24,1 7,3.24 7,6V8H6C4.9,8 4,8.9 4,10V20C4,21.1 4.9,22 6,22H18C19.1,22 20,21.1 20,20V10C20,8.9 19.1,8 18,8M15.65,8H8.35V6C8.35,4.03 10,2.38 12,2.38C14,2.38 15.65,4.03 15.65,6V8Z" />
+                    <Entry x:Name="passwordEntry" Grid.Column="1" Placeholder="Password" Style="{StaticResource InputEntryStyle}" IsPassword="True" AutomationId="PasswordEntry"/>
+                </Grid>
+            </Border>
+            
+            <!-- Confirm Password Entry -->
+            <Border Style="{StaticResource InputEntryBorderStyle}">
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10" Padding="10,0">
+                     <!-- Re-using Lock icon -->
+                     <Path Grid.Column="0" Style="{StaticResource IconPathStyle}"
+                           Data="M12,17C13.1,17 14,16.1 14,15C14,13.9 13.1,13 12,13C10.9,13 10,13.9 10,15C10,16.1 10.9,17 12,17M18,8H17V6C17,3.24 14.76,1 12,1C9.24,1 7,3.24 7,6V8H6C4.9,8 4,8.9 4,10V20C4,21.1 4.9,22 6,22H18C19.1,22 20,21.1 20,20V10C20,8.9 19.1,8 18,8M15.65,8H8.35V6C8.35,4.03 10,2.38 12,2.38C14,2.38 15.65,4.03 15.65,6V8Z" />
+                    <Entry x:Name="confirmPasswordEntry" Grid.Column="1" Placeholder="Confirm Password" Style="{StaticResource InputEntryStyle}" IsPassword="True" AutomationId="ConfirmPasswordEntry"/>
+                </Grid>
+            </Border>
+
+            <!-- Age Entry -->
+            <Border Style="{StaticResource InputEntryBorderStyle}">
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10" Padding="10,0">
+                    <Path Grid.Column="0" Style="{StaticResource IconPathStyle}"
+                          Data="M6,4H18C19.1,4 20,4.9 20,6V18C20,19.1 19.1,20 18,20H6C4.9,20 4,19.1 4,18V6C4,4.9 4.9,4 6,4ZM18,8L12,13L6,8V6L12,11L18,6V8Z"/>
+                    <Entry x:Name="ageEntry" Grid.Column="1" Placeholder="Age" Style="{StaticResource InputEntryStyle}" Keyboard="Numeric" AutomationId="AgeEntry"/>
+                </Grid>
+            </Border>
+
+
+            <!-- Gender Selection -->
+            <Border Style="{StaticResource InputEntryBorderStyle}">
+                <Picker x:Name="genderPicker"  Style="{StaticResource InputEntryStyle}">
+                    <Picker.Items>
+                        <x:String>Male</x:String>
+                        <x:String>Female</x:String>
+                        <x:String>Other</x:String>
+                    </Picker.Items>
+                </Picker>
+            </Border>
+
+
+            <!-- Fitness Goal Selection -->
+            <Border Style="{StaticResource InputEntryBorderStyle}">
+                <Picker x:Name="fitnessGoalPicker" Style="{StaticResource InputEntryStyle}">
+                    <Picker.Items>
+                        <x:String>Lose Weight</x:String>
+                        <x:String>Build Muscle</x:String>
+                        <x:String>Increase Strength</x:String>
+                        <x:String>General Fitness</x:String>
+                    </Picker.Items>
+                </Picker>
+            </Border>
+
+            <!-- Phone Number Entry -->
+            <Border Style="{StaticResource InputEntryBorderStyle}">
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10" Padding="10,0">
+                    <Path Grid.Column="0" Style="{StaticResource IconPathStyle}"
+                          Data="M12,19.2C9.5,19.2 7.29,17.92 6,16C6.03,14 10,12.9 12,12.9C14,12.9 17.97,14 18,16C16.71,17.92 14.5,19.2 12,19.2M12,5A3,3 0 0,1 15,8A3,3 0 0,1 12,11A3,3 0 0,1 9,8A3,3 0 0,1 12,5M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12C22,6.47 17.5,2 12,2Z" />
+                    <Entry x:Name="phoneEntry" Grid.Column="1" Placeholder="Phone Number" Style="{StaticResource InputEntryStyle}" Keyboard="Numeric" AutomationId="PhoneEntry"/>
+                </Grid>
+            </Border>
+
+
+            <!-- Medical Conditions -->
+            <Border Style="{StaticResource InputEntryBorderStyle}">
+                <Grid ColumnDefinitions="Auto,*" ColumnSpacing="10" Padding="10,0">
+                    <Path Grid.Column="0" Style="{StaticResource IconPathStyle}"
+                          Data="M12,19.2C9.5,19.2 7.29,17.92 6,16C6.03,14 10,12.9 12,12.9C14,12.9 17.97,14 18,16C16.71,17.92 14.5,19.2 12,19.2M12,5A3,3 0 0,1 15,8A3,3 0 0,1 12,11A3,3 0 0,1 9,8A3,3 0 0,1 12,5M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12C22,6.47 17.5,2 12,2Z" />
+                    <Entry x:Name="medicalConditionsEntry" Grid.Column="1" Placeholder="Medical Conditions (if any)" Style="{StaticResource InputEntryStyle}" Keyboard="Text" AutomationId="MedicalConditionsEntry"/>
+                </Grid>
+            </Border>
+            
+            <!-- Terms and Conditions -->
+                        <!-- Terms and Conditions -->
+            <HorizontalStackLayout Spacing="5" HorizontalOptions="Center" Margin="0,10,0,0">
+                <CheckBox x:Name="termsCheckBox" VerticalOptions="Center" IsChecked="False"/>
+                <Label Text="I agree to the" Style="{StaticResource FormTextStyle}" VerticalOptions="Center"/>
+                <Label Text="Terms and Conditions" Style="{StaticResource LinkTextStyle}" VerticalOptions="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnTermsAndConditionsTapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </HorizontalStackLayout>
+            
+            <Button Text="Register" 
+                    Style="{StaticResource PrimaryActionButtonStyle}" 
+                    Clicked="OnRegisterClicked" 
+                    AutomationId="RegisterButton"
+                    IsEnabled="{Binding Source={x:Reference termsCheckBox}, Path=IsChecked}"/> 
+            
+            
+            
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="5" Margin="0,15,0,0">
+                <Label Text="Already have an account?" Style="{StaticResource FormTextStyle}"/>
+                <Label Text="Log In" Style="{StaticResource LinkTextStyle}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnLoginLinkTapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

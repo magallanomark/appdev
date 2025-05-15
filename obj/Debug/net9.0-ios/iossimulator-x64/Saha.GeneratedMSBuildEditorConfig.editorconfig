@@ -1,0 +1,103 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.TargetFramework = net9.0-ios
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Saha
+build_property.ProjectDir = C:\Users\marka\OneDrive\Desktop\AppDev\Saha\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.EffectiveAnalysisLevelStyle = 9.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Users/marka/OneDrive/Desktop/AppDev/Saha/Admin/AdminDashboardPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Saha.Admin.AdminDashboardPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Admin\AdminDashboardPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Admin\AdminDashboardPage.xaml
+
+[C:/Users/marka/OneDrive/Desktop/AppDev/Saha/Admin/AdminUserManagement.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Saha.Admin.AdminUserManagement.xaml
+build_metadata.AdditionalFiles.TargetPath = Admin\AdminUserManagement.xaml
+build_metadata.AdditionalFiles.RelativePath = Admin\AdminUserManagement.xaml
+
+[C:/Users/marka/OneDrive/Desktop/AppDev/Saha/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Saha.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[C:/Users/marka/OneDrive/Desktop/AppDev/Saha/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Saha.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[C:/Users/marka/OneDrive/Desktop/AppDev/Saha/GuestViewPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Saha.GuestViewPage.xaml
+build_metadata.AdditionalFiles.TargetPath = GuestViewPage.xaml
+build_metadata.AdditionalFiles.RelativePath = GuestViewPage.xaml
+
+[C:/Users/marka/OneDrive/Desktop/AppDev/Saha/LoginPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Saha.LoginPage.xaml
+build_metadata.AdditionalFiles.TargetPath = LoginPage.xaml
+build_metadata.AdditionalFiles.RelativePath = LoginPage.xaml
+
+[C:/Users/marka/OneDrive/Desktop/AppDev/Saha/MainPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Saha.MainPage.xaml
+build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
+build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
+
+[C:/Users/marka/OneDrive/Desktop/AppDev/Saha/Modals/ProgramDetailsPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Saha.Modals.ProgramDetailsPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Modals\ProgramDetailsPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Modals\ProgramDetailsPage.xaml
+
+[C:/Users/marka/OneDrive/Desktop/AppDev/Saha/Modals/RequestUsers.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Saha.Modals.RequestUsers.xaml
+build_metadata.AdditionalFiles.TargetPath = Modals\RequestUsers.xaml
+build_metadata.AdditionalFiles.RelativePath = Modals\RequestUsers.xaml
+
+[C:/Users/marka/OneDrive/Desktop/AppDev/Saha/Modals/ViewUserPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Saha.Modals.ViewUserPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Modals\ViewUserPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Modals\ViewUserPage.xaml
+
+[C:/Users/marka/OneDrive/Desktop/AppDev/Saha/RegisterPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Saha.RegisterPage.xaml
+build_metadata.AdditionalFiles.TargetPath = RegisterPage.xaml
+build_metadata.AdditionalFiles.RelativePath = RegisterPage.xaml
+
+[C:/Users/marka/OneDrive/Desktop/AppDev/Saha/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Saha.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
+
+[C:/Users/marka/OneDrive/Desktop/AppDev/Saha/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Saha.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
+
+[C:/Users/marka/OneDrive/Desktop/AppDev/Saha/User/UserDashboard.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Saha.User.UserDashboard.xaml
+build_metadata.AdditionalFiles.TargetPath = User\UserDashboard.xaml
+build_metadata.AdditionalFiles.RelativePath = User\UserDashboard.xaml
