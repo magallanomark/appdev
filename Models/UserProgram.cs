@@ -15,6 +15,12 @@ namespace Saha.Models
         public int Progess { get; set; }
 
 
+        public string Status { get; set; }
+
+        public string TransactionNumber { get; set; }
+
         public string StartDate { get; set; }
+
+        public string EndDate { get; set; }
     }
 }

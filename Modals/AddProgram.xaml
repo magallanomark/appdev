@@ -226,10 +226,10 @@
 
 
                         <Border Style="{StaticResource InputEntryBorderStyle}">
-                                <DatePicker x:Name="ProgramScheduleEntry"
-                                            Format="MM/dd/yyyy"
-                                            HorizontalOptions="FillAndExpand"
-                                            BackgroundColor="Transparent"/>
+                                <Entry x:Name="DurationEntry"
+                                       Placeholder="Duration"
+                                       Style="{StaticResource InputEntryStyle}"
+                                       Keyboard="Numeric"/>
                         </Border>
 
                         <Border Style="{StaticResource InputEntryBorderStyle}">

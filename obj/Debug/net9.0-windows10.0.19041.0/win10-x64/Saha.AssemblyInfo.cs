@@ -17,7 +17,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Saha")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+9e6eefffc55ca937be3586d89e6515eb4efbcef2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+c06626faba2a28984b3b7fb0d03f53f2ffbec604")]
 [assembly: System.Reflection.AssemblyProductAttribute("Saha")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Saha")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

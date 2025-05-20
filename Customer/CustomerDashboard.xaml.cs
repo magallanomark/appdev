@@ -18,6 +18,8 @@ namespace Saha.Customer
 
         private SQLiteService _dbService;
 
+        DateTime selectedDate;
+
         public ObservableCollection<UserProgram> UserPrograms { get; set; }
         public CustomerDashboard()
         {
@@ -52,6 +54,7 @@ namespace Saha.Customer
         }
         public async void OnLogoutClicked(object sender, EventArgs e)
         {
+            UserSession.CurrentUserId = 0; // Reset the user ID
             await Navigation.PushAsync(new GuestViewPage());
         }
 
@@ -110,7 +113,6 @@ namespace Saha.Customer
         {
             _selectedProgram = program; // Store the selected program for later use
             PopupTitle.Text = program.Name;
-            PopupMessage.Text = $"{program.Description}\n\nSchedule: {program.Schedule}\nPrice: {program.Price}";
             PopupOverlay.IsVisible = true;
         }
 
@@ -142,23 +144,24 @@ namespace Saha.Customer
         }
         async void OnDateConfirmed(object sender, EventArgs e)
         {
-            DateTime selectedDate = SelectedDatePicker.Date;
+            selectedDate = SelectedDatePicker.Date;
 
+            GcashTransactionPopupOverlay.IsVisible = true;
 
-            var userProgram = new UserProgram
-            {
-                UserId = UserSession.CurrentUserId,
-                ProgramId = _selectedProgram.Id,
-                Progess = 0,
-                StartDate = selectedDate.ToString("MM/dd/yyyy"),
-            };
+            // var userProgram = new UserProgram
+            // {
+            //     UserId = UserSession.CurrentUserId,
+            //     ProgramId = _selectedProgram.Id,
+            //     Progess = 0,
+            //     StartDate = selectedDate.ToString("MM/dd/yyyy"),
+            // };
 
-            _dbService.AddUserProgram(userProgram);
+            // _dbService.AddUserProgram(userProgram);
 
-            // Example logic to store or show confirmation
-            await DisplayAlert("Booking Confirmed",
-                $"You availed {_selectedProgram?.Name} on {selectedDate:MMMM dd, yyyy}",
-                "OK");
+            // // Example logic to store or show confirmation
+            // await DisplayAlert("Booking Confirmed",
+            //     $"You availed {_selectedProgram?.Name} on {selectedDate:MMMM dd, yyyy}",
+            //     "OK");
 
 
 
@@ -170,10 +173,50 @@ namespace Saha.Customer
             // Optionally: save to DB or call API
         }
 
+        private async void OnTransactionConfirmClicked(object sender, EventArgs e)
+        {
+            string transactionNumber = TransactionNumberEntry.Text;
+
+            if (string.IsNullOrWhiteSpace(transactionNumber) || transactionNumber.Length < 6)
+            {
+                await DisplayAlert("Invalid", "Please enter a valid transaction number.", "OK");
+                return;
+            }
+
+            var userProgram = new UserProgram
+            {
+                UserId = UserSession.CurrentUserId,
+                ProgramId = _selectedProgram.Id,
+                Progess = 0,
+                Status = "Pending",
+                TransactionNumber = transactionNumber,
+                StartDate = selectedDate.ToString("MM/dd/yyyy"),
+                EndDate = selectedDate.AddDays(_selectedProgram.Duration).ToString("MM/dd/yyyy") // Assuming a 30-day program
+            };
+
+            _dbService.AddUserProgram(userProgram);
+
+            // Example logic to store or show confirmation
+            await DisplayAlert("Booking Confirmed",
+                $"You availed {_selectedProgram?.Name} on {selectedDate:MMMM dd, yyyy} . Please wait for the admin to confirm your booking.",
+                "OK");
+
+            // Save or process the transaction number
+            Console.WriteLine($"Transaction Number: {transactionNumber}");
+
+            GcashTransactionPopupOverlay.IsVisible = false;
+            // await DisplayAlert("Success", "Your transaction has been recorded.", "OK");
+        }
 
         void CloseCalendarPopup(object sender, EventArgs e)
         {
             CalendarPopupOverlay.IsVisible = false;
+        }
+
+
+        private void CloseTransactionPopup(object sender, EventArgs e)
+        {
+            GcashTransactionPopupOverlay.IsVisible = false;
         }
 
 

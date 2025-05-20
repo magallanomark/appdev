@@ -47,7 +47,8 @@ namespace Saha.Modals
             int trainerId = selectedTrainer?.Id ?? 0;  // or any default int value (like 0) when null
 
             // For DatePicker, get Date and convert to string if needed
-            string schedule = ProgramScheduleEntry.Date.ToString("MM/dd/yyyy");
+
+            int duration = DurationEntry.Text != null ? int.Parse(DurationEntry.Text) : 0;
 
             // For price Entry, still get Text (numeric string)
             string programPrice = PriceEntry.Text?.Trim() ?? string.Empty;
@@ -60,7 +61,7 @@ namespace Saha.Modals
             if (string.IsNullOrWhiteSpace(programName) ||
                 string.IsNullOrWhiteSpace(programDescription) ||
                 trainerId == 0 ||
-                string.IsNullOrWhiteSpace(schedule) ||
+                string.IsNullOrWhiteSpace(duration.ToString()) ||
                 string.IsNullOrWhiteSpace(programPrice))
             {
                 await DisplayAlert("Error", "Please fill in all fields.", "OK");
@@ -74,7 +75,7 @@ namespace Saha.Modals
                 Description = programDescription,
                 Trainer_Id = trainerId,
                 Price = programPrice,
-                Schedule = schedule
+                Duration = duration,
             };
 
             // 3. Save the new program to the database

@@ -16,12 +16,12 @@ namespace Saha
         // Access the static list of users from RegisterPage
         public static List<UserModel> _userList = RegisterPage.UserList;  // Reference the same list used in RegisterPage
 
-        SQLiteService _db = new SQLiteService();
+        SQLiteService _db;
 
         public LoginPage()
         {
             InitializeComponent();
-
+            _db = new SQLiteService();
 
         }
 

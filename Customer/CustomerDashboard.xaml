@@ -213,7 +213,7 @@
                                 Padding="5">
                                 <Button Text="Programs"
                                         TextColor="White"
-                                        BackgroundColor="Black"
+                                        BackgroundColor="Transparent"
                                         Clicked="OnUsersClicked"/>
                         </Border>
 
@@ -257,13 +257,6 @@
                                                                 <Label Text="{Binding Description}"
                                                                        FontSize="14"
                                                                        TextColor="#FFBAA72E"/>
-                                                                <Label Text="Schedule:"
-                                                                       FontAttributes="Bold"
-                                                                       FontSize="14"
-                                                                       TextColor="Black"/>
-                                                                <Label Text="{Binding Schedule}"
-                                                                       FontSize="13"
-                                                                       TextColor="Black"/>
                                                                 <Label Text="Price:"
                                                                        FontAttributes="Bold"
                                                                        FontSize="14"
@@ -351,6 +344,9 @@
 
                                         <DatePicker x:Name="SelectedDatePicker"
                                                     MinimumDate="{x:Static sys:DateTime.Now}"
+                                                    WidthRequest="250"
+                                                    BackgroundColor="Gray"
+                                                    TextColor="Black"
                                                     HorizontalOptions="Center"/>
 
                                         <HorizontalStackLayout HorizontalOptions="Center"
@@ -371,6 +367,62 @@
                                 </VerticalStackLayout>
                         </Frame>
                 </Grid>
+
+                <Grid x:Name="GcashTransactionPopupOverlay"
+                      Grid.ColumnSpan="2"
+                      BackgroundColor="#80000000"
+                      IsVisible="False"
+                      Padding="20"
+                      ZIndex="1000">
+
+                        <Frame BackgroundColor="White"
+                               CornerRadius="20"
+                               Padding="20"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center"
+                               WidthRequest="400"
+                               HasShadow="True">
+
+                                <VerticalStackLayout Spacing="15">
+
+                                        <!-- GCash Number Display -->
+                                        <Label Text="Send payment to: 09123434786"
+                                               FontSize="18"
+                                               FontAttributes="Bold"
+                                               TextColor="Black"
+                                               HorizontalOptions="Center"/>
+
+                                        <!-- Transaction Number Entry -->
+                                        <Entry x:Name="TransactionNumberEntry"
+                                               Placeholder="Enter your GCash transaction number"
+                                               MaxLength="20"
+                                               WidthRequest="300"
+                                               BackgroundColor="#EEEEEE"
+                                               TextColor="Black"
+                                               HorizontalOptions="Center"/>
+
+                                        <!-- Buttons -->
+                                        <HorizontalStackLayout HorizontalOptions="Center"
+                                                               Spacing="15">
+                                                <Button Text="Cancel"
+                                                        BackgroundColor="#B0BEC5"
+                                                        TextColor="Black"
+                                                        Clicked="CloseTransactionPopup"
+                                                        CornerRadius="10"
+                                                        WidthRequest="100"/>
+
+                                                <Button Text="Confirm"
+                                                        BackgroundColor="#00BFA5"
+                                                        TextColor="White"
+                                                        Clicked="OnTransactionConfirmClicked"
+                                                        CornerRadius="10"
+                                                        WidthRequest="100"/>
+                                        </HorizontalStackLayout>
+
+                                </VerticalStackLayout>
+                        </Frame>
+                </Grid>
+
 
 
         </Grid>

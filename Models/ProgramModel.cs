@@ -10,7 +10,8 @@ namespace Saha.Models
         public string Description { get; set; }
         public int Trainer_Id { get; set; }
         public string Price { get; set; }
-        public string Schedule { get; set; }
+
+        public int Duration { get; set; }
 
     }
 }
