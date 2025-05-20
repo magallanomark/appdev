@@ -29,6 +29,7 @@ namespace Saha.Customer
 
             _dbService = new SQLiteService();
 
+
         }
 
 
@@ -54,7 +55,9 @@ namespace Saha.Customer
         }
         public async void OnLogoutClicked(object sender, EventArgs e)
         {
-            UserSession.CurrentUserId = 0; // Reset the user ID
+            RoleSession.CurrentUserRole = null;
+            UserSession.CurrentUserId = 0;
+            Application.Current.MainPage = new AppShell("guest");
             await Navigation.PushAsync(new GuestViewPage());
         }
 

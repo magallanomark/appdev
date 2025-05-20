@@ -190,142 +190,80 @@
         </ContentPage.Background>
 
 
-        <Grid ColumnDefinitions="Auto,*"
-              RowDefinitions="*">
+        <VerticalStackLayout>
 
-                <!-- Vertical Sidebar Menu -->
-                <StackLayout BackgroundColor="#222"
-                             VerticalOptions="FillAndExpand"
-                             WidthRequest="180">
-
-
-                        <Border Stroke="#88FFFFFF"
-                                StrokeThickness="1"
-                                Padding="5">
-                                <Button Text="Dashboard"
-                                        TextColor="White"
-                                        BackgroundColor="Transparent"
-                                        Clicked="OnDashboardClicked"/>
-                        </Border>
-
-                        <Border Stroke="#88FFFFFF"
-                                StrokeThickness="1"
-                                Padding="5">
-                                <Button Text="Users"
-                                        TextColor="White"
-                                        BackgroundColor="Transparent"
-                                        Clicked="OnUsersClicked"/>
-                        </Border>
-
-                        <Border Stroke="#88FFFFFF"
-                                StrokeThickness="1"
-                                Padding="5">
-                                <Button Text="Program"
-                                        TextColor="White"
-                                        BackgroundColor="Gray"
-                                        Clicked="OnProgramListClicked"/>
-                        </Border>
-
-                        <Border Stroke="#88FFFFFF"
-                                StrokeThickness="1"
-                                Padding="5">
-                                <Button Text="Reports"
-                                        TextColor="White"
-                                        BackgroundColor="Transparent"
-                                        Clicked="OnReportsClicked"/>
-                        </Border>
-
-                        <Border Stroke="#88FFFFFF"
-                                StrokeThickness="1"
-                                Padding="5">
-                                <Button Text="Settings"
-                                        TextColor="White"
-                                        BackgroundColor="Transparent"
-                                        Clicked="OnSettingsClicked"/>
-                        </Border>
-
-                        <Border Stroke="#88FFFFFF"
-                                StrokeThickness="1"
-                                Padding="5">
-                                <Button Text="Logout"
-                                        TextColor="Red"
-                                        BackgroundColor="Transparent"
-                                        Clicked="OnLogoutClicked"/>
-                        </Border>
-
-                </StackLayout>
+                <!-- Header Bar -->
+                <Grid ColumnDefinitions="*,Auto"
+                      Padding="15"
+                      BackgroundColor="Transparent"
+                      VerticalOptions="Start">
+                        <Label Text="SAHA System"
+                               FontSize="20"
+                               FontAttributes="Bold"
+                               TextColor="White"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Start"/>
+                        <Button Text="Add Program"
+                                Style="{StaticResource PrimaryActionButtonStyle}"
+                                Clicked="OnAddProgramClicked"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Start"/>
+                        <Button Text="Logout"
+                                Style="{StaticResource PrimaryActionButtonStyle}"
+                                Clicked="OnLogoutClicked"
+                                BackgroundColor="#D9534F"
+                                VerticalOptions="Center"
+                                HorizontalOptions="End"/>
+                </Grid>
 
                 <!-- Main Content Area -->
-                <ScrollView Grid.Column="1"
-                            VerticalOptions="FillAndExpand">
-                        <VerticalStackLayout Padding="25,40"
+                <!-- Main Content Area -->
+                <ScrollView>
+                        <VerticalStackLayout Padding="25,0,25,0"
                                              Spacing="18">
-                                <!-- Label + Add Button -->
-                                <Grid ColumnSpacing="10"
-                                      Margin="0,30,0,10">
-                                        <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="*"/>
-                                                <ColumnDefinition Width="Auto"/>
-                                        </Grid.ColumnDefinitions>
-
-                                        <Label Text="Existing Programs"
-                                               Style="{StaticResource Headline}"
-                                               VerticalOptions="Center"
-                                               Grid.Column="0"/>
-
-                                        <Button Text="Add"
-                                                Style="{StaticResource PrimaryActionButtonStyle}"
-                                                Padding="12,6"
-                                                FontSize="16"
-                                                Clicked="OnAddProgramClicked"
-                                                HeightRequest="40"
-                                                WidthRequest="100"
-                                                Grid.Column="1"/>
-                                </Grid>
 
 
+                                <!-- Remove this ScrollView here -->
+                                <!-- CollectionView supports scrolling itself -->
                                 <CollectionView x:Name="ProgramsCollection"
                                                 ItemsSource="{Binding ProgramModels}"
                                                 Margin="0,0,0,30">
 
-                                        <!-- Table Header -->
                                         <CollectionView.Header>
-                                                <Grid Padding="10"
+                                                <Grid Padding="15"
                                                       ColumnSpacing="10"
-                                                      BackgroundColor="#222">
+                                                      BackgroundColor="Transparent">
                                                         <Grid.ColumnDefinitions>
                                                                 <ColumnDefinition Width="2*"/>
                                                                 <ColumnDefinition Width="3*"/>
                                                                 <ColumnDefinition Width="2*"/>
                                                                 <ColumnDefinition Width="2*"/>
                                                                 <ColumnDefinition Width="Auto"/>
-                                                                <!-- Extra column for Delete button -->
                                                         </Grid.ColumnDefinitions>
 
                                                         <Label Text="Name"
                                                                TextColor="White"
                                                                FontAttributes="Bold"
+                                                               FontSize="20"
                                                                Grid.Column="0"/>
                                                         <Label Text="Description"
                                                                TextColor="White"
                                                                FontAttributes="Bold"
+                                                               FontSize="20"
                                                                Grid.Column="1"/>
                                                         <Label Text="Trainer"
                                                                TextColor="White"
                                                                FontAttributes="Bold"
+                                                               FontSize="20"
                                                                Grid.Column="2"/>
-                                                        <Label Text="Schedule"
-                                                               TextColor="White"
-                                                               FontAttributes="Bold"
-                                                               Grid.Column="3"/>
                                                         <Label Text="Actions"
                                                                TextColor="White"
                                                                FontAttributes="Bold"
+                                                               FontSize="20"
                                                                Grid.Column="4"/>
                                                 </Grid>
                                         </CollectionView.Header>
 
-                                        <!-- Program Items -->
                                         <CollectionView.ItemTemplate>
                                                 <DataTemplate>
                                                         <Frame CornerRadius="10"
@@ -333,7 +271,6 @@
                                                                Margin="5"
                                                                BackgroundColor="#1A596E"
                                                                HasShadow="False">
-
                                                                 <Grid ColumnSpacing="10">
                                                                         <Grid.ColumnDefinitions>
                                                                                 <ColumnDefinition Width="2*"/>
@@ -341,7 +278,6 @@
                                                                                 <ColumnDefinition Width="2*"/>
                                                                                 <ColumnDefinition Width="2*"/>
                                                                                 <ColumnDefinition Width="Auto"/>
-                                                                                <!-- For delete button -->
                                                                         </Grid.ColumnDefinitions>
 
                                                                         <Label Text="{Binding Name}"
@@ -369,12 +305,10 @@
                                         </CollectionView.ItemTemplate>
                                 </CollectionView>
 
-
-
                         </VerticalStackLayout>
                 </ScrollView>
 
 
-        </Grid>
+        </VerticalStackLayout>
 
 </ContentPage>

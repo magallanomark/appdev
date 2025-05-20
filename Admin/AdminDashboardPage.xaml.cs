@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Saha.Admin;
+using Saha.Services;
 
 namespace Saha.Admin
 {
@@ -34,6 +35,9 @@ namespace Saha.Admin
         }
         public async void OnLogoutClicked(object sender, EventArgs e)
         {
+            RoleSession.CurrentUserRole = null;
+            UserSession.CurrentUserId = 0;
+            Application.Current.MainPage = new AppShell("guest");
             await Navigation.PushAsync(new GuestViewPage());
         }
 

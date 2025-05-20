@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Saha.Modals;
+using Saha.Services;
 
 namespace Saha
 {
@@ -9,6 +10,12 @@ namespace Saha
         public GuestViewPage()
         {
             InitializeComponent();
+            //Clear user session
+            // UserSession.CurrentUserId = 0;
+            // RoleSession.CurrentUserRole = null;
+
+            // // Replace shell with guest view
+            // Application.Current.Windows[0].Page = new AppShell("guest");
         }
 
         private async void OnLoginClicked(object sender, EventArgs e)

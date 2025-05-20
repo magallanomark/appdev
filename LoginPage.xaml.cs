@@ -31,11 +31,7 @@ namespace Saha
             string passwordFromUI = passwordEntry.Text.ToString();
 
 
-            if (emailFromUI == "admin" && passwordFromUI == "admin")
-            {
-                await Navigation.PushAsync(new AdminDashboardPage());
-                return;
-            }
+
 
 
             Debug.WriteLine("--- Login Attempt Diagnostics ---");
@@ -49,6 +45,16 @@ namespace Saha
                 return;
             }
 
+            if (emailFromUI == "admin" && passwordFromUI == "admin")
+            {
+                RoleSession.CurrentUserRole = "Admin";
+                UserSession.CurrentUserId = 999999; // Assuming admin has ID 1
+                Debug.WriteLine($"RoleSession.CurrentUserRole: {RoleSession.CurrentUserRole.ToLower()}");
+
+                await Navigation.PushAsync(new AdminDashboardPage());
+                Application.Current.Windows[0].Page = new AppShell("admin");
+                return;
+            }
             string processedEmail = emailFromUI.Trim();
             string processedPassword = passwordFromUI; // For this test, direct use. Real passwords shouldn't typically be trimmed if spaces are significant.
 
@@ -63,12 +69,21 @@ namespace Saha
 
             if (user != null && user.Password == processedPassword && user.Role.Equals("Trainer", StringComparison.OrdinalIgnoreCase))  // In a real app, compare the hashed password!
             {
+                //Application.Current.MainPage = new AppShell(user.Role);
                 Debug.WriteLine("Login Successful!");
                 await DisplayAlert("Login Success", "Welcome back!", "OK");
+
+                RoleSession.CurrentUserRole = user.Role;
+
+
 
                 UserSession.CurrentUserId = user.Id; // Store the logged-in user in a session or static variable
                                                      // TODO: Navigate to the main app page after login success
                                                      // Example for MAUI Shell
+
+                Application.Current.Windows[0].Page = new AppShell("trainer");
+                Debug.WriteLine($"RoleSession.CurrentUserRole: {RoleSession.CurrentUserRole}");
+
 
                 Debug.WriteLine($"User ID: {UserSession.CurrentUserId}");
                 await Navigation.PushAsync(new TrainorDashboard());
@@ -80,6 +95,9 @@ namespace Saha
                 await DisplayAlert("Login Success", "Welcome back!", "OK");
 
                 UserSession.CurrentUserId = user.Id;
+                RoleSession.CurrentUserRole = user.Role;
+                Application.Current.Windows[0].Page = new AppShell("customer");
+                Debug.WriteLine($"RoleSession.CurrentUserRole: {RoleSession.CurrentUserRole}");
                 await Navigation.PushAsync(new CustomerDashboard());
                 // Store the logged-in user in a session or static variable
             }

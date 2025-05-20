@@ -1,48 +1,34 @@
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using Saha.Admin;
+using Saha.Modals;
 using Saha.ViewModel;
-using Saha.Models;
 using Saha.Services;
 
-
-
-namespace Saha.Customer
+namespace Saha.Admin
 {
-    public partial class CustomerProgram : ContentPage
+    public partial class AdminUserProgramReviewed : ContentPage
     {
-
-
-        private ProgramModel _selectedProgram;
-
-        private SQLiteService _dbService;
-
-        DateTime selectedDate;
-
-        public ObservableCollection<UserProgram> UserPrograms { get; set; }
-        public CustomerProgram()
+        public AdminUserProgramReviewed()
         {
             InitializeComponent();
 
-            BindingContext = new CustomerViewModels();
-
-            _dbService = new SQLiteService();
-
+            BindingContext = new ProgramViewModel();
         }
 
 
         public async void OnDashboardClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new CustomerDashboard());
+            await Navigation.PushAsync(new AdminDashboardPage());
         }
         public async void OnUsersClicked(object sender, EventArgs e)
         {
-            //await Navigation.PushAsync(new AdminUserManagement());
+            await Navigation.PushAsync(new AdminUserManagement());
         }
-        public void OnRequestListClicked(object sender, EventArgs e)
+        public async void OnProgramListClicked(object sender, EventArgs e)
         {
-            //await Navigation.PushAsync(new RequestListPage());
+
+            await Navigation.PushAsync(new AdminProgram());
         }
         public void OnReportsClicked(object sender, EventArgs e)
         {
@@ -61,6 +47,20 @@ namespace Saha.Customer
         }
 
 
+        //User Management
+        private async void OnAddProgramClicked(object sender, EventArgs e)
+        {
+
+            await Navigation.PushAsync(new AddProgram());
+        }
+        private async void OnEditUserClicked(object sender, EventArgs e)
+        {
+            //await Navigation.PushAsync(new AddUserPage());
+        }
+        private async void OnViewUserClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ViewUserPage());
+        }
 
     }
 }

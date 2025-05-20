@@ -145,9 +145,64 @@ namespace Saha.Services
         {
             lock (_lock)
             {
-                return _database.Table<UserProgram>().ToList();
+                return _database.Table<UserProgram>()
+                        .Where(p => p.Status == "Pending")
+                        .ToList();
             }
         }
+        public List<UserProgram> GetUserAllPrograms()
+        {
+            lock (_lock)
+            {
+                return _database.Table<UserProgram>()
+                        .Where(p => p.Status == "Approved" || p.Status == "Rejected")
+                        .ToList();
+            }
+        }
+
+
+        public List<UserProgram> GetUserProgramsByUserId(int userId)
+        {
+            lock (_lock)
+            {
+                var userPrograms = _database.Table<UserProgram>().Where(up => up.UserId == userId).ToList();
+
+                foreach (var up in userPrograms)
+                {
+                    // Load the Program
+                    up.Program = _database.Table<ProgramModel>().FirstOrDefault(p => p.Id == up.ProgramId);
+
+                    // Load the Trainer via the Program
+                    if (up.Program != null)
+                    {
+                        up.Trainer = _database.Table<UserModel>().FirstOrDefault(t => t.Id == up.Program.Trainer_Id);
+                    }
+                }
+
+                return userPrograms;
+            }
+        }
+
+
+        public void UpdateUserProgram(UserProgram userProgram)
+        {
+            lock (_lock)
+            {
+                var rowsAffected = _database.Update(userProgram);
+                Debug.WriteLine($"Rows affected: {rowsAffected}");
+            }
+        }
+
+        public void DeleteUserProgram(List<UserProgram> userPrograms)
+        {
+            lock (_lock)
+            {
+
+                _database.Delete(userPrograms);
+
+            }
+        }
+
         public void AddUserProgram(UserProgram userProgram)
         {
             lock (_lock)

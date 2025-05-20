@@ -1,4 +1,8 @@
-﻿namespace Saha;
+﻿using Saha.Services;
+using System.Diagnostics;
+
+namespace Saha;
+
 
 public partial class App : Application
 {
@@ -12,6 +16,11 @@ public partial class App : Application
 
     protected override Window CreateWindow(IActivationState? activationState)
     {
-        return new Window(new AppShell());
+
+        Debug.WriteLine($"RoleSession.CurrentUserRole: {RoleSession.CurrentUserRole}");
+        var role = RoleSession.CurrentUserRole?.ToString() ?? "Guest"; // fallback role
+        return new Window(new AppShell(role));
+
+
     }
 }

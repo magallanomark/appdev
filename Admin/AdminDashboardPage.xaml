@@ -1,175 +1,96 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:Saha" 
              x:Class="Saha.Admin.AdminDashboardPage"
-             x:DataType="local:Admin.AdminDashboardPage" 
              BackgroundColor="Black">
-    <!-- 
-        Ensure x:Class="Saha.LoginPage" correctly matches your namespace and class name.
-        If LoginPage.xaml is in a "Pages" subfolder and your root namespace is "Saha",
-        then it should be x:Class="Saha.Pages.LoginPage".
-        The namespace in LoginPage.xaml.cs must also match (e.g., namespace Saha.Pages).
-    -->
+
     <ContentPage.Resources>
         <ResourceDictionary>
-
-            <!-- Gradient Background from MainPage.xaml -->
-            <LinearGradientBrush x:Key="PageGradientBackground" StartPoint="0,0" EndPoint="1,1">
-                <GradientStop Color="#00807E" Offset="0.1"/>
-                <GradientStop Color="#1A596E" Offset="0.5"/>
-                <GradientStop Color="#342758" Offset="1.0"/>
+            <LinearGradientBrush x:Key="PageGradientBackground"
+                                 StartPoint="0,0"
+                                 EndPoint="1,1">
+                <GradientStop Color="#00807E"
+                              Offset="0.1"/>
+                <GradientStop Color="#1A596E"
+                              Offset="0.5"/>
+                <GradientStop Color="#342758"
+                              Offset="1.0"/>
             </LinearGradientBrush>
 
-            <!-- Headline Style - Colors adapted from MainPage -->
-            <Style x:Key="Headline" TargetType="Label">
-                <Setter Property="FontSize" Value="36"/>
-                <Setter Property="FontAttributes" Value="Bold"/>
-                <Setter Property="HorizontalOptions" Value="Center"/>
-                <Setter Property="TextColor" Value="White"/> <!-- MainPage Headline TextColor -->
-                <Setter Property="Margin" Value="0,0,0,20"/>
+            <Style x:Key="Headline"
+                   TargetType="Label">
+                <Setter Property="FontSize"
+                        Value="36"/>
+                <Setter Property="FontAttributes"
+                        Value="Bold"/>
+                <Setter Property="HorizontalOptions"
+                        Value="Center"/>
+                <Setter Property="TextColor"
+                        Value="White"/>
+                <Setter Property="Margin"
+                        Value="0,0,0,20"/>
             </Style>
 
-            <!-- Input Entry Border Style - Colors adapted for dark theme -->
-            <Style x:Key="InputEntryBorderStyle" TargetType="Border">
-                <Setter Property="StrokeThickness" Value="1"/>
-                <Setter Property="Stroke" Value="#88FFFFFF"/> <!-- Semi-transparent white border -->
-                <Setter Property="BackgroundColor" Value="#33FFFFFF"/> <!-- Semi-transparent white background for field -->
-                <Setter Property="Padding" Value="12,8"/>
-                <Setter Property="Margin" Value="10,0"/>
-                <Setter Property="StrokeShape">
-                    <RoundRectangle CornerRadius="28"/>
-                </Setter>
-                <Setter Property="Shadow"> <!-- Keeping original shadow, can be tweaked if needed -->
-                    <Setter.Value>
-                        <Shadow Brush="Black" Opacity="0.2" Offset="2,2" Radius="5"/>
-                    </Setter.Value>
-                </Setter>
+            <Style x:Key="PrimaryActionButtonStyle"
+                   TargetType="Button">
+                <Setter Property="FontSize"
+                        Value="18"/>
+                <Setter Property="FontAttributes"
+                        Value="Bold"/>
+                <Setter Property="TextColor"
+                        Value="White"/>
+                <Setter Property="Padding"
+                        Value="10,5"/>
+                <Setter Property="Margin"
+                        Value="10"/>
+                <Setter Property="CornerRadius"
+                        Value="20"/>
+                <Setter Property="BackgroundColor"
+                        Value="#c0392b"/>
             </Style>
-
-            <!-- Input Entry Style (for the Entry control itself) - Colors adapted for dark theme -->
-            <Style x:Key="InputEntryStyle" TargetType="Entry">
-                <Setter Property="FontSize" Value="16"/>
-                <Setter Property="PlaceholderColor" Value="#A0FFFFFF"/> <!-- Lighter placeholder for dark background -->
-                <Setter Property="TextColor" Value="White"/> <!-- Input text color -->
-                <Setter Property="VerticalOptions" Value="Center"/>
-                <Setter Property="BackgroundColor" Value="Transparent"/> <!-- Entry itself is transparent -->
-                <Setter Property="Margin" Value="0"/>
-                <Setter Property="HeightRequest" Value="30"/>
-            </Style>
-
-            <!-- Primary Action Button Style - Adapted from MainPage's blue "Log In" button -->
-            <Style x:Key="PrimaryActionButtonStyle" TargetType="Button">
-                <Setter Property="FontSize" Value="18"/>
-                <Setter Property="FontAttributes" Value="Bold"/>
-                <Setter Property="TextColor" Value="White"/>
-                <Setter Property="Padding" Value="15"/>
-                <Setter Property="Margin" Value="12,20,12,12"/>
-                <Setter Property="HeightRequest" Value="55"/>
-                <Setter Property="CornerRadius" Value="28"/>
-                <Setter Property="Shadow"> <!-- Shadow from MainPage's CustomButtonStyle (can be adjusted) -->
-                    <Setter.Value>
-                        <Shadow Brush="Black" Opacity="0.5" Offset="4,4"/>
-                    </Setter.Value>
-                </Setter>
-                <Setter Property="BackgroundColor" Value="#0056b3"/> <!-- Blue from MainPage's Log In button -->
-                <!-- <Setter Property="BorderColor" Value="White"/> Optional, if you want a white border like MainPage buttons -->
-                <!-- <Setter Property="BorderWidth" Value="2"/> -->
-                <Setter Property="VisualStateManager.VisualStateGroups">
-                    <VisualStateGroupList>
-                        <VisualStateGroup x:Name="CommonStates">
-                            <VisualState x:Name="Normal" />
-                            <VisualState x:Name="Pressed">
-                                <VisualState.Setters>
-                                    <Setter Property="BackgroundColor" Value="#004085"/> <!-- Darker blue for pressed -->
-                                    <Setter Property="Scale" Value="0.98" />
-                                </VisualState.Setters>
-                            </VisualState>
-                            <VisualState x:Name="Disabled">
-                                <VisualState.Setters>
-                                    <Setter Property="Background" Value="#555555"/> <!-- Dark gray for disabled -->
-                                    <Setter Property="Opacity" Value="0.7"/>
-                                    <Setter Property="TextColor" Value="#AAAAAA"/> <!-- Light gray text for disabled -->
-                                </VisualState.Setters>
-                            </VisualState>
-                        </VisualStateGroup>
-                    </VisualStateGroupList>
-                </Setter>
-            </Style>
-
-            <!-- Link Text Style - Color adapted for dark theme -->
-            <Style x:Key="LinkTextStyle" TargetType="Label">
-                <Setter Property="TextColor" Value="#ADD8E6"/> <!-- Light blue, common for links on dark -->
-                <Setter Property="HorizontalOptions" Value="Center"/>
-                <Setter Property="FontSize" Value="14"/>
-                <Setter Property="TextDecorations" Value="Underline"/>
-            </Style>
-
-            <!-- Icon Style for Path - Color adapted for dark theme -->
-            <Style x:Key="IconPathStyle" TargetType="Path">
-                <Setter Property="Fill" Value="White"/> <!-- White icons for visibility -->
-                <Setter Property="VerticalOptions" Value="Center"/>
-                <Setter Property="HorizontalOptions" Value="Center"/>
-                <Setter Property="HeightRequest" Value="20"/>
-                <Setter Property="WidthRequest" Value="20"/>
-            </Style>
-
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <!-- Apply the Gradient Background from MainPage -->
     <ContentPage.Background>
         <StaticResource Key="PageGradientBackground"/>
     </ContentPage.Background>
-    
 
-    <Grid ColumnDefinitions="Auto,*" RowDefinitions="*">
+    <VerticalStackLayout>
 
-        <!-- Vertical Sidebar Menu -->
-        <StackLayout BackgroundColor="#222"
-                     VerticalOptions="FillAndExpand"
-                     WidthRequest="180">
-            
+        <!-- Header with system name and logout -->
+        <Grid ColumnDefinitions="*,Auto"
+              Padding="15"
+              BackgroundColor="Transparent"
+              VerticalOptions="Start">
+            <Label Text="SAHA System"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Start"/>
+            <Button Text="Logout"
+                    Style="{StaticResource PrimaryActionButtonStyle}"
+                    Clicked="OnLogoutClicked"
+                    VerticalOptions="Center"
+                    BackgroundColor="#D9534F"
+                    HorizontalOptions="End"/>
+        </Grid>
 
-           <Border Stroke="#88FFFFFF" StrokeThickness="1" Padding="5">
-                <Button Text="Dashboard" TextColor="White" BackgroundColor="Gray" Clicked="OnDashboardClicked"/>
-            </Border>
-
-            <Border Stroke="#88FFFFFF" StrokeThickness="1" Padding="5">
-                <Button Text="Users" TextColor="White" BackgroundColor="Transparent" Clicked="OnUsersClicked"/>
-            </Border>
-
-            <Border Stroke="#88FFFFFF" StrokeThickness="1" Padding="5">
-                <Button Text="Program" TextColor="White" BackgroundColor="Transparent" Clicked="OnProgramListClicked"/>
-            </Border>
-
-            <Border Stroke="#88FFFFFF" StrokeThickness="1" Padding="5">
-                <Button Text="Reports" TextColor="White" BackgroundColor="Transparent" Clicked="OnReportsClicked"/>
-            </Border>
-
-            <Border Stroke="#88FFFFFF" StrokeThickness="1" Padding="5">
-                <Button Text="Settings" TextColor="White" BackgroundColor="Transparent" Clicked="OnSettingsClicked"/>
-            </Border>
-
-            <Border Stroke="#88FFFFFF" StrokeThickness="1" Padding="5">
-                <Button Text="Logout" TextColor="Red" BackgroundColor="Transparent" Clicked="OnLogoutClicked"/>
-            </Border>
-
-        </StackLayout>
-
-        <!-- Main Content Area -->
-        <ScrollView Grid.Column="1" VerticalOptions="FillAndExpand">
-            <VerticalStackLayout Padding="25,40" Spacing="18"
+        <!-- Main Content -->
+        <ScrollView>
+            <VerticalStackLayout Padding="25,40"
+                                 Spacing="18"
                                  VerticalOptions="CenterAndExpand"
                                  HorizontalOptions="FillAndExpand"
                                  MaximumWidthRequest="450">
-                <Label Text="Admin Dashboard" Style="{StaticResource Headline}"/>
+                <Label Text="Admin Dashboard"
+                       Style="{StaticResource Headline}"/>
                 <Label Text="Welcome to the Admin Dashboard. Here you can manage users, view reports, and configure settings."
                        FontSize="18"
                        TextColor="White"
-                       HorizontalOptions="Center" />
+                       HorizontalOptions="Center"/>
             </VerticalStackLayout>
         </ScrollView>
-    </Grid>
 
+    </VerticalStackLayout>
 </ContentPage>

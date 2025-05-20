@@ -22,5 +22,12 @@ namespace Saha.Models
         public string StartDate { get; set; }
 
         public string EndDate { get; set; }
+
+        // Not mapped in SQLite - used manually
+        [Ignore]
+        public ProgramModel Program { get; set; }
+
+        [Ignore]
+        public UserModel Trainer { get; set; }
     }
 }

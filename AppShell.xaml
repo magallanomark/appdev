@@ -10,10 +10,10 @@
         ContentTemplate="{DataTemplate local:Admin.AdminDashboardPage}"
         Title="Admin Dashboard"
         Route="AdminDashboardPage" /> -->
-    <ShellContent
+    <!-- <ShellContent
         ContentTemplate="{DataTemplate local:GuestViewPage}"
         Title="Guest View"
-        Route="GuestViewPage"/>
+        Route="GuestViewPage"/> -->
 
     <!-- <ShellContent
         ContentTemplate="{DataTemplate local:Modals.RequestUsers}"

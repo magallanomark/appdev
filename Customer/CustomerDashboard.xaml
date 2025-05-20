@@ -191,46 +191,41 @@
         </ContentPage.Background>
 
 
-        <Grid ColumnDefinitions="Auto,*"
-              RowDefinitions="*">
+        <Grid RowDefinitions="Auto,*"
+              ColumnDefinitions="*">
 
-                <!-- Sidebar Navigation -->
-                <StackLayout Grid.Column="0"
-                             BackgroundColor="#222"
-                             VerticalOptions="FillAndExpand"
-                             WidthRequest="180">
-                        <Border Stroke="#88FFFFFF"
-                                StrokeThickness="1"
-                                Padding="5">
-                                <Button Text="Dashboard"
-                                        TextColor="White"
-                                        BackgroundColor="Gray"
-                                        Clicked="OnDashboardClicked"/>
-                        </Border>
+                <!-- Header -->
+                <Grid BackgroundColor="Transparent"
+                      Padding="10"
+                      Row="0"
+                      Column="0">
+                        <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
 
-                        <Border Stroke="#88FFFFFF"
-                                StrokeThickness="1"
-                                Padding="5">
-                                <Button Text="Programs"
-                                        TextColor="White"
-                                        BackgroundColor="Transparent"
-                                        Clicked="OnUsersClicked"/>
-                        </Border>
+                        <!-- Header Title -->
+                        <Label Text="Saha System"
+                               TextColor="White"
+                               FontAttributes="Bold"
+                               FontSize="18"
+                               VerticalOptions="Center"
+                               Grid.Column="0"/>
 
-                        <Border Stroke="#88FFFFFF"
-                                StrokeThickness="1"
-                                Padding="5">
-                                <Button Text="Logout"
-                                        TextColor="Red"
-                                        BackgroundColor="Transparent"
-                                        Clicked="OnLogoutClicked"/>
-                        </Border>
-                </StackLayout>
+                        <!-- Logout Button -->
+                        <Button Text="Logout"
+                                TextColor="White"
+                                BackgroundColor="#D9534F"
+                                Clicked="OnLogoutClicked"
+                                VerticalOptions="Center"
+                                Grid.Column="1"/>
+                </Grid>
 
                 <!-- Main Content Area -->
-                <ScrollView Grid.Column="1"
+                <ScrollView Grid.Row="1"
+                            Padding="10"
                             VerticalOptions="FillAndExpand"
-                            Padding="10">
+                            Grid.Column="0">
                         <CollectionView ItemsSource="{Binding Programs}"
                                         Margin="0,0,0,30"
                                         ItemsLayout="VerticalGrid, 2">
@@ -273,7 +268,7 @@
 
                 <!-- Popup Overlay -->
                 <Grid x:Name="PopupOverlay"
-                      Grid.ColumnSpan="2"
+                      Grid.RowSpan="2"
                       BackgroundColor="#80000000"
                       IsVisible="False"
                       Padding="20"
@@ -321,7 +316,7 @@
                 </Grid>
 
                 <Grid x:Name="CalendarPopupOverlay"
-                      Grid.ColumnSpan="2"
+                      Grid.RowSpan="2"
                       BackgroundColor="#80000000"
                       IsVisible="False"
                       Padding="20"
@@ -369,7 +364,7 @@
                 </Grid>
 
                 <Grid x:Name="GcashTransactionPopupOverlay"
-                      Grid.ColumnSpan="2"
+                      Grid.RowSpan="2"
                       BackgroundColor="#80000000"
                       IsVisible="False"
                       Padding="20"
@@ -423,9 +418,8 @@
                         </Frame>
                 </Grid>
 
-
-
         </Grid>
+
 
 
 
