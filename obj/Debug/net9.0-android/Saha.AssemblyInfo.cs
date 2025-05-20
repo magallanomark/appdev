@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Saha")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+8af737f8101914de278192bdfb63b28a4fd6ea24")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+9e6eefffc55ca937be3586d89e6515eb4efbcef2")]
 [assembly: System.Reflection.AssemblyProductAttribute("Saha")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Saha")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

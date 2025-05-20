@@ -5,110 +5,81 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Name="RequestUsersPage"
     BackgroundColor="Black">
-    <!--
-        Ensure x:Class="Saha.LoginPage" correctly matches your namespace and class name.
-        If LoginPage.xaml is in a "Pages" subfolder and your root namespace is "Saha",
-        then it should be x:Class="Saha.Pages.LoginPage".
-        The namespace in LoginPage.xaml.cs must also match (e.g., namespace Saha.Pages).
-    -->
+
     <ContentPage.Resources>
         <ResourceDictionary>
 
-            <!--  Gradient Background from MainPage.xaml  -->
-            <LinearGradientBrush x:Key="PageGradientBackground" StartPoint="0,0" EndPoint="1,1">
-                <GradientStop Offset="0.1" Color="#00807E" />
-                <GradientStop Offset="0.5" Color="#1A596E" />
-                <GradientStop Offset="1.0" Color="#342758" />
+            <LinearGradientBrush x:Key="PageGradientBackground"
+                                 StartPoint="0,0"
+                                 EndPoint="1,1">
+                <GradientStop Offset="0.1" Color="#00807E"/>
+                <GradientStop Offset="0.5" Color="#1A596E"/>
+                <GradientStop Offset="1.0" Color="#342758"/>
             </LinearGradientBrush>
 
-            <!--  Headline Style - Colors adapted from MainPage  -->
             <Style x:Key="Headline" TargetType="Label">
-                <Setter Property="FontSize" Value="36" />
-                <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="HorizontalOptions" Value="Center" />
-                <Setter Property="TextColor" Value="White" />
-                <!--  MainPage Headline TextColor  -->
-                <Setter Property="Margin" Value="0,0,0,20" />
+                <Setter Property="FontSize" Value="36"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="Margin" Value="0,0,0,20"/>
             </Style>
 
-            <!--  Input Entry Border Style - Colors adapted for dark theme  -->
             <Style x:Key="InputEntryBorderStyle" TargetType="Border">
-                <Setter Property="StrokeThickness" Value="1" />
-                <Setter Property="Stroke" Value="#88FFFFFF" />
-                <!--  Semi-transparent white border  -->
-                <Setter Property="BackgroundColor" Value="#33FFFFFF" />
-                <!--  Semi-transparent white background for field  -->
-                <Setter Property="Padding" Value="12,8" />
-                <Setter Property="Margin" Value="10,0" />
+                <Setter Property="StrokeThickness" Value="1"/>
+                <Setter Property="Stroke" Value="#88FFFFFF"/>
+                <Setter Property="BackgroundColor" Value="#33FFFFFF"/>
+                <Setter Property="Padding" Value="12,8"/>
+                <Setter Property="Margin" Value="10,0"/>
                 <Setter Property="StrokeShape">
-                    <RoundRectangle CornerRadius="28" />
+                    <RoundRectangle CornerRadius="28"/>
                 </Setter>
                 <Setter Property="Shadow">
-                    <!--  Keeping original shadow, can be tweaked if needed  -->
                     <Setter.Value>
-                        <Shadow
-                            Brush="Black"
-                            Opacity="0.2"
-                            Radius="5"
-                            Offset="2,2" />
+                        <Shadow Brush="Black" Opacity="0.2" Radius="5" Offset="2,2"/>
                     </Setter.Value>
                 </Setter>
             </Style>
 
-            <!--  Input Entry Style (for the Entry control itself) - Colors adapted for dark theme  -->
             <Style x:Key="InputEntryStyle" TargetType="Entry">
-                <Setter Property="FontSize" Value="16" />
-                <Setter Property="PlaceholderColor" Value="#A0FFFFFF" />
-                <!--  Lighter placeholder for dark background  -->
-                <Setter Property="TextColor" Value="White" />
-                <!--  Input text color  -->
-                <Setter Property="VerticalOptions" Value="Center" />
-                <Setter Property="BackgroundColor" Value="Transparent" />
-                <!--  Entry itself is transparent  -->
-                <Setter Property="Margin" Value="0" />
-                <Setter Property="HeightRequest" Value="30" />
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="PlaceholderColor" Value="#A0FFFFFF"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="BackgroundColor" Value="Transparent"/>
+                <Setter Property="Margin" Value="0"/>
+                <Setter Property="HeightRequest" Value="30"/>
             </Style>
 
-            <!--  Primary Action Button Style - Adapted from MainPage's blue "Log In" button  -->
             <Style x:Key="PrimaryActionButtonStyle" TargetType="Button">
-                <Setter Property="FontSize" Value="18" />
-                <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="TextColor" Value="White" />
-                <Setter Property="Padding" Value="15" />
-                <Setter Property="Margin" Value="12,20,12,12" />
-                <Setter Property="HeightRequest" Value="55" />
-                <Setter Property="CornerRadius" Value="28" />
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="Padding" Value="15"/>
+                <Setter Property="Margin" Value="12,20,12,12"/>
+                <Setter Property="HeightRequest" Value="55"/>
+                <Setter Property="CornerRadius" Value="28"/>
                 <Setter Property="Shadow">
-                    <!--  Shadow from MainPage's CustomButtonStyle (can be adjusted)  -->
                     <Setter.Value>
-                        <Shadow
-                            Brush="Black"
-                            Opacity="0.5"
-                            Offset="4,4" />
+                        <Shadow Brush="Black" Opacity="0.5" Offset="4,4"/>
                     </Setter.Value>
                 </Setter>
-                <Setter Property="BackgroundColor" Value="#0056b3" />
-                <!--  Blue from MainPage's Log In button  -->
-                <!-- <Setter Property="BorderColor" Value="White"/> Optional, if you want a white border like MainPage buttons -->
-                <!-- <Setter Property="BorderWidth" Value="2"/> -->
+                <Setter Property="BackgroundColor" Value="#0056b3"/>
                 <Setter Property="VisualStateManager.VisualStateGroups">
                     <VisualStateGroupList>
                         <VisualStateGroup x:Name="CommonStates">
-                            <VisualState x:Name="Normal" />
+                            <VisualState x:Name="Normal"/>
                             <VisualState x:Name="Pressed">
                                 <VisualState.Setters>
-                                    <Setter Property="BackgroundColor" Value="#004085" />
-                                    <!--  Darker blue for pressed  -->
-                                    <Setter Property="Scale" Value="0.98" />
+                                    <Setter Property="BackgroundColor" Value="#004085"/>
+                                    <Setter Property="Scale" Value="0.98"/>
                                 </VisualState.Setters>
                             </VisualState>
                             <VisualState x:Name="Disabled">
                                 <VisualState.Setters>
-                                    <Setter Property="Background" Value="#555555" />
-                                    <!--  Dark gray for disabled  -->
-                                    <Setter Property="Opacity" Value="0.7" />
-                                    <Setter Property="TextColor" Value="#AAAAAA" />
-                                    <!--  Light gray text for disabled  -->
+                                    <Setter Property="Background" Value="#555555"/>
+                                    <Setter Property="Opacity" Value="0.7"/>
+                                    <Setter Property="TextColor" Value="#AAAAAA"/>
                                 </VisualState.Setters>
                             </VisualState>
                         </VisualStateGroup>
@@ -116,141 +87,62 @@
                 </Setter>
             </Style>
 
-            <!--  Link Text Style - Color adapted for dark theme  -->
             <Style x:Key="LinkTextStyle" TargetType="Label">
-                <Setter Property="TextColor" Value="#ADD8E6" />
-                <!--  Light blue, common for links on dark  -->
-                <Setter Property="HorizontalOptions" Value="Center" />
-                <Setter Property="FontSize" Value="14" />
-                <Setter Property="TextDecorations" Value="Underline" />
+                <Setter Property="TextColor" Value="#ADD8E6"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="TextDecorations" Value="Underline"/>
             </Style>
 
-            <!--  Icon Style for Path - Color adapted for dark theme  -->
             <Style x:Key="IconPathStyle" TargetType="Path">
-                <Setter Property="Fill" Value="White" />
-                <!--  White icons for visibility  -->
-                <Setter Property="VerticalOptions" Value="Center" />
-                <Setter Property="HorizontalOptions" Value="Center" />
-                <Setter Property="HeightRequest" Value="20" />
-                <Setter Property="WidthRequest" Value="20" />
+                <Setter Property="Fill" Value="White"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="HeightRequest" Value="20"/>
+                <Setter Property="WidthRequest" Value="20"/>
             </Style>
 
         </ResourceDictionary>
     </ContentPage.Resources>
 
-    <!--  Apply the Gradient Background from MainPage  -->
     <ContentPage.Background>
-        <StaticResource Key="PageGradientBackground" />
+        <StaticResource Key="PageGradientBackground"/>
     </ContentPage.Background>
 
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="10">
 
-            <!--  Header Row  -->
-            <Grid
-                Padding="10"
-                BackgroundColor="#333"
-                ColumnDefinitions="2*,2*,2*,1*,1*,2*,2*,2*,Auto">
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="14"
-                    Text="Name"
-                    TextColor="White" />
-                <Label
-                    Grid.Column="1"
-                    FontAttributes="Bold"
-                    FontSize="14"
-                    Text="Email"
-                    TextColor="White" />
-                <Label
-                    Grid.Column="2"
-                    FontAttributes="Bold"
-                    FontSize="14"
-                    Text="Phone"
-                    TextColor="White" />
-                <Label
-                    Grid.Column="3"
-                    FontAttributes="Bold"
-                    FontSize="14"
-                    Text="Age"
-                    TextColor="White" />
-                <Label
-                    Grid.Column="4"
-                    FontAttributes="Bold"
-                    FontSize="14"
-                    Text="Gender"
-                    TextColor="White" />
-                <Label
-                    Grid.Column="5"
-                    FontAttributes="Bold"
-                    FontSize="14"
-                    Text="Goal"
-                    TextColor="White" />
-                <Label
-                    Grid.Column="6"
-                    FontAttributes="Bold"
-                    FontSize="14"
-                    Text="Medical"
-                    TextColor="White" />
-                <Label
-                    Grid.Column="7"
-                    FontAttributes="Bold"
-                    FontSize="14"
-                    Text="Role"
-                    TextColor="White" />
-                <Label
-                    Grid.Column="8"
-                    FontAttributes="Bold"
-                    FontSize="14"
-                    Text="Action"
-                    TextColor="White" />
-
+            <!-- Header -->
+            <Grid Padding="10"
+                  BackgroundColor="#333"
+                  ColumnDefinitions="2*,2*,2*,1*,1*,2*,2*,2*,Auto">
+                <Label FontAttributes="Bold" FontSize="12" Text="Name" TextColor="White"/>
+                <Label Grid.Column="1" FontAttributes="Bold" FontSize="12" Text="Email" TextColor="White"/>
+                <Label Grid.Column="2" FontAttributes="Bold" FontSize="12" Text="Phone" TextColor="White"/>
+                <Label Grid.Column="3" FontAttributes="Bold" FontSize="12" Text="Age" TextColor="White"/>
+                <Label Grid.Column="4" FontAttributes="Bold" FontSize="12" Text="Gender" TextColor="White"/>
+                <Label Grid.Column="5" FontAttributes="Bold" FontSize="12" Text="Goal" TextColor="White"/>
+                <Label Grid.Column="6" FontAttributes="Bold" FontSize="12" Text="Medical" TextColor="White"/>
+                <Label Grid.Column="7" FontAttributes="Bold" FontSize="12" Text="Role" TextColor="White"/>
+                <Label Grid.Column="8" FontAttributes="Bold" FontSize="12" Text="Action" TextColor="White"/>
             </Grid>
 
-            <!--  CollectionView Rows  -->
+            <!-- CollectionView -->
             <CollectionView ItemsSource="{Binding RequestUsers}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Grid
-                            Margin="0,1"
-                            Padding="10"
-                            BackgroundColor="#1A1A2E"
-                            ColumnDefinitions="2*,2*,2*,1*,1*,2*,2*,2*,2*">
+                        <Grid Margin="0,1"
+                              Padding="10"
+                              BackgroundColor="#1A1A2E"
+                              ColumnDefinitions="2*,2*,2*,1*,1*,2*,2*,2*,2*">
 
-                            <Label
-                                FontSize="13"
-                                Text="{Binding FullName}"
-                                TextColor="White" />
-                            <Label
-                                Grid.Column="1"
-                                FontSize="13"
-                                Text="{Binding Email}"
-                                TextColor="White" />
-                            <Label
-                                Grid.Column="2"
-                                FontSize="13"
-                                Text="{Binding PhoneNumber}"
-                                TextColor="White" />
-                            <Label
-                                Grid.Column="3"
-                                FontSize="13"
-                                Text="{Binding Age}"
-                                TextColor="White" />
-                            <Label
-                                Grid.Column="4"
-                                FontSize="13"
-                                Text="{Binding Gender}"
-                                TextColor="White" />
-                            <Label
-                                Grid.Column="5"
-                                FontSize="13"
-                                Text="{Binding FitnessGoal}"
-                                TextColor="White" />
-                            <Label
-                                Grid.Column="6"
-                                FontSize="13"
-                                Text="{Binding MedicalCondition}"
-                                TextColor="White" />
+                            <Label FontSize="11" Text="{Binding FullName}" TextColor="White"/>
+                            <Label Grid.Column="1" FontSize="11" Text="{Binding Email}" TextColor="White"/>
+                            <Label Grid.Column="2" FontSize="11" Text="{Binding PhoneNumber}" TextColor="White"/>
+                            <Label Grid.Column="3" FontSize="11" Text="{Binding Age}" TextColor="White"/>
+                            <Label Grid.Column="4" FontSize="11" Text="{Binding Gender}" TextColor="White"/>
+                            <Label Grid.Column="5" FontSize="11" Text="{Binding FitnessGoal}" TextColor="White"/>
+                            <Label Grid.Column="6" FontSize="11" Text="{Binding MedicalCondition}" TextColor="White"/>
 
                             <Border Grid.Column="7" Margin="0,0,10,0">
                                 <Picker SelectedItem="{Binding Role}" Style="{StaticResource InputEntryStyle}">
@@ -262,35 +154,29 @@
                                 </Picker>
                             </Border>
 
+                            <HorizontalStackLayout Grid.Column="8"
+                                                   HorizontalOptions="Fill"
+                                                   Spacing="5"
+                                                   VerticalOptions="Center">
+                                <Button Padding="6,4"
+                                        BackgroundColor="#007BFF"
+                                        Command="{Binding Source={x:Reference RequestUsersPage}, Path=BindingContext.AcceptCommand}"
+                                        CommandParameter="{Binding}"
+                                        CornerRadius="6"
+                                        FontSize="11"
+                                        HorizontalOptions="StartAndExpand"
+                                        Text="Accept"
+                                        TextColor="White"/>
 
-                            <!--  Responsive Buttons  -->
-                            <HorizontalStackLayout
-                                Grid.Column="8"
-                                HorizontalOptions="Fill"
-                                Spacing="5"
-                                VerticalOptions="Center">
-
-                                <Button
-                                    Padding="10,6"
-                                    BackgroundColor="#007BFF"
-                                    Command="{Binding Source={x:Reference RequestUsersPage}, Path=BindingContext.AcceptCommand}"
-                                    CommandParameter="{Binding}"
-                                    CornerRadius="8"
-                                    FontSize="13"
-                                    HorizontalOptions="FillAndExpand"
-                                    Text="Accept"
-                                    TextColor="White" />
-
-                                <Button
-                                    Padding="10,6"
-                                    BackgroundColor="#D32F2F"
-                                    Command="{Binding Source={x:Reference RequestUsersPage}, Path=BindingContext.DeleteCommand}"
-                                    CommandParameter="{Binding}"
-                                    CornerRadius="8"
-                                    FontSize="13"
-                                    HorizontalOptions="FillAndExpand"
-                                    Text="Reject"
-                                    TextColor="White" />
+                                <Button Padding="6,4"
+                                        BackgroundColor="#D32F2F"
+                                        Command="{Binding Source={x:Reference RequestUsersPage}, Path=BindingContext.DeleteCommand}"
+                                        CommandParameter="{Binding}"
+                                        CornerRadius="6"
+                                        FontSize="11"
+                                        HorizontalOptions="StartAndExpand"
+                                        Text="Reject"
+                                        TextColor="White"/>
                             </HorizontalStackLayout>
 
                         </Grid>
@@ -298,10 +184,7 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
 
-
-
         </VerticalStackLayout>
     </ScrollView>
-
 
 </ContentPage>

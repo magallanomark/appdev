@@ -8,44 +8,75 @@
 
     <ContentPage.Resources>
         <ResourceDictionary>
-            <LinearGradientBrush x:Key="GradientBackground" StartPoint="0,0" EndPoint="1,1">
-                <GradientStop Color="#00807E" Offset="0.1"/>
-                <GradientStop Color="#1A596E" Offset="0.5"/>
-                <GradientStop Color="#342758" Offset="1.0"/>
+            <LinearGradientBrush x:Key="GradientBackground"
+                                 StartPoint="0,0"
+                                 EndPoint="1,1">
+                <GradientStop Color="#00807E"
+                              Offset="0.1"/>
+                <GradientStop Color="#1A596E"
+                              Offset="0.5"/>
+                <GradientStop Color="#342758"
+                              Offset="1.0"/>
             </LinearGradientBrush>
 
-            <Style x:Key="HeaderButtonStyle" TargetType="Button">
-                <Setter Property="FontSize" Value="14"/>
-                <Setter Property="TextColor" Value="White"/>
-                <Setter Property="BackgroundColor" Value="Transparent"/>
-                <Setter Property="FontAttributes" Value="Bold"/>
-                <Setter Property="Padding" Value="5,0"/>
-                <Setter Property="Margin" Value="0,0,10,0"/>
-                <Setter Property="HorizontalOptions" Value="End"/>
+            <Style x:Key="HeaderButtonStyle"
+                   TargetType="Button">
+                <Setter Property="FontSize"
+                        Value="14"/>
+                <Setter Property="TextColor"
+                        Value="White"/>
+                <Setter Property="BackgroundColor"
+                        Value="Transparent"/>
+                <Setter Property="FontAttributes"
+                        Value="Bold"/>
+                <Setter Property="Padding"
+                        Value="5,0"/>
+                <Setter Property="Margin"
+                        Value="0,0,10,0"/>
+                <Setter Property="HorizontalOptions"
+                        Value="End"/>
             </Style>
 
-            <Style x:Key="CustomButtonStyle" TargetType="Button">
-                <Setter Property="FontSize" Value="Medium"/>
-                <Setter Property="CornerRadius" Value="20"/>
-                <Setter Property="Padding" Value="10"/>
-                <Setter Property="Margin" Value="10"/>
-                <Setter Property="TextColor" Value="White"/>
-                <Setter Property="BackgroundColor" Value="#00BFA5"/>
-                <Setter Property="FontAttributes" Value="Bold"/>
-                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+            <Style x:Key="CustomButtonStyle"
+                   TargetType="Button">
+                <Setter Property="FontSize"
+                        Value="Medium"/>
+                <Setter Property="CornerRadius"
+                        Value="20"/>
+                <Setter Property="Padding"
+                        Value="10"/>
+                <Setter Property="Margin"
+                        Value="10"/>
+                <Setter Property="TextColor"
+                        Value="White"/>
+                <Setter Property="BackgroundColor"
+                        Value="#00BFA5"/>
+                <Setter Property="FontAttributes"
+                        Value="Bold"/>
+                <Setter Property="HorizontalOptions"
+                        Value="FillAndExpand"/>
             </Style>
 
-            <Style x:Key="SectionHeader" TargetType="Label">
-                <Setter Property="FontSize" Value="24"/>
-                <Setter Property="FontAttributes" Value="Bold"/>
-                <Setter Property="TextColor" Value="White"/>
-                <Setter Property="Margin" Value="0,10,0,5"/>
+            <Style x:Key="SectionHeader"
+                   TargetType="Label">
+                <Setter Property="FontSize"
+                        Value="24"/>
+                <Setter Property="FontAttributes"
+                        Value="Bold"/>
+                <Setter Property="TextColor"
+                        Value="White"/>
+                <Setter Property="Margin"
+                        Value="0,10,0,5"/>
             </Style>
 
-            <Style x:Key="SubText" TargetType="Label">
-                <Setter Property="FontSize" Value="16"/>
-                <Setter Property="TextColor" Value="White"/>
-                <Setter Property="Margin" Value="0,0,0,10"/>
+            <Style x:Key="SubText"
+                   TargetType="Label">
+                <Setter Property="FontSize"
+                        Value="16"/>
+                <Setter Property="TextColor"
+                        Value="White"/>
+                <Setter Property="Margin"
+                        Value="0,0,0,10"/>
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
@@ -55,29 +86,31 @@
     </ContentPage.Background>
 
     <Grid RowDefinitions="Auto,*">
-      
-                <!-- Header -->
+
+        <!-- Header -->
         <Grid Padding="10,10,10,20"
-            ColumnDefinitions="*,Auto,Auto"
-            BackgroundColor="Transparent">
+              ColumnDefinitions="*,Auto,Auto"
+              BackgroundColor="Transparent">
 
             <!-- Bottom Border Line -->
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="1" />
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="1"/>
             </Grid.RowDefinitions>
 
             <!-- Header Content -->
             <Label Text="GymIMS Guest"
-                Grid.Row="0" Grid.Column="0"
-                TextColor="White"
-                FontSize="20"
-                FontAttributes="Bold"
-                VerticalOptions="Center" />
+                   Grid.Row="0"
+                   Grid.Column="0"
+                   TextColor="White"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   VerticalOptions="Center"/>
 
             <!-- Login Button -->
             <Button Text="Login"
-                    Grid.Row="0" Grid.Column="1"
+                    Grid.Row="0"
+                    Grid.Column="1"
                     BackgroundColor="White"
                     TextColor="Black"
                     FontAttributes="Bold"
@@ -86,11 +119,12 @@
                     Padding="10,5"
                     HeightRequest="35"
                     VerticalOptions="Center"
-                    Clicked="OnLoginClicked" />
+                    Clicked="OnLoginClicked"/>
 
             <!-- Register Button -->
             <Button Text="Register"
-                    Grid.Row="0" Grid.Column="2"
+                    Grid.Row="0"
+                    Grid.Column="2"
                     BackgroundColor="Transparent"
                     TextColor="White"
                     BorderColor="White"
@@ -101,175 +135,190 @@
                     Padding="10,5"
                     HeightRequest="35"
                     VerticalOptions="Center"
-                    Clicked="OnRegisterClicked" />
+                    Clicked="OnRegisterClicked"/>
 
             <!-- Bottom Border -->
-            <BoxView Grid.Row="1" Grid.ColumnSpan="3"
-                    HeightRequest="1"
-                    Color="White"
-                    Opacity="0.2"
-                    HorizontalOptions="Fill" />
+            <BoxView Grid.Row="1"
+                     Grid.ColumnSpan="3"
+                     HeightRequest="1"
+                     Color="White"
+                     Opacity="0.2"
+                     HorizontalOptions="Fill"/>
         </Grid>
 
-        
 
-<ScrollView Grid.Row="1">
-            <VerticalStackLayout Padding="20" Spacing="20">
 
-                <Image Source="icon_gym2.png" HeightRequest="150" HorizontalOptions="Center" />
-                <Label Text="Welcome to GymIMS" FontSize="32" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center" />
-                <Label Text="Start your fitness journey with us today!" FontSize="18" TextColor="White" HorizontalOptions="Center" />
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout Padding="20"
+                                 Spacing="20">
+
+                <Image Source="icon_gym2.png"
+                       HeightRequest="150"
+                       HorizontalOptions="Center"/>
+                <Label Text="Welcome to GymIMS"
+                       FontSize="32"
+                       FontAttributes="Bold"
+                       TextColor="White"
+                       HorizontalOptions="Center"/>
+                <Label Text="Start your fitness journey with us today!"
+                       FontSize="18"
+                       TextColor="White"
+                       HorizontalOptions="Center"/>
 
                 <!-- Program Cards -->
-                <Label Text="Explore Programs" Style="{StaticResource SectionHeader}" />
-               <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="10" ColumnSpacing="10">
+                <Label Text="Explore Programs"
+                       Style="{StaticResource SectionHeader}"/>
+                <Grid ColumnDefinitions="*,*"
+                      RowDefinitions="Auto,Auto,Auto,Auto"
+                      RowSpacing="10"
+                      ColumnSpacing="10">
 
 
                     <!-- Beginner Program -->
                     <Frame x:Name="BeginnerFrame"
-                        BackgroundColor="White"
-                        BorderColor="White"
-                        CornerRadius="10"
-                        Padding="15"
-                        Margin="10"
-                        HasShadow="True"
-                        Grid.Column="0">
+                           BackgroundColor="White"
+                           BorderColor="White"
+                           CornerRadius="10"
+                           Padding="15"
+                           Margin="10"
+                           HasShadow="True"
+                           Grid.Column="0">
 
                         <Frame.GestureRecognizers>
                             <PointerGestureRecognizer PointerEntered="OnPointerEntered"
-                                                    PointerExited="OnPointerExited" />
-                            <TapGestureRecognizer Tapped="OnBeginnerTapped" />
+                                                      PointerExited="OnPointerExited"/>
+                            <TapGestureRecognizer Tapped="OnBeginnerTapped"/>
                         </Frame.GestureRecognizers>
 
                         <StackLayout>
                             <Label x:Name="TitleLabel1"
-                                Text="1. Beginner Program"
-                                FontAttributes="Bold"
-                                FontSize="20"
-                                TextColor="#FF514805" />
+                                   Text="1. Beginner Program"
+                                   FontAttributes="Bold"
+                                   FontSize="20"
+                                   TextColor="#FF514805"/>
                             <Label x:Name="SubtitleLabel1"
-                                Text="Full-Body Beginner Program (3 Days/Week)"
-                                FontSize="14"
-                                TextColor="#FFBAA72E" />
+                                   Text="Full-Body Beginner Program (3 Days/Week)"
+                                   FontSize="14"
+                                   TextColor="#FFBAA72E"/>
                         </StackLayout>
                     </Frame>
 
                     <!-- Muscle Building -->
                     <Frame x:Name="MuscleFrame"
-                        BackgroundColor="White"
-                        BorderColor="White"
-                        CornerRadius="10"
-                        Padding="15"
-                        Margin="10"
-                        HasShadow="True"
-                        Grid.Column="1">
+                           BackgroundColor="White"
+                           BorderColor="White"
+                           CornerRadius="10"
+                           Padding="15"
+                           Margin="10"
+                           HasShadow="True"
+                           Grid.Column="1">
 
                         <Frame.GestureRecognizers>
                             <PointerGestureRecognizer PointerEntered="OnMusclePointerEntered"
-                                                    PointerExited="OnMusclePointerExited" />
-                            <TapGestureRecognizer Tapped="OnMuscleTapped" />
+                                                      PointerExited="OnMusclePointerExited"/>
+                            <TapGestureRecognizer Tapped="OnMuscleTapped"/>
                         </Frame.GestureRecognizers>
 
                         <StackLayout>
                             <Label x:Name="TitleLabel2"
-                                Text="2. Muscle Building"
-                                FontAttributes="Bold"
-                                FontSize="20"
-                                TextColor="#FF514805" />
+                                   Text="2. Muscle Building"
+                                   FontAttributes="Bold"
+                                   FontSize="20"
+                                   TextColor="#FF514805"/>
                             <Label x:Name="SubtitleLabel2"
-                                Text="Hypertrophy Program (4 Days/Week)"
-                                FontSize="14"
-                                TextColor="#FFBAA72E" />
+                                   Text="Hypertrophy Program (4 Days/Week)"
+                                   FontSize="14"
+                                   TextColor="#FFBAA72E"/>
                         </StackLayout>
                     </Frame>
 
                     <!-- Fat Loss -->
                     <Frame x:Name="FatLossFrame"
-                        BackgroundColor="White"
-                        BorderColor="White"
-                        CornerRadius="10"
-                        Padding="15"
-                        Margin="10"
-                        HasShadow="True"
-                        Grid.Column="0"
-                        Grid.Row="1">
+                           BackgroundColor="White"
+                           BorderColor="White"
+                           CornerRadius="10"
+                           Padding="15"
+                           Margin="10"
+                           HasShadow="True"
+                           Grid.Column="0"
+                           Grid.Row="1">
 
                         <Frame.GestureRecognizers>
                             <PointerGestureRecognizer PointerEntered="OnFatLossPointerEntered"
-                                                    PointerExited="OnFatLossPointerExited" />
-                            <TapGestureRecognizer Tapped="OnFatLossTapped" />
+                                                      PointerExited="OnFatLossPointerExited"/>
+                            <TapGestureRecognizer Tapped="OnFatLossTapped"/>
                         </Frame.GestureRecognizers>
 
                         <StackLayout>
                             <Label x:Name="TitleLabel3"
-                                Text="3. Fat Loss"
-                                FontAttributes="Bold"
-                                FontSize="20"
-                                TextColor="#FF514805" />
+                                   Text="3. Fat Loss"
+                                   FontAttributes="Bold"
+                                   FontSize="20"
+                                   TextColor="#FF514805"/>
                             <Label x:Name="SubtitleLabel3"
-                                Text="Cutting Program (3-4 Days/Week)"
-                                FontSize="14"
-                                TextColor="#FFBAA72E" />
+                                   Text="Cutting Program (3-4 Days/Week)"
+                                   FontSize="14"
+                                   TextColor="#FFBAA72E"/>
                         </StackLayout>
                     </Frame>
 
                     <!-- Strength Training -->
                     <Frame x:Name="StrengthFrame"
-                        BackgroundColor="White"
-                        BorderColor="White"
-                        CornerRadius="10"
-                        Padding="15"
-                        Margin="10"
-                        HasShadow="True"
-                        Grid.Column="1"
-                        Grid.Row="1">
+                           BackgroundColor="White"
+                           BorderColor="White"
+                           CornerRadius="10"
+                           Padding="15"
+                           Margin="10"
+                           HasShadow="True"
+                           Grid.Column="1"
+                           Grid.Row="1">
 
                         <Frame.GestureRecognizers>
                             <PointerGestureRecognizer PointerEntered="OnStrengthPointerEntered"
-                                                    PointerExited="OnStrengthPointerExited" />
-                            <TapGestureRecognizer Tapped="OnStrengthTapped" />
+                                                      PointerExited="OnStrengthPointerExited"/>
+                            <TapGestureRecognizer Tapped="OnStrengthTapped"/>
                         </Frame.GestureRecognizers>
 
                         <StackLayout>
                             <Label x:Name="TitleLabel4"
-                                Text="4. Strength Training"
-                                FontAttributes="Bold"
-                                FontSize="20"
-                                TextColor="#FF514805" />
+                                   Text="4. Strength Training"
+                                   FontAttributes="Bold"
+                                   FontSize="20"
+                                   TextColor="#FF514805"/>
                             <Label x:Name="SubtitleLabel4"
-                                Text="Power Program (4-5 Days/Week)"
-                                FontSize="14"
-                                TextColor="#FFBAA72E" />
+                                   Text="Power Program (4-5 Days/Week)"
+                                   FontSize="14"
+                                   TextColor="#FFBAA72E"/>
                         </StackLayout>
                     </Frame>
 
                     <!-- Home Workout -->
                     <Frame x:Name="HomeFrame"
-                        BackgroundColor="White"
-                        BorderColor="White"
-                        CornerRadius="10"
-                        Padding="15"
-                        Margin="10"
-                        HasShadow="True"
-                        Grid.Column="0"
-                        Grid.Row="2">
+                           BackgroundColor="White"
+                           BorderColor="White"
+                           CornerRadius="10"
+                           Padding="15"
+                           Margin="10"
+                           HasShadow="True"
+                           Grid.Column="0"
+                           Grid.Row="2">
 
                         <Frame.GestureRecognizers>
                             <PointerGestureRecognizer PointerEntered="OnHomePointerEntered"
-                                                    PointerExited="OnHomePointerExited" />
-                            <TapGestureRecognizer Tapped="OnHomeWorkoutTapped" />
+                                                      PointerExited="OnHomePointerExited"/>
+                            <TapGestureRecognizer Tapped="OnHomeWorkoutTapped"/>
                         </Frame.GestureRecognizers>
 
                         <StackLayout>
                             <Label x:Name="TitleLabel5"
-                                Text="5. Home Workout"
-                                FontAttributes="Bold"
-                                FontSize="20"
-                                TextColor="#FF514805" />
+                                   Text="5. Home Workout"
+                                   FontAttributes="Bold"
+                                   FontSize="20"
+                                   TextColor="#FF514805"/>
                             <Label x:Name="SubtitleLabel5"
-                                Text="Minimal Equipment (3 Days/Week)"
-                                FontSize="14"
-                                TextColor="#FFBAA72E" />
+                                   Text="Minimal Equipment (3 Days/Week)"
+                                   FontSize="14"
+                                   TextColor="#FFBAA72E"/>
                         </StackLayout>
                     </Frame>
 
@@ -284,54 +333,55 @@
 
             </VerticalStackLayout>
         </ScrollView>
-    
+
 
         <!-- Popup Overlay -->
-            <Grid x:Name="PopupOverlay"
-            BackgroundColor="#80000000"
-            IsVisible="False"
-            RowSpan="2"
-            Padding="20"
-            ZIndex="999">
+        <Grid x:Name="PopupOverlay"
+              BackgroundColor="#80000000"
+              IsVisible="False"
+              RowSpan="2"
+              Padding="20"
+              ZIndex="999">
 
             <Frame x:Name="PopupModal"
-                BackgroundColor="White"
-                CornerRadius="20"
-                Padding="20"
-                VerticalOptions="Center"
-                HorizontalOptions="Center"
-                WidthRequest="400"
-                HasShadow="True">
+                   BackgroundColor="White"
+                   CornerRadius="20"
+                   Padding="20"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   WidthRequest="400"
+                   HasShadow="True">
 
                 <VerticalStackLayout Spacing="10">
                     <Label x:Name="PopupTitle"
-                        Text="Program Title"
-                        FontSize="20"
-                        FontAttributes="Bold"
-                        TextColor="Black"
-                        HorizontalOptions="Center" />
+                           Text="Program Title"
+                           FontSize="20"
+                           FontAttributes="Bold"
+                           TextColor="Black"
+                           HorizontalOptions="Center"/>
 
                     <Label x:Name="PopupMessage"
-                        Text="Program details will go here."
-                        FontSize="14"
-                        TextColor="Black"
-                        HorizontalOptions="Center"
-                        HorizontalTextAlignment="Center" />
+                           Text="Program details will go here."
+                           FontSize="14"
+                           TextColor="Black"
+                           HorizontalOptions="Center"
+                           HorizontalTextAlignment="Center"/>
 
-                    <HorizontalStackLayout HorizontalOptions="Center" Spacing="15">
+                    <HorizontalStackLayout HorizontalOptions="Center"
+                                           Spacing="15">
                         <Button Text="Close"
                                 BackgroundColor="#B0BEC5"
                                 TextColor="Black"
                                 Clicked="ClosePopup"
                                 CornerRadius="10"
-                                WidthRequest="100" />
+                                WidthRequest="100"/>
 
                         <Button Text="Avail"
                                 BackgroundColor="#00BFA5"
                                 TextColor="White"
                                 Clicked="OnAvailClicked"
                                 CornerRadius="10"
-                                WidthRequest="100" />
+                                WidthRequest="100"/>
                     </HorizontalStackLayout>
                 </VerticalStackLayout>
 
@@ -340,5 +390,5 @@
 
     </Grid>
 
-    
+
 </ContentPage>

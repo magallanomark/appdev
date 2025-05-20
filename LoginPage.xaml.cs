@@ -6,6 +6,8 @@ using Saha.Admin;
 using System.Linq; // To use LINQ for finding the user in the list
 using System.Collections.Generic; // For List<T>
 using Saha.Services; // For UserStore
+using Saha.Trainor;
+using Saha.Customer;
 
 namespace Saha
 {
@@ -14,9 +16,13 @@ namespace Saha
         // Access the static list of users from RegisterPage
         public static List<UserModel> _userList = RegisterPage.UserList;  // Reference the same list used in RegisterPage
 
+        SQLiteService _db = new SQLiteService();
+
         public LoginPage()
         {
             InitializeComponent();
+
+
         }
 
         private async void OnLoginClicked(object sender, EventArgs e)
@@ -25,12 +31,12 @@ namespace Saha
             string passwordFromUI = passwordEntry.Text.ToString();
 
 
-            if(emailFromUI == "admin" && passwordFromUI == "admin")
+            if (emailFromUI == "admin" && passwordFromUI == "admin")
             {
                 await Navigation.PushAsync(new AdminDashboardPage());
                 return;
             }
-            
+
 
             Debug.WriteLine("--- Login Attempt Diagnostics ---");
             Debug.WriteLine($"Raw Email from UI: '{emailFromUI}' (Length: {emailFromUI?.Length ?? 0})");
@@ -50,20 +56,32 @@ namespace Saha
             Debug.WriteLine($"Processed Password for comparison: '{processedPassword}'");
 
             // Try to find the user in the static list
-             var user = UserStore.AcceptedUsers.FirstOrDefault(u => u.Email.Equals(emailFromUI, StringComparison.OrdinalIgnoreCase));
+            var user = _db.GetUsers().FirstOrDefault(u => u.Email.Equals(emailFromUI, StringComparison.OrdinalIgnoreCase));
+
+
             //var user = _userList.FirstOrDefault(u => u.Email.Equals(processedEmail, StringComparison.OrdinalIgnoreCase));
 
-            if (user != null && user.Password == processedPassword)  // In a real app, compare the hashed password!
+            if (user != null && user.Password == processedPassword && user.Role.Equals("Trainer", StringComparison.OrdinalIgnoreCase))  // In a real app, compare the hashed password!
             {
                 Debug.WriteLine("Login Successful!");
                 await DisplayAlert("Login Success", "Welcome back!", "OK");
 
-                // TODO: Navigate to the main app page after login success
-                // Example for MAUI Shell
-                if (Shell.Current != null)
-                {
-                   await Shell.Current.GoToAsync("//MainPage"); // Replace "//MainPage" with your actual main page route
-                }
+                UserSession.CurrentUserId = user.Id; // Store the logged-in user in a session or static variable
+                                                     // TODO: Navigate to the main app page after login success
+                                                     // Example for MAUI Shell
+
+                Debug.WriteLine($"User ID: {UserSession.CurrentUserId}");
+                await Navigation.PushAsync(new TrainorDashboard());
+
+            }
+            else if (user != null && user.Password == processedPassword && user.Role.Equals("Customer", StringComparison.OrdinalIgnoreCase))  // In a real app, compare the hashed password!
+            {
+                Debug.WriteLine("Login Successful!");
+                await DisplayAlert("Login Success", "Welcome back!", "OK");
+
+                UserSession.CurrentUserId = user.Id;
+                await Navigation.PushAsync(new CustomerDashboard());
+                // Store the logged-in user in a session or static variable
             }
             else
             {
@@ -90,8 +108,9 @@ namespace Saha
 
         private async void OnSignUpTapped(object sender, TappedEventArgs e)
         {
-            Debug.WriteLine("Sign Up link tapped.");
-            await DisplayAlert("Sign Up", "This feature is not yet implemented.", "OK");
+
+            await Navigation.PushAsync(new RegisterPage());
+
         }
     }
 }

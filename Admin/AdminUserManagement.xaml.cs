@@ -21,9 +21,9 @@ namespace Saha.Admin
         {
             await Navigation.PushAsync(new AdminUserManagement());
         }
-         public async void OnProgramListClicked(object sender, EventArgs e)
+        public async void OnProgramListClicked(object sender, EventArgs e)
         {
-           
+
             await Navigation.PushAsync(new AdminProgram());
         }
         public void OnReportsClicked(object sender, EventArgs e)
@@ -34,18 +34,18 @@ namespace Saha.Admin
         {
             //await Navigation.PushAsync(new SettingsPage());
         }
-        public void OnLogoutClicked(object sender, EventArgs e)
+        public async void OnLogoutClicked(object sender, EventArgs e)
         {
-            //await Navigation.PushAsync(new LoginPage());
+            await Navigation.PushAsync(new GuestViewPage());
         }
 
 
         //User Management
         private async void OnViewRequestsClicked(object sender, EventArgs e)
         {
-           await Navigation.PushAsync(new RequestUsers());
+            await Navigation.PushAsync(new RequestUsers());
         }
-     
+
         private async void OnEditUserClicked(object sender, EventArgs e)
         {
             //await Navigation.PushAsync(new AddUserPage());
@@ -54,6 +54,6 @@ namespace Saha.Admin
         {
             await Navigation.PushAsync(new ViewUserPage());
         }
-       
+
     }
 }

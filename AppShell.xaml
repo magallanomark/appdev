@@ -4,46 +4,45 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Saha"
     x:Class="Saha.AppShell"
-    Shell.FlyoutBehavior="Flyout"
-    >
+    Shell.FlyoutBehavior="Flyout">
 
- <ShellContent
+    <!-- <ShellContent
         ContentTemplate="{DataTemplate local:Admin.AdminDashboardPage}"
         Title="Admin Dashboard"
-        Route="AdminDashboardPage" />
+        Route="AdminDashboardPage" /> -->
     <ShellContent
         ContentTemplate="{DataTemplate local:GuestViewPage}"
         Title="Guest View"
-        Route="GuestViewPage" />
-    
-    <ShellContent
+        Route="GuestViewPage"/>
+
+    <!-- <ShellContent
         ContentTemplate="{DataTemplate local:Modals.RequestUsers}"
-        Route="RequestUsers" 
-        Title="Request Users" />
-        
+        Route="RequestUsers"
+        Title="Request Users"/> -->
+
 
     <!-- Home Page -->
-    <ShellContent
+    <!-- <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        Route="MainPage"/> -->
 
     <!-- Register Page -->
-    <ShellContent
+    <!-- <ShellContent
         Title="Register"
         ContentTemplate="{DataTemplate local:RegisterPage}"
-        Route="RegisterPage" />
+        Route="RegisterPage"/> -->
 
     <!-- Login Page -->
-    <ShellContent
+    <!-- <ShellContent
         Title="Login"
         ContentTemplate="{DataTemplate local:LoginPage}"
-        Route="LoginPage" />
+        Route="LoginPage"/> -->
 
     <!-- Guest View Page -->
-    
 
-    
 
-    
+
+
+
 </Shell>

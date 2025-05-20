@@ -98,7 +98,7 @@ namespace Saha
 
 
             // Navigate to the login page
-            await Shell.Current.GoToAsync("//LoginPage");
+            await Navigation.PushAsync(new GuestViewPage());
         }
 
         private async void OnTermsAndConditionsTapped(object sender, EventArgs e)
@@ -141,7 +141,8 @@ Gym MS App - Terms and Conditions
         {
             // Navigate to LoginPage (Assuming LoginPage is registered in AppShell.xaml)
             // The "//" ensures navigation from the root of the shell hierarchy.
-            await Shell.Current.GoToAsync("//LoginPage");
+           // await Shell.Current.GoToAsync("//LoginPage");
+            await Navigation.PushAsync(new LoginPage());
         }
 
         // Basic Email Validation Helper

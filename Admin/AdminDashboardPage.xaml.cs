@@ -14,7 +14,7 @@ namespace Saha.Admin
 
         public void OnDashboardClicked(object sender, EventArgs e)
         {
-           // await Navigation.PushAsync(new UserListPage());
+            // await Navigation.PushAsync(new UserListPage());
         }
         public async void OnUsersClicked(object sender, EventArgs e)
         {
@@ -32,13 +32,13 @@ namespace Saha.Admin
         {
             //await Navigation.PushAsync(new SettingsPage());
         }
-        public void OnLogoutClicked(object sender, EventArgs e)
+        public async void OnLogoutClicked(object sender, EventArgs e)
         {
-            //await Navigation.PushAsync(new LoginPage());
+            await Navigation.PushAsync(new GuestViewPage());
         }
 
 
         // 
-       
+
     }
 }

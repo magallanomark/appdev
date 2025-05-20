@@ -13,10 +13,10 @@ namespace Saha.Modals
     {
 
 
-    public SQLiteService _db;
+        private readonly SQLiteService _db;
 
 
-    public AddProgram()
+        public AddProgram()
         {
             InitializeComponent();
 
@@ -27,6 +27,7 @@ namespace Saha.Modals
             _db = new SQLiteService();
 
             BindingContext = new ProgramViewModel();
+
         }
 
 
@@ -40,15 +41,25 @@ namespace Saha.Modals
         {
             string programName = ProgramNameEntry.Text?.Trim() ?? string.Empty;
             string programDescription = ProgramDescriptionEntry.Text?.Trim() ?? string.Empty;
-            string trainerName = TrainerPicker.Text?.Trim() ?? string.Empty;
-            //string trainerName = TrainerPicker.SelectedItem?.ToString() ?? string.Empty;
-            string schedule = ProgramScheduleEntry.Text?.Trim() ?? string.Empty;
+            // string trainerName = TrainerPicker.Text?.Trim() ?? string.Empty;
+            // string trainerName = TrainerPicker.SelectedItem?.ToString() ?? string.Empty;
+            var selectedTrainer = TrainerPicker.SelectedItem as UserModel;
+            int trainerId = selectedTrainer?.Id ?? 0;  // or any default int value (like 0) when null
+
+            // For DatePicker, get Date and convert to string if needed
+            string schedule = ProgramScheduleEntry.Date.ToString("MM/dd/yyyy");
+
+            // For price Entry, still get Text (numeric string)
             string programPrice = PriceEntry.Text?.Trim() ?? string.Empty;
+
+
+
+            //Debug.WriteLine($"Trainer Name: {trainerName}");
 
             // 1. Validate Inputs
             if (string.IsNullOrWhiteSpace(programName) ||
                 string.IsNullOrWhiteSpace(programDescription) ||
-                string.IsNullOrWhiteSpace(trainerName) ||
+                trainerId == 0 ||
                 string.IsNullOrWhiteSpace(schedule) ||
                 string.IsNullOrWhiteSpace(programPrice))
             {
@@ -61,18 +72,20 @@ namespace Saha.Modals
             {
                 Name = programName,
                 Description = programDescription,
-                Trainer = trainerName,
+                Trainer_Id = trainerId,
                 Price = programPrice,
                 Schedule = schedule
             };
 
             // 3. Save the new program to the database
-           _db.AddProgram(newProgram);
+            _db.AddProgram(newProgram);
 
             // 4. Optionally, navigate back or show a success message
-           await DisplayAlert("Success", "Program added successfully!", "OK");
+            await DisplayAlert("Success", "Program added successfully!", "OK");
+
+            await Navigation.PushAsync(new AdminProgram());
         }
-       
-       
+
+
     }
 }
