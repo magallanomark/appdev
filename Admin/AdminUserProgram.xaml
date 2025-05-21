@@ -3,348 +3,351 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Saha.Admin.AdminUserProgram"
              BackgroundColor="Black">
-    <!-- 
+        <!-- 
         Ensure x:Class="Saha.LoginPage" correctly matches your namespace and class name.
         If LoginPage.xaml is in a "Pages" subfolder and your root namespace is "Saha",
         then it should be x:Class="Saha.Pages.LoginPage".
         The namespace in LoginPage.xaml.cs must also match (e.g., namespace Saha.Pages).
     -->
-    <ContentPage.Resources>
-        <ResourceDictionary>
+        <ContentPage.Resources>
+                <ResourceDictionary>
 
-            <!-- Gradient Background from MainPage.xaml -->
-            <LinearGradientBrush x:Key="PageGradientBackground"
-                                 StartPoint="0,0"
-                                 EndPoint="1,1">
-                <GradientStop Color="#00807E"
-                              Offset="0.1"/>
-                <GradientStop Color="#1A596E"
-                              Offset="0.5"/>
-                <GradientStop Color="#342758"
-                              Offset="1.0"/>
-            </LinearGradientBrush>
+                        <!-- Gradient Background from MainPage.xaml -->
+                        <LinearGradientBrush x:Key="PageGradientBackground"
+                                             StartPoint="0,0"
+                                             EndPoint="1,1">
+                                <GradientStop Color="#00807E"
+                                              Offset="0.1"/>
+                                <GradientStop Color="#1A596E"
+                                              Offset="0.5"/>
+                                <GradientStop Color="#342758"
+                                              Offset="1.0"/>
+                        </LinearGradientBrush>
 
-            <!-- Headline Style - Colors adapted from MainPage -->
-            <Style x:Key="Headline"
-                   TargetType="Label">
-                <Setter Property="FontSize"
-                        Value="36"/>
-                <Setter Property="FontAttributes"
-                        Value="Bold"/>
-                <Setter Property="HorizontalOptions"
-                        Value="Center"/>
-                <Setter Property="TextColor"
-                        Value="White"/>
-                <!-- MainPage Headline TextColor -->
-                <Setter Property="Margin"
-                        Value="0,0,0,20"/>
-            </Style>
+                        <!-- Headline Style - Colors adapted from MainPage -->
+                        <Style x:Key="Headline"
+                               TargetType="Label">
+                                <Setter Property="FontSize"
+                                        Value="36"/>
+                                <Setter Property="FontAttributes"
+                                        Value="Bold"/>
+                                <Setter Property="HorizontalOptions"
+                                        Value="Center"/>
+                                <Setter Property="TextColor"
+                                        Value="White"/>
+                                <!-- MainPage Headline TextColor -->
+                                <Setter Property="Margin"
+                                        Value="0,0,0,20"/>
+                        </Style>
 
-            <!-- Input Entry Border Style - Colors adapted for dark theme -->
-            <Style x:Key="InputEntryBorderStyle"
-                   TargetType="Border">
-                <Setter Property="StrokeThickness"
-                        Value="1"/>
-                <Setter Property="Stroke"
-                        Value="#88FFFFFF"/>
-                <!-- Semi-transparent white border -->
-                <Setter Property="BackgroundColor"
-                        Value="#33FFFFFF"/>
-                <!-- Semi-transparent white background for field -->
-                <Setter Property="Padding"
-                        Value="12,8"/>
-                <Setter Property="Margin"
-                        Value="10,0"/>
-                <Setter Property="StrokeShape">
-                    <RoundRectangle CornerRadius="28"/>
-                </Setter>
-                <Setter Property="Shadow">
-                    <!-- Keeping original shadow, can be tweaked if needed -->
-                    <Setter.Value>
-                        <Shadow Brush="Black"
-                                Opacity="0.2"
-                                Offset="2,2"
-                                Radius="5"/>
-                    </Setter.Value>
-                </Setter>
-            </Style>
+                        <!-- Input Entry Border Style - Colors adapted for dark theme -->
+                        <Style x:Key="InputEntryBorderStyle"
+                               TargetType="Border">
+                                <Setter Property="StrokeThickness"
+                                        Value="1"/>
+                                <Setter Property="Stroke"
+                                        Value="#88FFFFFF"/>
+                                <!-- Semi-transparent white border -->
+                                <Setter Property="BackgroundColor"
+                                        Value="#33FFFFFF"/>
+                                <!-- Semi-transparent white background for field -->
+                                <Setter Property="Padding"
+                                        Value="12,8"/>
+                                <Setter Property="Margin"
+                                        Value="10,0"/>
+                                <Setter Property="StrokeShape">
+                                        <RoundRectangle CornerRadius="28"/>
+                                </Setter>
+                                <Setter Property="Shadow">
+                                        <!-- Keeping original shadow, can be tweaked if needed -->
+                                        <Setter.Value>
+                                                <Shadow Brush="Black"
+                                                        Opacity="0.2"
+                                                        Offset="2,2"
+                                                        Radius="5"/>
+                                        </Setter.Value>
+                                </Setter>
+                        </Style>
 
-            <!-- Input Entry Style (for the Entry control itself) - Colors adapted for dark theme -->
-            <Style x:Key="InputEntryStyle"
-                   TargetType="Entry">
-                <Setter Property="FontSize"
-                        Value="16"/>
-                <Setter Property="PlaceholderColor"
-                        Value="#A0FFFFFF"/>
-                <!-- Lighter placeholder for dark background -->
-                <Setter Property="TextColor"
-                        Value="White"/>
-                <!-- Input text color -->
-                <Setter Property="VerticalOptions"
-                        Value="Center"/>
-                <Setter Property="BackgroundColor"
-                        Value="Transparent"/>
-                <!-- Entry itself is transparent -->
-                <Setter Property="Margin"
-                        Value="0"/>
-                <Setter Property="HeightRequest"
-                        Value="30"/>
-            </Style>
+                        <!-- Input Entry Style (for the Entry control itself) - Colors adapted for dark theme -->
+                        <Style x:Key="InputEntryStyle"
+                               TargetType="Entry">
+                                <Setter Property="FontSize"
+                                        Value="16"/>
+                                <Setter Property="PlaceholderColor"
+                                        Value="#A0FFFFFF"/>
+                                <!-- Lighter placeholder for dark background -->
+                                <Setter Property="TextColor"
+                                        Value="White"/>
+                                <!-- Input text color -->
+                                <Setter Property="VerticalOptions"
+                                        Value="Center"/>
+                                <Setter Property="BackgroundColor"
+                                        Value="Transparent"/>
+                                <!-- Entry itself is transparent -->
+                                <Setter Property="Margin"
+                                        Value="0"/>
+                                <Setter Property="HeightRequest"
+                                        Value="30"/>
+                        </Style>
 
-            <!-- Primary Action Button Style - Adapted from MainPage's blue "Log In" button -->
-            <Style x:Key="PrimaryActionButtonStyle"
-                   TargetType="Button">
-                <Setter Property="FontSize"
-                        Value="18"/>
-                <Setter Property="FontAttributes"
-                        Value="Bold"/>
-                <Setter Property="TextColor"
-                        Value="White"/>
-                <Setter Property="Padding"
-                        Value="15"/>
-                <Setter Property="Margin"
-                        Value="12,20,12,12"/>
-                <Setter Property="HeightRequest"
-                        Value="55"/>
-                <Setter Property="CornerRadius"
-                        Value="28"/>
-                <Setter Property="Shadow">
-                    <!-- Shadow from MainPage's CustomButtonStyle (can be adjusted) -->
-                    <Setter.Value>
-                        <Shadow Brush="Black"
-                                Opacity="0.5"
-                                Offset="4,4"/>
-                    </Setter.Value>
-                </Setter>
-                <Setter Property="BackgroundColor"
-                        Value="#0056b3"/>
-                <!-- Blue from MainPage's Log In button -->
-                <!-- <Setter Property="BorderColor" Value="White"/> Optional, if you want a white border like MainPage buttons -->
-                <!-- <Setter Property="BorderWidth" Value="2"/> -->
-                <Setter Property="VisualStateManager.VisualStateGroups">
-                    <VisualStateGroupList>
-                        <VisualStateGroup x:Name="CommonStates">
-                            <VisualState x:Name="Normal"/>
-                            <VisualState x:Name="Pressed">
-                                <VisualState.Setters>
-                                    <Setter Property="BackgroundColor"
-                                            Value="#004085"/>
-                                    <!-- Darker blue for pressed -->
-                                    <Setter Property="Scale"
-                                            Value="0.98"/>
-                                </VisualState.Setters>
-                            </VisualState>
-                            <VisualState x:Name="Disabled">
-                                <VisualState.Setters>
-                                    <Setter Property="Background"
-                                            Value="#555555"/>
-                                    <!-- Dark gray for disabled -->
-                                    <Setter Property="Opacity"
-                                            Value="0.7"/>
-                                    <Setter Property="TextColor"
-                                            Value="#AAAAAA"/>
-                                    <!-- Light gray text for disabled -->
-                                </VisualState.Setters>
-                            </VisualState>
-                        </VisualStateGroup>
-                    </VisualStateGroupList>
-                </Setter>
-            </Style>
+                        <!-- Primary Action Button Style - Adapted from MainPage's blue "Log In" button -->
+                        <Style x:Key="PrimaryActionButtonStyle"
+                               TargetType="Button">
+                                <Setter Property="FontSize"
+                                        Value="18"/>
+                                <Setter Property="FontAttributes"
+                                        Value="Bold"/>
+                                <Setter Property="TextColor"
+                                        Value="White"/>
+                                <Setter Property="Padding"
+                                        Value="15"/>
+                                <Setter Property="Margin"
+                                        Value="12,20,12,12"/>
+                                <Setter Property="HeightRequest"
+                                        Value="55"/>
+                                <Setter Property="CornerRadius"
+                                        Value="28"/>
+                                <Setter Property="Shadow">
+                                        <!-- Shadow from MainPage's CustomButtonStyle (can be adjusted) -->
+                                        <Setter.Value>
+                                                <Shadow Brush="Black"
+                                                        Opacity="0.5"
+                                                        Offset="4,4"/>
+                                        </Setter.Value>
+                                </Setter>
+                                <Setter Property="BackgroundColor"
+                                        Value="#0056b3"/>
+                                <!-- Blue from MainPage's Log In button -->
+                                <!-- <Setter Property="BorderColor" Value="White"/> Optional, if you want a white border like MainPage buttons -->
+                                <!-- <Setter Property="BorderWidth" Value="2"/> -->
+                                <Setter Property="VisualStateManager.VisualStateGroups">
+                                        <VisualStateGroupList>
+                                                <VisualStateGroup x:Name="CommonStates">
+                                                        <VisualState x:Name="Normal"/>
+                                                        <VisualState x:Name="Pressed">
+                                                                <VisualState.Setters>
+                                                                        <Setter Property="BackgroundColor"
+                                                                                Value="#004085"/>
+                                                                        <!-- Darker blue for pressed -->
+                                                                        <Setter Property="Scale"
+                                                                                Value="0.98"/>
+                                                                </VisualState.Setters>
+                                                        </VisualState>
+                                                        <VisualState x:Name="Disabled">
+                                                                <VisualState.Setters>
+                                                                        <Setter Property="Background"
+                                                                                Value="#555555"/>
+                                                                        <!-- Dark gray for disabled -->
+                                                                        <Setter Property="Opacity"
+                                                                                Value="0.7"/>
+                                                                        <Setter Property="TextColor"
+                                                                                Value="#AAAAAA"/>
+                                                                        <!-- Light gray text for disabled -->
+                                                                </VisualState.Setters>
+                                                        </VisualState>
+                                                </VisualStateGroup>
+                                        </VisualStateGroupList>
+                                </Setter>
+                        </Style>
 
-            <!-- Link Text Style - Color adapted for dark theme -->
-            <Style x:Key="LinkTextStyle"
-                   TargetType="Label">
-                <Setter Property="TextColor"
-                        Value="#ADD8E6"/>
-                <!-- Light blue, common for links on dark -->
-                <Setter Property="HorizontalOptions"
-                        Value="Center"/>
-                <Setter Property="FontSize"
-                        Value="14"/>
-                <Setter Property="TextDecorations"
-                        Value="Underline"/>
-            </Style>
+                        <!-- Link Text Style - Color adapted for dark theme -->
+                        <Style x:Key="LinkTextStyle"
+                               TargetType="Label">
+                                <Setter Property="TextColor"
+                                        Value="#ADD8E6"/>
+                                <!-- Light blue, common for links on dark -->
+                                <Setter Property="HorizontalOptions"
+                                        Value="Center"/>
+                                <Setter Property="FontSize"
+                                        Value="14"/>
+                                <Setter Property="TextDecorations"
+                                        Value="Underline"/>
+                        </Style>
 
-            <!-- Icon Style for Path - Color adapted for dark theme -->
-            <Style x:Key="IconPathStyle"
-                   TargetType="Path">
-                <Setter Property="Fill"
-                        Value="White"/>
-                <!-- White icons for visibility -->
-                <Setter Property="VerticalOptions"
-                        Value="Center"/>
-                <Setter Property="HorizontalOptions"
-                        Value="Center"/>
-                <Setter Property="HeightRequest"
-                        Value="20"/>
-                <Setter Property="WidthRequest"
-                        Value="20"/>
-            </Style>
+                        <!-- Icon Style for Path - Color adapted for dark theme -->
+                        <Style x:Key="IconPathStyle"
+                               TargetType="Path">
+                                <Setter Property="Fill"
+                                        Value="White"/>
+                                <!-- White icons for visibility -->
+                                <Setter Property="VerticalOptions"
+                                        Value="Center"/>
+                                <Setter Property="HorizontalOptions"
+                                        Value="Center"/>
+                                <Setter Property="HeightRequest"
+                                        Value="20"/>
+                                <Setter Property="WidthRequest"
+                                        Value="20"/>
+                        </Style>
 
-        </ResourceDictionary>
-    </ContentPage.Resources>
+                </ResourceDictionary>
+        </ContentPage.Resources>
 
-    <!-- Apply the Gradient Background from MainPage -->
-    <ContentPage.Background>
-        <StaticResource Key="PageGradientBackground"/>
-    </ContentPage.Background>
-
-
-    <VerticalStackLayout>
-
-        <!-- Header Bar -->
-        <Grid ColumnDefinitions="*,Auto"
-              Padding="15"
-              BackgroundColor="Transparent"
-              VerticalOptions="Start">
-            <Label Text="SAHA System"
-                   FontSize="20"
-                   FontAttributes="Bold"
-                   TextColor="White"
-                   VerticalOptions="Center"
-                   HorizontalOptions="Start"/>
-            <Button Text="Add Program"
-                    Style="{StaticResource PrimaryActionButtonStyle}"
-                    Clicked="OnAddProgramClicked"
-                    HorizontalOptions="Center"
-                    VerticalOptions="Start"/>
-            <Button Text="Logout"
-                    Style="{StaticResource PrimaryActionButtonStyle}"
-                    Clicked="OnLogoutClicked"
-                    BackgroundColor="#D9534F"
-                    VerticalOptions="Center"
-                    HorizontalOptions="End"/>
-        </Grid>
-
-        <!-- Main Content Area -->
-        <ScrollView>
-            <VerticalStackLayout Padding="25,0,25,0"
-                                 Spacing="18">
+        <!-- Apply the Gradient Background from MainPage -->
+        <ContentPage.Background>
+                <StaticResource Key="PageGradientBackground"/>
+        </ContentPage.Background>
 
 
-                <!-- Remove this ScrollView here -->
-                <!-- CollectionView supports scrolling itself -->
-                <CollectionView x:Name="ProgramsCollection"
-                                ItemsSource="{Binding userPrograms}"
-                                Margin="0,0,0,30">
+        <VerticalStackLayout>
 
-                    <CollectionView.Header>
-                        <Grid Padding="15"
-                              ColumnSpacing="10"
-                              BackgroundColor="Transparent">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="2*"/>
-                                <ColumnDefinition Width="2*"/>
-                                <ColumnDefinition Width="2*"/>
-                                <ColumnDefinition Width="2*"/>
-                                <ColumnDefinition Width="2*"/>
-                                <ColumnDefinition Width="2*"/>
-                                <ColumnDefinition Width="Auto"/>
-                            </Grid.ColumnDefinitions>
+                <!-- Header Bar -->
+                <Grid ColumnDefinitions="*,Auto"
+                      Padding="15"
+                      BackgroundColor="Transparent"
+                      VerticalOptions="Start">
+                        <Label Text="SAHA System"
+                               FontSize="20"
+                               FontAttributes="Bold"
+                               TextColor="White"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Start"/>
+                        <Button Text="Logout"
+                                Style="{StaticResource PrimaryActionButtonStyle}"
+                                Clicked="OnLogoutClicked"
+                                BackgroundColor="#D9534F"
+                                VerticalOptions="Center"
+                                HorizontalOptions="End"/>
+                </Grid>
 
-                            <Label Text="Start Date"
-                                   TextColor="White"
-                                   FontAttributes="Bold"
-                                   FontSize="20"
-                                   Grid.Column="0"/>
-                            <Label Text="End Date"
-                                   TextColor="White"
-                                   FontAttributes="Bold"
-                                   FontSize="20"
-                                   Grid.Column="1"/>
-                            <Label Text="Program ID"
-                                   TextColor="White"
-                                   FontAttributes="Bold"
-                                   FontSize="20"
-                                   Grid.Column="2"/>
-                            <Label Text="User ID"
-                                   TextColor="White"
-                                   FontAttributes="Bold"
-                                   FontSize="20"
-                                   Grid.Column="3"/>
-                            <Label Text="Status"
-                                   TextColor="White"
-                                   FontAttributes="Bold"
-                                   FontSize="20"
-                                   Grid.Column="4"/>
-                            <Label Text="Transaction #"
-                                   TextColor="White"
-                                   FontAttributes="Bold"
-                                   FontSize="20"
-                                   Grid.Column="5"/>
-                            <Label Text="Actions"
-                                   TextColor="White"
-                                   FontAttributes="Bold"
-                                   FontSize="20"
-                                   Grid.Column="6"/>
-                        </Grid>
-                    </CollectionView.Header>
-
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
-                            <Frame CornerRadius="10"
-                                   Padding="10"
-                                   Margin="5"
-                                   BackgroundColor="#1A596E"
-                                   HasShadow="False">
-                                <Grid ColumnSpacing="10">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="2*"/>
-                                        <ColumnDefinition Width="2*"/>
-                                        <ColumnDefinition Width="2*"/>
-                                        <ColumnDefinition Width="2*"/>
-                                        <ColumnDefinition Width="2*"/>
-                                        <ColumnDefinition Width="2*"/>
-                                        <ColumnDefinition Width="Auto"/>
-                                    </Grid.ColumnDefinitions>
-
-                                    <Label Text="{Binding StartDate}"
-                                           TextColor="White"
-                                           Grid.Column="0"/>
-                                    <Label Text="{Binding EndDate}"
-                                           TextColor="White"
-                                           Grid.Column="1"/>
-                                    <Label Text="{Binding ProgramId}"
-                                           TextColor="White"
-                                           Grid.Column="2"/>
-                                    <Label Text="{Binding UserId}"
-                                           TextColor="White"
-                                           Grid.Column="3"/>
-                                    <Label Text="{Binding Status}"
-                                           TextColor="White"
-                                           Grid.Column="4"/>
-                                    <Label Text="{Binding TransactionNumber}"
-                                           TextColor="White"
-                                           Grid.Column="5"/>
-
-                                    <StackLayout Orientation="Horizontal"
-                                                 Grid.Column="6"
-                                                 Spacing="5">
-                                        <Button Text="Accept"
-                                                BackgroundColor="#5CB85C"
-                                                TextColor="White"
-                                                Command="{Binding BindingContext.AcceptProgramCommand, Source={x:Reference ProgramsCollection}}"
-                                                CommandParameter="{Binding .}"/>
-
-                                        <Button Text="Reject"
-                                                BackgroundColor="#D9534F"
-                                                TextColor="White"
-                                                Command="{Binding BindingContext.RejectProgramCommand, Source={x:Reference ProgramsCollection}}"
-                                                CommandParameter="{Binding .}"/>
-                                    </StackLayout>
-                                </Grid>
-                            </Frame>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
+                <!-- Main Content Area -->
+                <ScrollView>
+                        <VerticalStackLayout Padding="25,0,25,0"
+                                             Spacing="18">
 
 
+                                <!-- Remove this ScrollView here -->
+                                <!-- CollectionView supports scrolling itself -->
+                                <CollectionView x:Name="ProgramsCollection"
+                                                ItemsSource="{Binding userPrograms}"
+                                                Margin="0,0,0,30">
+
+                                        <CollectionView.Header>
+                                                <Grid Padding="15"
+                                                      ColumnSpacing="10"
+                                                      BackgroundColor="Transparent">
+                                                        <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="2*"/>
+                                                                <ColumnDefinition Width="2*"/>
+                                                                <ColumnDefinition Width="2*"/>
+                                                                <ColumnDefinition Width="2*"/>
+                                                                <ColumnDefinition Width="2*"/>
+                                                                <ColumnDefinition Width="2*"/>
+                                                                <ColumnDefinition Width="Auto"/>
+                                                        </Grid.ColumnDefinitions>
+
+                                                        <Label Text="Start Date"
+                                                               TextColor="White"
+                                                               FontAttributes="Bold"
+                                                               FontSize="14"
+                                                               Grid.Column="0"/>
+                                                        <Label Text="End Date"
+                                                               TextColor="White"
+                                                               FontAttributes="Bold"
+                                                               FontSize="14"
+                                                               Grid.Column="1"/>
+                                                        <Label Text="Program ID"
+                                                               TextColor="White"
+                                                               FontAttributes="Bold"
+                                                               FontSize="14"
+                                                               Grid.Column="2"/>
+                                                        <Label Text="User ID"
+                                                               TextColor="White"
+                                                               FontAttributes="Bold"
+                                                               FontSize="14"
+                                                               Grid.Column="3"/>
+                                                        <Label Text="Status"
+                                                               TextColor="White"
+                                                               FontAttributes="Bold"
+                                                               FontSize="14"
+                                                               Grid.Column="4"/>
+                                                        <Label Text="Transaction #"
+                                                               TextColor="White"
+                                                               FontAttributes="Bold"
+                                                               FontSize="14"
+                                                               Grid.Column="5"/>
+                                                        <Label Text="Actions"
+                                                               TextColor="White"
+                                                               FontAttributes="Bold"
+                                                               FontSize="14"
+                                                               Grid.Column="6"/>
+
+                                                </Grid>
+                                        </CollectionView.Header>
+
+                                        <CollectionView.ItemTemplate>
+                                                <DataTemplate>
+                                                        <Frame CornerRadius="10"
+                                                               Padding="10"
+                                                               Margin="5"
+                                                               BackgroundColor="#1A596E"
+                                                               HasShadow="False">
+                                                                <Grid ColumnSpacing="10">
+                                                                        <Grid.ColumnDefinitions>
+                                                                                <ColumnDefinition Width="2*"/>
+                                                                                <ColumnDefinition Width="2*"/>
+                                                                                <ColumnDefinition Width="2*"/>
+                                                                                <ColumnDefinition Width="2*"/>
+                                                                                <ColumnDefinition Width="2*"/>
+                                                                                <ColumnDefinition Width="2*"/>
+                                                                                <ColumnDefinition Width="Auto"/>
+                                                                        </Grid.ColumnDefinitions>
+
+                                                                        <Label Text="{Binding StartDate}"
+                                                                               TextColor="White"
+                                                                               FontSize="12"
+                                                                               Grid.Column="0"/>
+                                                                        <Label Text="{Binding EndDate}"
+                                                                               TextColor="White"
+                                                                               FontSize="12"
+                                                                               Grid.Column="1"/>
+                                                                        <Label Text="{Binding ProgramId}"
+                                                                               TextColor="White"
+                                                                               FontSize="12"
+                                                                               Grid.Column="2"/>
+                                                                        <Label Text="{Binding UserId}"
+                                                                               TextColor="White"
+                                                                               FontSize="12"
+                                                                               Grid.Column="3"/>
+                                                                        <Label Text="{Binding Status}"
+                                                                               TextColor="White"
+                                                                               FontSize="12"
+                                                                               Grid.Column="4"/>
+                                                                        <Label Text="{Binding TransactionNumber}"
+                                                                               TextColor="White"
+                                                                               FontSize="12"
+                                                                               Grid.Column="5"/>
 
 
-            </VerticalStackLayout>
-        </ScrollView>
+                                                                        <StackLayout Orientation="Horizontal"
+                                                                                     Grid.Column="6"
+                                                                                     Spacing="5">
+                                                                                <Button Text="Accept"
+                                                                                        BackgroundColor="#5CB85C"
+                                                                                        TextColor="White"
+                                                                                        Command="{Binding BindingContext.AcceptProgramCommand, Source={x:Reference ProgramsCollection}}"
+                                                                                        CommandParameter="{Binding .}"/>
+
+                                                                                <Button Text="Reject"
+                                                                                        BackgroundColor="#D9534F"
+                                                                                        TextColor="White"
+                                                                                        Command="{Binding BindingContext.RejectProgramCommand, Source={x:Reference ProgramsCollection}}"
+                                                                                        CommandParameter="{Binding .}"/>
+                                                                        </StackLayout>
+                                                                </Grid>
+                                                        </Frame>
+                                                </DataTemplate>
+                                        </CollectionView.ItemTemplate>
+                                </CollectionView>
 
 
-    </VerticalStackLayout>
+
+
+                        </VerticalStackLayout>
+                </ScrollView>
+
+
+        </VerticalStackLayout>
 
 </ContentPage>

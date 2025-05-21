@@ -183,6 +183,43 @@ namespace Saha.Services
             }
         }
 
+        // This class groups the program with its user programs
+        public class ProgramWithUserPrograms
+        {
+            public ProgramModel Program { get; set; }
+            public List<UserProgram> UserPrograms { get; set; }
+        }
+
+        // Method to get all programs created by the trainor with associated user programs
+        public List<ProgramWithUserPrograms> GetUserProgramsByTrainorId(int trainorId)
+        {
+            lock (_lock)
+            {
+                var trainorPrograms = _database.Table<ProgramModel>()
+                                               .Where(p => p.Trainer_Id == trainorId)
+                                               .ToList();
+
+                var result = new List<ProgramWithUserPrograms>();
+
+                foreach (var program in trainorPrograms)
+                {
+                    var userPrograms = _database.Table<UserProgram>()
+                                                .Where(up => up.ProgramId == program.Id)
+                                                .ToList();
+
+                    result.Add(new ProgramWithUserPrograms
+                    {
+                        Program = program,
+                        UserPrograms = userPrograms
+                    });
+                }
+
+                return result;
+            }
+        }
+
+
+
 
         public void UpdateUserProgram(UserProgram userProgram)
         {

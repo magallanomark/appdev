@@ -208,51 +208,5 @@ namespace Saha
 
 
 
-        private void OnBeginnerTapped(object sender, EventArgs e)
-        {
-            ShowPopup("Beginner Program", "Full-body beginner program, 3 days/week. Ideal for those just starting out.");
-        }
-
-        private void OnMuscleTapped(object sender, EventArgs e)
-        {
-            ShowPopup("Muscle Building", "Hypertrophy-focused program, 4 days/week. Designed to build muscle mass.");
-        }
-
-        private void OnFatLossTapped(object sender, EventArgs e)
-        {
-            ShowPopup("Fat Loss", "Cutting program for fat reduction, 3-4 days/week, includes cardio and HIIT.");
-        }
-
-        private void OnStrengthTapped(object sender, EventArgs e)
-        {
-            ShowPopup("Strength Training", "Powerlifting-style training, 4-5 days/week. Focus on compound lifts.");
-        }
-
-        private void OnHomeWorkoutTapped(object sender, EventArgs e)
-        {
-            ShowPopup("Home Workout", "Train at home with minimal equipment. 3 days/week, bodyweight focused.");
-        }
-
-
-
-        private void ShowPopup(string title, string message)
-        {
-            PopupTitle.Text = title;
-            PopupMessage.Text = message;
-            PopupOverlay.IsVisible = true;
-        }
-
-        private void ClosePopup(object sender, EventArgs e)
-        {
-            PopupOverlay.IsVisible = false;
-        }
-
-
-        // On Avail Clicked
-        private async void OnAvailClicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new RegisterPage());
-        }
-
     }
 }

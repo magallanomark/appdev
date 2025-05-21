@@ -147,3 +147,9 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = Saha.Trainor.TrainorDashboard.xaml
 build_metadata.AdditionalFiles.TargetPath = Trainor\TrainorDashboard.xaml
 build_metadata.AdditionalFiles.RelativePath = Trainor\TrainorDashboard.xaml
+
+[D:/MobileApp/Maui/Saha/Trainor/TrainorUserProgram.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Saha.Trainor.TrainorUserProgram.xaml
+build_metadata.AdditionalFiles.TargetPath = Trainor\TrainorUserProgram.xaml
+build_metadata.AdditionalFiles.RelativePath = Trainor\TrainorUserProgram.xaml

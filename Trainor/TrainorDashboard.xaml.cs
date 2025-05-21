@@ -41,8 +41,10 @@ namespace Saha.Trainor
         }
         public async void OnLogoutClicked(object sender, EventArgs e)
         {
-            UserSession.CurrentUserId = 0; // Reset the user ID
-            await Navigation.PushAsync(new GuestViewPage());
+            RoleSession.CurrentUserRole = null;
+            UserSession.CurrentUserId = 0;
+            Application.Current.MainPage = new AppShell("guest");
+            //await Navigation.PushAsync(new GuestViewPage());
         }
 
 

@@ -10,6 +10,7 @@ public partial class App : Application
     {
         InitializeComponent();
 
+        Routing.RegisterRoute("GuestViewPage", typeof(GuestViewPage));
         // Set the main page of the application
         // MainPage = new AppShell(); // Uncomment this if you want to use Shell navigation
     }

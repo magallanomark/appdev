@@ -77,6 +77,21 @@ public partial class AppShell : Shell
 			});
 
 		}
+		else if (role.ToLower() == "trainer")
+		{
+			Items.Add(new ShellContent
+			{
+				Title = "Dashboard",
+				ContentTemplate = new DataTemplate(typeof(TrainorDashboard)),
+				Icon = "home.png"
+			});
+			Items.Add(new ShellContent
+			{
+				Title = "User Programs",
+				ContentTemplate = new DataTemplate(typeof(TrainorUserProgram)),
+				Icon = "home.png"
+			});
+		}
 
 		// Logout or settings page common to all
 

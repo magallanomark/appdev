@@ -33,11 +33,6 @@ namespace Saha
 
 
 
-
-            Debug.WriteLine("--- Login Attempt Diagnostics ---");
-            Debug.WriteLine($"Raw Email from UI: '{emailFromUI}' (Length: {emailFromUI?.Length ?? 0})");
-            Debug.WriteLine($"Raw Password from UI: '{passwordFromUI}' (Length: {passwordFromUI?.Length ?? 0})");
-
             if (emailFromUI == null || passwordFromUI == null)
             {
                 Debug.WriteLine("ERROR: Email or password entry field is null in C#. Check x:Name attributes in XAML.");
@@ -51,15 +46,13 @@ namespace Saha
                 UserSession.CurrentUserId = 999999; // Assuming admin has ID 1
                 Debug.WriteLine($"RoleSession.CurrentUserRole: {RoleSession.CurrentUserRole.ToLower()}");
 
-                await Navigation.PushAsync(new AdminDashboardPage());
+                //  await Navigation.PushAsync(new AdminDashboardPage());
                 Application.Current.Windows[0].Page = new AppShell("admin");
                 return;
             }
             string processedEmail = emailFromUI.Trim();
             string processedPassword = passwordFromUI; // For this test, direct use. Real passwords shouldn't typically be trimmed if spaces are significant.
 
-            Debug.WriteLine($"Processed Email for comparison: '{processedEmail}'");
-            Debug.WriteLine($"Processed Password for comparison: '{processedPassword}'");
 
             // Try to find the user in the static list
             var user = _db.GetUsers().FirstOrDefault(u => u.Email.Equals(emailFromUI, StringComparison.OrdinalIgnoreCase));
@@ -86,7 +79,7 @@ namespace Saha
 
 
                 Debug.WriteLine($"User ID: {UserSession.CurrentUserId}");
-                await Navigation.PushAsync(new TrainorDashboard());
+                //await Navigation.PushAsync(new TrainorDashboard());
 
             }
             else if (user != null && user.Password == processedPassword && user.Role.Equals("Customer", StringComparison.OrdinalIgnoreCase))  // In a real app, compare the hashed password!
@@ -98,7 +91,7 @@ namespace Saha
                 RoleSession.CurrentUserRole = user.Role;
                 Application.Current.Windows[0].Page = new AppShell("customer");
                 Debug.WriteLine($"RoleSession.CurrentUserRole: {RoleSession.CurrentUserRole}");
-                await Navigation.PushAsync(new CustomerDashboard());
+                // await Navigation.PushAsync(new CustomerDashboard());
                 // Store the logged-in user in a session or static variable
             }
             else

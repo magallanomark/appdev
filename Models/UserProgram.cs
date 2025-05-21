@@ -29,5 +29,7 @@ namespace Saha.Models
 
         [Ignore]
         public UserModel Trainer { get; set; }
+
+
     }
 }

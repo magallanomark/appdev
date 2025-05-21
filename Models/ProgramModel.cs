@@ -13,5 +13,12 @@ namespace Saha.Models
 
         public int Duration { get; set; }
 
+        [Ignore]
+        public ProgramModel Program { get; set; }
+        [Ignore]
+        public UserModel Trainer { get; set; }
+
+        [Ignore]
+        public UserProgram TrainerProgram { get; set; }
     }
 }

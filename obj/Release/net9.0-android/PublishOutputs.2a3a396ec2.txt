@@ -1,0 +1,4 @@
+D:\MobileApp\Maui\Saha\bin\Release\net9.0-android\publish\com.companyname.saha-Signed.aab
+D:\MobileApp\Maui\Saha\bin\Release\net9.0-android\publish\com.companyname.saha.aab
+D:\MobileApp\Maui\Saha\bin\Release\net9.0-android\publish\com.companyname.saha-Signed.apk
+D:\MobileApp\Maui\Saha\bin\Release\net9.0-android\publish\_Microsoft.Android.Resource.Designer.dll
