@@ -6,47 +6,33 @@
 
     <ContentPage.Resources>
         <ResourceDictionary>
-            <LinearGradientBrush x:Key="PageGradientBackground"
-                                 StartPoint="0,0"
-                                 EndPoint="1,1">
-                <GradientStop Color="#00807E"
-                              Offset="0.1"/>
-                <GradientStop Color="#1A596E"
-                              Offset="0.5"/>
-                <GradientStop Color="#342758"
-                              Offset="1.0"/>
+            <!-- Background -->
+            <LinearGradientBrush x:Key="PageGradientBackground" StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#00807E" Offset="0.1"/>
+                <GradientStop Color="#1A596E" Offset="0.5"/>
+                <GradientStop Color="#342758" Offset="1.0"/>
             </LinearGradientBrush>
 
-            <Style x:Key="Headline"
-                   TargetType="Label">
-                <Setter Property="FontSize"
-                        Value="36"/>
-                <Setter Property="FontAttributes"
-                        Value="Bold"/>
-                <Setter Property="HorizontalOptions"
-                        Value="Center"/>
-                <Setter Property="TextColor"
-                        Value="White"/>
-                <Setter Property="Margin"
-                        Value="0,0,0,20"/>
+            <!-- Headline Style -->
+            <Style x:Key="Headline" TargetType="Label">
+                <Setter Property="FontSize" Value="28"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="Margin" Value="0,0,0,16"/>
             </Style>
 
-            <Style x:Key="PrimaryActionButtonStyle"
-                   TargetType="Button">
-                <Setter Property="FontSize"
-                        Value="18"/>
-                <Setter Property="FontAttributes"
-                        Value="Bold"/>
-                <Setter Property="TextColor"
-                        Value="White"/>
-                <Setter Property="Padding"
-                        Value="10,5"/>
-                <Setter Property="Margin"
-                        Value="10"/>
-                <Setter Property="CornerRadius"
-                        Value="20"/>
-                <Setter Property="BackgroundColor"
-                        Value="#c0392b"/>
+            <!-- Button Style -->
+            <Style x:Key="PrimaryActionButtonStyle" TargetType="Button">
+                <Setter Property="FontSize" Value="11"/>
+                <Setter Property="FontAttributes" Value="None"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="Padding" Value="14,10"/>
+                <Setter Property="Margin" Value="5"/>
+                <Setter Property="HeightRequest" Value="30"/>
+                <Setter Property="CornerRadius" Value="8"/>
+                <Setter Property="BackgroundColor" Value="#c0392b"/>
+                <Setter Property="HorizontalOptions" Value="End"/>
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
@@ -55,40 +41,35 @@
         <StaticResource Key="PageGradientBackground"/>
     </ContentPage.Background>
 
-    <VerticalStackLayout>
+    <VerticalStackLayout Padding="15" Spacing="10">
 
-        <!-- Header with system name and logout -->
+        <!-- Header -->
         <Grid ColumnDefinitions="*,Auto"
-              Padding="15"
-              BackgroundColor="Transparent"
+              Padding="0,10"
               VerticalOptions="Start">
-            <Label Text="SAHA System"
-                   FontSize="20"
-                   FontAttributes="Bold"
-                   TextColor="White"
-                   VerticalOptions="Center"
-                   HorizontalOptions="Start"/>
-            <Button Text="Logout"
-                    Style="{StaticResource PrimaryActionButtonStyle}"
-                    Clicked="OnLogoutClicked"
-                    VerticalOptions="Center"
-                    BackgroundColor="#D9534F"
-                    HorizontalOptions="End"/>
+            
+
         </Grid>
 
-        <!-- Main Content -->
+        <!-- Scrollable Content -->
         <ScrollView>
-            <VerticalStackLayout Padding="25,40"
-                                 Spacing="18"
-                                 VerticalOptions="CenterAndExpand"
+            <VerticalStackLayout Padding="20,30"
+                                 Spacing="20"
+                                 VerticalOptions="Start"
                                  HorizontalOptions="FillAndExpand"
-                                 MaximumWidthRequest="450">
+                                 MaximumWidthRequest="500">
+
                 <Label Text="Admin Dashboard"
                        Style="{StaticResource Headline}"/>
-                <Label Text="Welcome to the Admin Dashboard. Here you can manage users, view reports, and configure settings."
-                       FontSize="18"
+
+                <Label Text="Welcome to the Admin Dashbard. Here you can manage users, view reports, and configure settings."
+                       FontSize="16"
                        TextColor="White"
+                       HorizontalTextAlignment="Center"
                        HorizontalOptions="Center"/>
+
+                <!-- Optionally add more buttons or cards for admin actions -->
+
             </VerticalStackLayout>
         </ScrollView>
 

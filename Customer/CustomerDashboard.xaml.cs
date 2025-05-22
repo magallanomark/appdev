@@ -5,6 +5,7 @@ using Saha.Admin;
 using Saha.ViewModel;
 using Saha.Models;
 using Saha.Services;
+using System.Diagnostics;
 
 
 
@@ -190,14 +191,26 @@ namespace Saha.Customer
             {
                 UserId = UserSession.CurrentUserId,
                 ProgramId = _selectedProgram.Id,
-                Progess = 0,
+                Progress = 0,
                 Status = "Pending",
                 TransactionNumber = transactionNumber,
                 StartDate = selectedDate.ToString("MM/dd/yyyy"),
                 EndDate = selectedDate.AddDays(_selectedProgram.Duration).ToString("MM/dd/yyyy") // Assuming a 30-day program
             };
 
-            _dbService.AddUserProgram(userProgram);
+            var userProgramId = _dbService.AddUserProgram(userProgram);
+
+            Debug.WriteLine($"userProgramId = {userProgramId}");
+           // return;
+
+            // Generate daily sessions for the duration of the program
+            var sessionDates = Enumerable.Range(0, _selectedProgram.Duration)
+                .Select(offset => selectedDate.AddDays(offset))
+                .ToList();
+
+            _dbService.CreateInitialAttendance(userProgramId, sessionDates);
+
+
 
             // Example logic to store or show confirmation
             await DisplayAlert("Booking Confirmed",

@@ -441,7 +441,7 @@ target triple = "x86_64-unknown-linux-android21"
 		ptr @__compressedAssemblyData_83; uint8_t* data
 	}, ; 83: Xamarin.KotlinX.Serialization.Core.Jvm
 	%struct.CompressedAssemblyDescriptor {
-		i32 724480, ; uint32_t uncompressed_file_size
+		i32 708608, ; uint32_t uncompressed_file_size
 		i1 false, ; bool loaded
 		ptr @__compressedAssemblyData_84; uint8_t* data
 	}, ; 84: Saha
@@ -536,7 +536,7 @@ target triple = "x86_64-unknown-linux-android21"
 		ptr @__compressedAssemblyData_102; uint8_t* data
 	}, ; 102: System.Linq.Expressions
 	%struct.CompressedAssemblyDescriptor {
-		i32 40448, ; uint32_t uncompressed_file_size
+		i32 40960, ; uint32_t uncompressed_file_size
 		i1 false, ; bool loaded
 		ptr @__compressedAssemblyData_103; uint8_t* data
 	}, ; 103: System.Linq
@@ -801,7 +801,7 @@ target triple = "x86_64-unknown-linux-android21"
 @__compressedAssemblyData_81 = internal dso_local global [86016 x i8] zeroinitializer, align 16
 @__compressedAssemblyData_82 = internal dso_local global [18432 x i8] zeroinitializer, align 16
 @__compressedAssemblyData_83 = internal dso_local global [89600 x i8] zeroinitializer, align 16
-@__compressedAssemblyData_84 = internal dso_local global [724480 x i8] zeroinitializer, align 16
+@__compressedAssemblyData_84 = internal dso_local global [708608 x i8] zeroinitializer, align 16
 @__compressedAssemblyData_85 = internal dso_local global [24576 x i8] zeroinitializer, align 16
 @__compressedAssemblyData_86 = internal dso_local global [44032 x i8] zeroinitializer, align 16
 @__compressedAssemblyData_87 = internal dso_local global [15872 x i8] zeroinitializer, align 16
@@ -820,7 +820,7 @@ target triple = "x86_64-unknown-linux-android21"
 @__compressedAssemblyData_100 = internal dso_local global [27136 x i8] zeroinitializer, align 16
 @__compressedAssemblyData_101 = internal dso_local global [27136 x i8] zeroinitializer, align 16
 @__compressedAssemblyData_102 = internal dso_local global [355840 x i8] zeroinitializer, align 16
-@__compressedAssemblyData_103 = internal dso_local global [40448 x i8] zeroinitializer, align 16
+@__compressedAssemblyData_103 = internal dso_local global [40960 x i8] zeroinitializer, align 16
 @__compressedAssemblyData_104 = internal dso_local global [18944 x i8] zeroinitializer, align 16
 @__compressedAssemblyData_105 = internal dso_local global [128512 x i8] zeroinitializer, align 16
 @__compressedAssemblyData_106 = internal dso_local global [27136 x i8] zeroinitializer, align 16

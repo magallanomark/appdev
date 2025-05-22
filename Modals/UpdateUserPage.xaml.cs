@@ -12,30 +12,30 @@ namespace Saha.Modals
     public partial class UpdateUserPage : ContentPage
     {
 
-      private readonly SQLiteService _db;
-    private AcceptUsersViewModel _viewModel;
-    private UserModel _editingUser;
-    public UpdateUserPage(UserModel userModel,AcceptUsersViewModel viewModel)
-    {
-        InitializeComponent();
+        private readonly SQLiteService _db;
+        private AcceptUsersViewModel _viewModel;
+        private UserModel _editingUser;
+        public UpdateUserPage(UserModel userModel, AcceptUsersViewModel viewModel)
+        {
+            InitializeComponent();
 
             // Initialize the list of users
             // You can add some sample data here if needed
             // For example:
-        
-          _db = new SQLiteService(); 
 
-         _viewModel = viewModel;
-        _editingUser = userModel;
+            _db = new SQLiteService();
 
-        BindingContext = _editingUser;
-         //BindingContext = new AcceptUsersViewModel();
-    }
-    
-    private async void OnSaveClicked(object sender, EventArgs e)
-    {
+            _viewModel = viewModel;
+            _editingUser = userModel;
 
-             string name = Fullname.Text?.Trim() ?? string.Empty;
+            BindingContext = _editingUser;
+            //BindingContext = new AcceptUsersViewModel();
+        }
+
+        private async void OnSaveClicked(object sender, EventArgs e)
+        {
+
+            string name = Fullname.Text?.Trim() ?? string.Empty;
             string email = Email.Text?.Trim() ?? string.Empty;
             int age = Age.Text != null ? int.Parse(Age.Text) : 0;
             string gender = Gender.SelectedItem?.ToString() ?? string.Empty;
@@ -48,16 +48,16 @@ namespace Saha.Modals
                 string.IsNullOrWhiteSpace(email) ||
                 string.IsNullOrWhiteSpace(phoneNumber) ||
                 string.IsNullOrWhiteSpace(age.ToString()) ||
-                string.IsNullOrWhiteSpace(gender)||
-                string.IsNullOrWhiteSpace(fitnessGoal)||
-                string.IsNullOrWhiteSpace(medicalCondition) 
+                string.IsNullOrWhiteSpace(gender) ||
+                string.IsNullOrWhiteSpace(fitnessGoal) ||
+                string.IsNullOrWhiteSpace(medicalCondition)
                 )
-                {
+            {
                 await DisplayAlert("Error", "Please fill in all fields.", "OK");
                 return;
             }
 
-           UserModel user = new UserModel
+            UserModel user = new UserModel
             {
                 FullName = name,
                 Email = email,
@@ -65,21 +65,21 @@ namespace Saha.Modals
                 PhoneNumber = phoneNumber,
                 Age = age,
                 Gender = gender,
-                FitnessGoal = fitnessGoal,
+                Role = fitnessGoal,
                 MedicalCondition = medicalCondition
 
             };
 
-         _db.UpdateUser(user); // Make sure you have this in your SQLiteService
-        await DisplayAlert("Success", "User updated successfully", "OK");
-        await Navigation.PopAsync();
-    }
+            _db.UpdateUser(user); // Make sure you have this in your SQLiteService
+            await DisplayAlert("Success", "User updated successfully", "OK");
+            await Navigation.PopAsync();
+        }
 
 
-        
-        
 
-        
+
+
+
 
 
         public void OnDashboardClicked(object sender, EventArgs e)
@@ -106,6 +106,6 @@ namespace Saha.Modals
         {
             //await Navigation.PushAsync(new LoginPage());
         }
-       
+
     }
 }

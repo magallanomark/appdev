@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Saha.Trainor.TrainerAttendancePage"
+             Title="Trainer Attendance"
+             BackgroundColor="Black">
+
+    <ContentPage.Content>
+    <Grid RowDefinitions="*, Auto"
+          Padding="20"
+          RowSpacing="15">
+        <CollectionView ItemsSource="{Binding AttendanceRecords}"
+                        Grid.Row="0">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="10"
+                          ColumnSpacing="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Text="{Binding SessionDate, StringFormat='{}{0:MMM dd, yyyy}'}"
+                               Grid.Column="0"
+                               TextColor="White"/>
+
+                        <CheckBox IsChecked="{Binding IsPresent, Mode=TwoWay}"
+                                  Grid.Column="1"/>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Button Text="Save Attendance"
+                Grid.Row="1"
+                Command="{Binding SaveCommand}"
+                BackgroundColor="#0056b3"
+                TextColor="White"
+                CornerRadius="20"
+                HeightRequest="50"/>
+    </Grid>
+</ContentPage.Content>
+
+</ContentPage>

@@ -14,6 +14,8 @@ namespace Saha.ViewModel
 
         public ObservableCollection<UserProgram> UserPrograms { get; set; }
 
+        public ObservableCollection<UserProgram> MyPrograms { get; set; }
+
 
         public ICommand DeleteUserProgramCommand { get; set; }
 
@@ -22,11 +24,34 @@ namespace Saha.ViewModel
         {
             _dbService = new SQLiteService();
 
-            Programs = new ObservableCollection<ProgramModel>(_dbService.GetPrograms());
+            Programs = new ObservableCollection<ProgramModel>(_dbService.GetAvailableProgramsByCustomer(UserSession.CurrentUserId));
 
             UserPrograms = new ObservableCollection<UserProgram>(_dbService.GetUserProgramsByUserId(UserSession.CurrentUserId));
 
             DeleteUserProgramCommand = new Command<UserProgram>(OnDeleteUserProgram);
+
+            if (UserSession.CurrentUserId == 0) return; // or your default invalid ID check
+
+            foreach (var userProgram in _dbService.GetUserProgramsByUserId(UserSession.CurrentUserId))
+            {
+                var records = _dbService.GetAttendanceRecordsByUserProgramId(userProgram.Id);
+                int total = records.Count;
+                int presentCount = records.Count(r => r.IsPresent);
+                double Valprogress = total == 0 ? 0 : (double)presentCount / total;
+
+                //MyPrograms.Add(new UserProgram
+                //{
+                //    UserId = userProgram.UserId,
+                //    ProgramId = userProgram.ProgramId,
+                //    Progress = Valprogress,
+                //    Status = userProgram.Status,
+                //    TransactionNumber = userProgram.TransactionNumber,
+                //    StartDate = userProgram.StartDate,
+                //    EndDate = userProgram.EndDate
+                //});
+            }
+
+
 
 
         }
@@ -35,6 +60,8 @@ namespace Saha.ViewModel
         {
             if (userProgram == null) return;
 
+            // Delete attendance first
+            _dbService.DeleteAttendanceByUserProgramId(userProgram.Id);
             _dbService.DeleteUserProgram(userProgram);
             UserPrograms.Remove(userProgram);
 

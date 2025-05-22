@@ -1,301 +1,153 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
     x:Class="Saha.Modals.RequestUsers"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Name="RequestUsersPage"
+    Title="RequestUsersPage"
     BackgroundColor="Black">
 
-    <ContentPage.Resources>
-        <ResourceDictionary>
-
-            <LinearGradientBrush x:Key="PageGradientBackground"
-                                 StartPoint="0,0"
-                                 EndPoint="1,1">
-                <GradientStop Offset="0.1"
-                        Color="#00807E"/>
-                <GradientStop Offset="0.5"
-                        Color="#1A596E"/>
-                <GradientStop Offset="1.0"
-                        Color="#342758"/>
-            </LinearGradientBrush>
-
-            <Style x:Key="Headline"
-                    TargetType="Label">
-                <Setter Property="FontSize"
-                        Value="36"/>
-                <Setter Property="FontAttributes"
-                        Value="Bold"/>
-                <Setter Property="HorizontalOptions"
-                        Value="Center"/>
-                <Setter Property="TextColor"
-                        Value="White"/>
-                <Setter Property="Margin"
-                        Value="0,0,0,20"/>
-            </Style>
-
-            <Style x:Key="InputEntryBorderStyle"
-                    TargetType="Border">
-                <Setter Property="StrokeThickness"
-                        Value="1"/>
-                <Setter Property="Stroke"
-                        Value="#88FFFFFF"/>
-                <Setter Property="BackgroundColor"
-                        Value="#33FFFFFF"/>
-                <Setter Property="Padding"
-                        Value="12,8"/>
-                <Setter Property="Margin"
-                        Value="10,0"/>
-                <Setter Property="StrokeShape">
-                    <RoundRectangle CornerRadius="28"/>
-                </Setter>
-                <Setter Property="Shadow">
-                    <Setter.Value>
-                        <Shadow Brush="Black"
-                                Opacity="0.2"
-                                Radius="5"
-                                Offset="2,2"/>
-                    </Setter.Value>
-                </Setter>
-            </Style>
-
-            <Style x:Key="InputEntryStyle"
-                    TargetType="Entry">
-                <Setter Property="FontSize"
-                        Value="16"/>
-                <Setter Property="PlaceholderColor"
-                        Value="#A0FFFFFF"/>
-                <Setter Property="TextColor"
-                        Value="White"/>
-                <Setter Property="VerticalOptions"
-                        Value="Center"/>
-                <Setter Property="BackgroundColor"
-                        Value="Transparent"/>
-                <Setter Property="Margin"
-                        Value="0"/>
-                <Setter Property="HeightRequest"
-                        Value="30"/>
-            </Style>
-
-            <Style x:Key="PrimaryActionButtonStyle"
-                    TargetType="Button">
-                <Setter Property="FontSize"
-                        Value="18"/>
-                <Setter Property="FontAttributes"
-                        Value="Bold"/>
-                <Setter Property="TextColor"
-                        Value="White"/>
-                <Setter Property="Padding"
-                        Value="15"/>
-                <Setter Property="Margin"
-                        Value="12,20,12,12"/>
-                <Setter Property="HeightRequest"
-                        Value="55"/>
-                <Setter Property="CornerRadius"
-                        Value="28"/>
-                <Setter Property="Shadow">
-                    <Setter.Value>
-                        <Shadow Brush="Black"
-                                Opacity="0.5"
-                                Offset="4,4"/>
-                    </Setter.Value>
-                </Setter>
-                <Setter Property="BackgroundColor"
-                        Value="#0056b3"/>
-                <Setter Property="VisualStateManager.VisualStateGroups">
-                    <VisualStateGroupList>
-                        <VisualStateGroup x:Name="CommonStates">
-                            <VisualState x:Name="Normal"/>
-                            <VisualState x:Name="Pressed">
-                                <VisualState.Setters>
-                                    <Setter Property="BackgroundColor"
-                                            Value="#004085"/>
-                                    <Setter Property="Scale"
-                                            Value="0.98"/>
-                                </VisualState.Setters>
-                            </VisualState>
-                            <VisualState x:Name="Disabled">
-                                <VisualState.Setters>
-                                    <Setter Property="Background"
-                                            Value="#555555"/>
-                                    <Setter Property="Opacity"
-                                            Value="0.7"/>
-                                    <Setter Property="TextColor"
-                                            Value="#AAAAAA"/>
-                                </VisualState.Setters>
-                            </VisualState>
-                        </VisualStateGroup>
-                    </VisualStateGroupList>
-                </Setter>
-            </Style>
-
-            <Style x:Key="LinkTextStyle"
-                    TargetType="Label">
-                <Setter Property="TextColor"
-                        Value="#ADD8E6"/>
-                <Setter Property="HorizontalOptions"
-                        Value="Center"/>
-                <Setter Property="FontSize"
-                        Value="14"/>
-                <Setter Property="TextDecorations"
-                        Value="Underline"/>
-            </Style>
-
-            <Style x:Key="IconPathStyle"
-                    TargetType="Path">
-                <Setter Property="Fill"
-                        Value="White"/>
-                <Setter Property="VerticalOptions"
-                        Value="Center"/>
-                <Setter Property="HorizontalOptions"
-                        Value="Center"/>
-                <Setter Property="HeightRequest"
-                        Value="20"/>
-                <Setter Property="WidthRequest"
-                        Value="20"/>
-            </Style>
-
-        </ResourceDictionary>
-    </ContentPage.Resources>
-
     <ContentPage.Background>
-        <StaticResource Key="PageGradientBackground"/>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Offset="0.1" Color="#00807E" />
+            <GradientStop Offset="0.5" Color="#1A596E" />
+            <GradientStop Offset="1.0" Color="#342758" />
+        </LinearGradientBrush>
     </ContentPage.Background>
 
-    <ScrollView>
-        <VerticalStackLayout Padding="20"
-                Spacing="10">
+    <!-- Layout Grid with CollectionView and PopupOverlay -->
+    <Grid Margin="10">
 
-            <!-- Header -->
-            <Grid Padding="10"
-                  BackgroundColor="#333"
-                  ColumnDefinitions="2*,2*,2*,1*,1*,2*,2*,2*,Auto">
-                <Label FontAttributes="Bold"
-                        FontSize="12"
-                        Text="Name"
-                        TextColor="White"/>
-                <Label Grid.Column="1"
-                        FontAttributes="Bold"
-                        FontSize="12"
-                        Text="Email"
-                        TextColor="White"/>
-                <Label Grid.Column="2"
-                        FontAttributes="Bold"
-                        FontSize="12"
-                        Text="Phone"
-                        TextColor="White"/>
-                <Label Grid.Column="3"
-                        FontAttributes="Bold"
-                        FontSize="12"
-                        Text="Age"
-                        TextColor="White"/>
-                <Label Grid.Column="4"
-                        FontAttributes="Bold"
-                        FontSize="12"
-                        Text="Gender"
-                        TextColor="White"/>
-                <Label Grid.Column="5"
-                        FontAttributes="Bold"
-                        FontSize="12"
-                        Text="Goal"
-                        TextColor="White"/>
-                <Label Grid.Column="6"
-                        FontAttributes="Bold"
-                        FontSize="12"
-                        Text="Medical"
-                        TextColor="White"/>
-                <Label Grid.Column="7"
-                        FontAttributes="Bold"
-                        FontSize="12"
-                        Text="Role"
-                        TextColor="White"/>
-                <Label Grid.Column="8"
-                        FontAttributes="Bold"
-                        FontSize="12"
-                        Text="Action"
-                        TextColor="White"/>
-            </Grid>
+        <!-- Scrollable CollectionView only -->
+        <CollectionView ItemsSource="{Binding RequestUsers}"
+                Margin="0,10,0,30"
+                SelectionMode="None">
+    <CollectionView.ItemTemplate>
+        <DataTemplate>
+            <Frame Margin="5"
+                   Padding="15"
+                   CornerRadius="15"
+                   BackgroundColor="#1A1A2E"
+                   HasShadow="True"
+                   BorderColor="#2E3A59">
 
-            <!-- CollectionView -->
-            <CollectionView ItemsSource="{Binding RequestUsers}">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Grid Margin="0,1"
-                              Padding="10"
-                              BackgroundColor="#1A1A2E"
-                              ColumnDefinitions="2*,2*,2*,1*,1*,2*,2*,2*,2*">
+                <VerticalStackLayout Spacing="10">
 
-                            <Label FontSize="11"
-                                    Text="{Binding FullName}"
-                                    TextColor="White"/>
-                            <Label Grid.Column="1"
-                                    FontSize="11"
-                                    Text="{Binding Email}"
-                                    TextColor="White"/>
-                            <Label Grid.Column="2"
-                                    FontSize="11"
-                                    Text="{Binding PhoneNumber}"
-                                    TextColor="White"/>
-                            <Label Grid.Column="3"
-                                    FontSize="11"
-                                    Text="{Binding Age}"
-                                    TextColor="White"/>
-                            <Label Grid.Column="4"
-                                    FontSize="11"
-                                    Text="{Binding Gender}"
-                                    TextColor="White"/>
-                            <Label Grid.Column="5"
-                                    FontSize="11"
-                                    Text="{Binding FitnessGoal}"
-                                    TextColor="White"/>
-                            <Label Grid.Column="6"
-                                    FontSize="11"
-                                    Text="{Binding MedicalCondition}"
-                                    TextColor="White"/>
+                    <!-- Basic Info -->
+                    <HorizontalStackLayout Spacing="10">
+                        <Label Text="Name:" FontSize="10" TextColor="#AAAAAA" />
+                        <Label Text="{Binding FullName}" FontSize="10" TextColor="White" />
+                    </HorizontalStackLayout>
 
-                            <Border Grid.Column="7"
-                                    Margin="0,0,10,0">
-                                <Picker SelectedItem="{Binding Role}"
-                                        Style="{StaticResource InputEntryStyle}">
-                                    <Picker.Items>
-                                        <x:String>Admin</x:String>
-                                        <x:String>Customer</x:String>
-                                        <x:String>Trainer</x:String>
-                                    </Picker.Items>
-                                </Picker>
-                            </Border>
+                    <HorizontalStackLayout Spacing="10">
+                        <Label Text="Email:" FontSize="10" TextColor="#AAAAAA" />
+                        <Label Text="{Binding Email}" FontSize="10" TextColor="White" />
+                    </HorizontalStackLayout>
 
-                            <HorizontalStackLayout Grid.Column="8"
-                                                   HorizontalOptions="Fill"
-                                                   Spacing="5"
-                                                   VerticalOptions="Center">
-                                <Button Padding="6,4"
-                                        BackgroundColor="#007BFF"
-                                        Command="{Binding Source={x:Reference RequestUsersPage}, Path=BindingContext.AcceptCommand}"
-                                        CommandParameter="{Binding}"
-                                        CornerRadius="6"
-                                        FontSize="11"
-                                        HorizontalOptions="StartAndExpand"
-                                        Text="Accept"
-                                        TextColor="White"/>
+                    <HorizontalStackLayout Spacing="10">
+                        <Label Text="Phone:" FontSize="10" TextColor="#AAAAAA" />
+                        <Label Text="{Binding Phone}" FontSize="10" TextColor="White" />
+                    </HorizontalStackLayout>
 
-                                <Button Padding="6,4"
-                                        BackgroundColor="#D32F2F"
-                                        Command="{Binding Source={x:Reference RequestUsersPage}, Path=BindingContext.DeleteCommand}"
-                                        CommandParameter="{Binding}"
-                                        CornerRadius="6"
-                                        FontSize="11"
-                                        HorizontalOptions="StartAndExpand"
-                                        Text="Reject"
-                                        TextColor="White"/>
-                            </HorizontalStackLayout>
+                    <HorizontalStackLayout Spacing="10">
+                        <Label Text="Age:" FontSize="10" TextColor="#AAAAAA" />
+                        <Label Text="{Binding Age}" FontSize="10" TextColor="White" />
+                    </HorizontalStackLayout>
 
-                        </Grid>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
+                    <HorizontalStackLayout Spacing="10">
+                        <Label Text="Gender:" FontSize="10" TextColor="#AAAAAA" />
+                        <Label Text="{Binding Gender}" FontSize="10" TextColor="White" />
+                    </HorizontalStackLayout>
 
-        </VerticalStackLayout>
-    </ScrollView>
+                    <HorizontalStackLayout Spacing="10">
+                        <Label Text="Goal:" FontSize="10" TextColor="#AAAAAA" />
+                        <Label Text="{Binding Goal}" FontSize="10" TextColor="White" />
+                    </HorizontalStackLayout>
 
+                    <HorizontalStackLayout Spacing="10">
+                        <Label Text="Medical History:" FontSize="10" TextColor="#AAAAAA" />
+                        <Label Text="{Binding MedicalHistory}" FontSize="10" TextColor="White" />
+                    </HorizontalStackLayout>
+
+                    <!-- Role Picker -->
+                    <HorizontalStackLayout Spacing="10">
+                        <Label Text="Role:" FontSize="10" TextColor="#AAAAAA" />
+                        <Picker FontSize="10"
+                                TextColor="White"
+                                Title="Select Role"
+                                SelectedItem="{Binding Role, Mode=TwoWay}"
+                                BackgroundColor="#333333">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Customer</x:String>
+                                    <x:String>Admin</x:String>
+                                    <x:String>Trainer</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+                    </HorizontalStackLayout>
+
+                    <!-- Action Buttons -->
+                    <HorizontalStackLayout Spacing="10"
+                                           HorizontalOptions="CenterAndExpand">
+                        <Button Text="Accept"
+                                FontSize="9"
+                                Padding="30,4"
+                                BackgroundColor="#28A745"
+                                TextColor="White"
+                                CornerRadius="10"
+                                Command="{Binding Source={x:Reference RequestUsersPage}, Path=BindingContext.AcceptCommand}"
+                                CommandParameter="{Binding}" />
+
+                        <Button Text="Reject"
+                                FontSize="9"
+                                Padding="30,4"
+                                BackgroundColor="#DC3545"
+                                TextColor="White"
+                                CornerRadius="10"
+                                Command="{Binding Source={x:Reference RequestUsersPage}, Path=BindingContext.DeleteCommand}"
+                                CommandParameter="{Binding}" />
+                    </HorizontalStackLayout>
+
+                </VerticalStackLayout>
+            </Frame>
+        </DataTemplate>
+    </CollectionView.ItemTemplate>
+</CollectionView>
+
+
+        <!-- Popup Modal (overlayed, not scrollable) -->
+        <Grid x:Name="PopupOverlay"
+              IsVisible="False"
+              Padding="20"
+              ZIndex="9999"
+              BackgroundColor="#80000000">
+            <Frame BackgroundColor="White"
+                   CornerRadius="20"
+                   Padding="20"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   WidthRequest="350"
+                   HasShadow="True">
+                <ScrollView>
+                    <VerticalStackLayout Spacing="8">
+                        <Label x:Name="PopupTitle" FontSize="18" FontAttributes="Bold" TextColor="Black" HorizontalOptions="Center" />
+                        <Label x:Name="PopupEmail" FontSize="14" TextColor="Black" />
+                        <Label x:Name="PopupPhone" FontSize="14" TextColor="Black" />
+                        <Label x:Name="PopupAge" FontSize="14" TextColor="Black" />
+                        <Label x:Name="PopupGender" FontSize="14" TextColor="Black" />
+                        <Label x:Name="PopupGoal" FontSize="14" TextColor="Black" />
+                        <Label x:Name="PopupMedical" FontSize="14" TextColor="Black" />
+                        <Label x:Name="PopupRole" FontSize="14" TextColor="Black" />
+                        <Button Text="Close"
+                                BackgroundColor="#B0BEC5"
+                                TextColor="Black"
+                                CornerRadius="10"
+                                Margin="0,10,0,0"
+                                Clicked="ClosePopup" />
+                    </VerticalStackLayout>
+                </ScrollView>
+            </Frame>
+        </Grid>
+
+    </Grid>
 </ContentPage>

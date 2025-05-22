@@ -15,6 +15,8 @@ public partial class AppShell : Shell
 		this.Items.Clear();
 
 		// Common pages for all users
+		Routing.RegisterRoute(nameof(TrainerAttendancePage), typeof(TrainerAttendancePage));
+
 
 		if (UserSession.CurrentUserId == 0 || string.IsNullOrEmpty(role))
 		{
@@ -33,7 +35,7 @@ public partial class AppShell : Shell
 			{
 				Title = "Dashboard",
 				ContentTemplate = new DataTemplate(typeof(AdminDashboardPage)),
-				Icon = "home.png"
+				Icon = "icon_gym2.png"
 			});
 			Items.Add(new ShellContent
 			{
@@ -60,6 +62,28 @@ public partial class AppShell : Shell
 				Icon = "settings.png"
 			});
 
+			FlyoutFooter = new StackLayout
+			{
+				Padding = 10,
+				Children =
+				{
+					new Button
+					{
+						Text = "Logout",
+						BackgroundColor = Colors.Red,
+						TextColor = Colors.WhiteSmoke,
+						FontAttributes = FontAttributes.Bold,
+						BorderColor=Colors.LightGray,
+						Command = new Command(() =>
+						{
+							RoleSession.CurrentUserRole = null;
+							UserSession.CurrentUserId = 0;
+							Application.Current.MainPage = new AppShell("guest");
+						})
+					}
+				}
+			};
+
 		}
 		else if (role.ToLower() == "customer")
 		{
@@ -75,6 +99,27 @@ public partial class AppShell : Shell
 				ContentTemplate = new DataTemplate(typeof(CustomerProgram)),
 				Icon = "programs.png"
 			});
+			FlyoutFooter = new StackLayout
+			{
+				Padding = 10,
+				Children =
+				{
+					new Button
+					{
+						Text = "Logout",
+						BackgroundColor = Colors.Red,
+						TextColor = Colors.WhiteSmoke,
+						FontAttributes = FontAttributes.Bold,
+						BorderColor=Colors.LightGray,
+						Command = new Command(() =>
+						{
+							RoleSession.CurrentUserRole = null;
+							UserSession.CurrentUserId = 0;
+							Application.Current.MainPage = new AppShell("guest");
+						})
+					}
+				}
+			};
 
 		}
 		else if (role.ToLower() == "trainer")
@@ -91,6 +136,28 @@ public partial class AppShell : Shell
 				ContentTemplate = new DataTemplate(typeof(TrainorUserProgram)),
 				Icon = "home.png"
 			});
+
+			FlyoutFooter = new StackLayout
+			{
+				Padding = 10,
+				Children =
+				{
+					new Button
+					{
+						Text = "Logout",
+						BackgroundColor = Colors.Red,
+						TextColor = Colors.WhiteSmoke,
+						FontAttributes = FontAttributes.Bold,
+						BorderColor=Colors.LightGray,
+						Command = new Command(() =>
+						{
+							RoleSession.CurrentUserRole = null;
+							UserSession.CurrentUserId = 0;
+							Application.Current.MainPage = new AppShell("guest");
+						})
+					}
+				}
+			};
 		}
 
 		// Logout or settings page common to all

@@ -1,7 +1,8 @@
-using SQLite;
 using Saha.Models;
-using System.IO;
+using SQLite;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.IO;
 
 namespace Saha.Services
 {
@@ -25,7 +26,8 @@ namespace Saha.Services
                 _database.CreateTable<RequestUserModel>();
                 _database.CreateTable<ProgramModel>();
                 _database.CreateTable<UserProgram>();
-                _database.CreateTable<UserProgram>();
+                // _database.CreateTable<UserProgram>();
+                _database.CreateTable<AttendanceRecord>();
             }
         }
 
@@ -118,6 +120,26 @@ namespace Saha.Services
                 return _database.Table<ProgramModel>().ToList();
             }
         }
+
+        public List<ProgramModel> GetAvailableProgramsByCustomer(int userId)
+        {
+            lock (_lock)
+            {
+                // Get all programs
+                var allPrograms = _database.Table<ProgramModel>().ToList();
+
+                // Get only the ProgramIds already assigned to this specific user
+                var userProgramIds = _database.Table<UserProgram>()
+                                              .Where(up => up.UserId == userId)
+                                              .Select(up => up.ProgramId)
+                                              .Distinct()
+                                              .ToList();
+
+                // Return programs not yet assigned to the user
+                return allPrograms.Where(p => !userProgramIds.Contains(p.Id)).ToList();
+            }
+        }
+
         public void AddProgram(ProgramModel program)
         {
             lock (_lock)
@@ -155,7 +177,7 @@ namespace Saha.Services
             lock (_lock)
             {
                 return _database.Table<UserProgram>()
-                        .Where(p => p.Status == "Approved" || p.Status == "Rejected")
+                        .Where(p => p.Status == "Accepted" || p.Status == "Rejected")
                         .ToList();
             }
         }
@@ -240,13 +262,15 @@ namespace Saha.Services
             }
         }
 
-        public void AddUserProgram(UserProgram userProgram)
+        public int AddUserProgram(UserProgram userProgram)
         {
             lock (_lock)
             {
                 _database.Insert(userProgram);
+                return userProgram.Id; // This will now contain the auto-incremented ID
             }
         }
+
 
         public void DeleteUserProgram(UserProgram userProgram)
         {
@@ -276,6 +300,117 @@ namespace Saha.Services
         }
 
 
+
+        //Attendance
+        public void CreateInitialAttendance(int userProgramId, List<DateTime> sessionDates)
+        {
+            lock (_lock)
+            {
+                foreach (var date in sessionDates)
+                {
+                    var attendance = new AttendanceRecord
+                    {
+                        UserProgramId = userProgramId,
+                        SessionDate = date,
+                        IsPresent = false // default
+                    };
+
+                    _database.Insert(attendance);
+                }
+            }
+        }
+        public void DeleteAttendanceByUserProgramId(int userProgramId)
+        {
+            lock (_lock)
+            {
+                _database.Execute("DELETE FROM AttendanceRecord WHERE UserProgramId = ?", userProgramId);
+            }
+        }
+
+        public void UpdateAttendanceRecordPresence(AttendanceRecord record)
+        {
+            lock (_lock)
+            {
+                _database.Execute(
+                    "UPDATE AttendanceRecord SET IsPresent = ? WHERE Id = ?",
+                    record.IsPresent ? 1 : 0,
+                    record.Id
+                );
+            }
+        }
+
+
+        public List<AttendanceRecord> GetAttendanceRecordsByUserId(int userId)
+        {
+            lock (_lock)
+            {
+                // Step 1: Get all user program IDs for this user
+                var userProgramIds = _database.Table<UserProgram>()
+                                              .Where(up => up.UserId == userId)
+                                              .Select(up => up.Id)
+                                              .ToList();
+
+                // Step 2: Get all attendance records where UserProgramId matches
+                return _database.Table<AttendanceRecord>()
+                                .Where(ar => userProgramIds.Contains(ar.UserProgramId))
+                                .ToList();
+            }
+        }
+
+
+
+        public void UpdateAttendanceRecordPresence(int id, bool isPresent)
+        {
+            lock (_lock)
+            {
+                var record = _database.Table<AttendanceRecord>().FirstOrDefault(a => a.Id == id);
+                if (record != null)
+                {
+                    record.IsPresent = isPresent;
+                    _database.Update(record);
+                }
+            }
+        }
+
+
+        public ObservableCollection<AttendanceRecord> GetAttendanceRecordsByUserProgramId(int userProgramId)
+        {
+            lock (_lock)
+            {
+                var list = _database.Table<AttendanceRecord>()
+                                    .Where(a => a.UserProgramId == userProgramId)
+                                    .ToList();
+
+                return new ObservableCollection<AttendanceRecord>(list);
+            }
+        }
+
+
+        public void UpdateUserProgramProgress(int userProgramId, float newProgress)
+        {
+            lock (_lock)
+            {
+                var program = _database.Table<UserProgram>().FirstOrDefault(up => up.Id == userProgramId);
+                if (program != null)
+                {
+                    program.Progress = newProgress; // Note: double-check your spelling if it's really "Progess"
+                    _database.Update(program);
+                }
+            }
+        }
+
+
+
+
+        //public List<AttendanceRecord> GetAttendanceRecordsByUserProgramId(int userProgramId)
+        //{
+        //    lock (_lock)
+        //    {
+        //        return _database.Table<AttendanceRecord>()
+        //                        .Where(a => a.UserProgramId == userProgramId)
+        //                        .ToList();
+        //    }
+        //}
 
 
 

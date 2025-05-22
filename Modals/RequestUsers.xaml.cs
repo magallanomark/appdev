@@ -23,10 +23,31 @@ namespace Saha.Modals
          BindingContext = new RequestUsersViewModel();
     }
 
-        
-        
 
-        
+        private void OnUserTapped(object sender, EventArgs e)
+        {
+            if (sender is Grid grid && grid.BindingContext is RequestUserModel user)
+            {
+                PopupTitle.Text = user.FullName;
+                PopupEmail.Text = $"Email: {user.Email}";
+                PopupPhone.Text = $"Phone: {user.PhoneNumber}";
+                PopupAge.Text = $"Age: {user.Age}";
+                PopupGender.Text = $"Gender: {user.Gender}";
+                PopupGoal.Text = $"Goal: {user.FitnessGoal}";
+                PopupMedical.Text = $"Medical: {user.MedicalCondition}";
+                PopupRole.Text = $"Role: {user.Role}";
+                PopupOverlay.IsVisible = true;
+            }
+        }
+
+        private void ClosePopup(object sender, EventArgs e)
+        {
+            PopupOverlay.IsVisible = false;
+        }
+
+
+
+
 
 
         public void OnDashboardClicked(object sender, EventArgs e)

@@ -1,11 +1,11 @@
-using System;
-using System.Collections.Generic;
 using Saha.Admin;
 using Saha.Models;
-using System.Diagnostics;
-using System.Collections.ObjectModel;
-using Saha.ViewModel;
 using Saha.Services;
+using Saha.ViewModel;
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
 
 namespace Saha.Modals
 {
@@ -48,7 +48,13 @@ namespace Saha.Modals
 
             // For DatePicker, get Date and convert to string if needed
 
-            int duration = DurationEntry.Text != null ? int.Parse(DurationEntry.Text) : 0;
+
+            if (DurationEntry.Text.All(char.IsLetter)) {
+                await DisplayAlert("Error", "Please input valid values.", "OK");
+                return;
+            }
+
+                int duration = DurationEntry.Text != null ? int.Parse(DurationEntry.Text) : 0;
 
             // For price Entry, still get Text (numeric string)
             string programPrice = PriceEntry.Text?.Trim() ?? string.Empty;

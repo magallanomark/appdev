@@ -43,7 +43,7 @@ namespace Saha.Admin
             RoleSession.CurrentUserRole = null;
             UserSession.CurrentUserId = 0;
             Application.Current.MainPage = new AppShell("guest");
-            await Navigation.PushAsync(new GuestViewPage());
+            //await Navigation.PushAsync(new GuestViewPage());
         }
 
 

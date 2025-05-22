@@ -12,7 +12,7 @@ namespace Saha.Models
         public int ProgramId { get; set; }
         // public string Status { get; set; }
 
-        public int Progess { get; set; }
+        public double Progress { get; set; } // NOT Progess
 
 
         public string Status { get; set; }

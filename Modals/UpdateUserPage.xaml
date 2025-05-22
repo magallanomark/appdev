@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Name="RequestUsersPage" 
-             x:Class="Saha.Modals.UpdateUserPage" 
+             x:Name="RequestUsersPage"
+             x:Class="Saha.Modals.UpdateUserPage"
              BackgroundColor="Black">
     <!-- 
         Ensure x:Class="Saha.LoginPage" correctly matches your namespace and class name.
@@ -14,81 +14,137 @@
         <ResourceDictionary>
 
             <!-- Gradient Background from MainPage.xaml -->
-            <LinearGradientBrush x:Key="PageGradientBackground" StartPoint="0,0" EndPoint="1,1">
-                <GradientStop Color="#00807E" Offset="0.1"/>
-                <GradientStop Color="#1A596E" Offset="0.5"/>
-                <GradientStop Color="#342758" Offset="1.0"/>
+            <LinearGradientBrush x:Key="PageGradientBackground"
+                                 StartPoint="0,0"
+                                 EndPoint="1,1">
+                <GradientStop Color="#00807E"
+                              Offset="0.1"/>
+                <GradientStop Color="#1A596E"
+                              Offset="0.5"/>
+                <GradientStop Color="#342758"
+                              Offset="1.0"/>
             </LinearGradientBrush>
 
             <!-- Headline Style - Colors adapted from MainPage -->
-            <Style x:Key="Headline" TargetType="Label">
-                <Setter Property="FontSize" Value="36"/>
-                <Setter Property="FontAttributes" Value="Bold"/>
-                <Setter Property="HorizontalOptions" Value="Center"/>
-                <Setter Property="TextColor" Value="White"/> <!-- MainPage Headline TextColor -->
-                <Setter Property="Margin" Value="0,0,0,20"/>
+            <Style x:Key="Headline"
+                   TargetType="Label">
+                <Setter Property="FontSize"
+                        Value="36"/>
+                <Setter Property="FontAttributes"
+                        Value="Bold"/>
+                <Setter Property="HorizontalOptions"
+                        Value="Center"/>
+                <Setter Property="TextColor"
+                        Value="White"/>
+                <!-- MainPage Headline TextColor -->
+                <Setter Property="Margin"
+                        Value="0,0,0,20"/>
             </Style>
 
             <!-- Input Entry Border Style - Colors adapted for dark theme -->
-            <Style x:Key="InputEntryBorderStyle" TargetType="Border">
-                <Setter Property="StrokeThickness" Value="1"/>
-                <Setter Property="Stroke" Value="#88FFFFFF"/> <!-- Semi-transparent white border -->
-                <Setter Property="BackgroundColor" Value="#33FFFFFF"/> <!-- Semi-transparent white background for field -->
-                <Setter Property="Padding" Value="12,8"/>
-                <Setter Property="Margin" Value="10,0"/>
+            <Style x:Key="InputEntryBorderStyle"
+                   TargetType="Border">
+                <Setter Property="StrokeThickness"
+                        Value="1"/>
+                <Setter Property="Stroke"
+                        Value="#88FFFFFF"/>
+                <!-- Semi-transparent white border -->
+                <Setter Property="BackgroundColor"
+                        Value="#33FFFFFF"/>
+                <!-- Semi-transparent white background for field -->
+                <Setter Property="Padding"
+                        Value="12,8"/>
+                <Setter Property="Margin"
+                        Value="10,0"/>
                 <Setter Property="StrokeShape">
                     <RoundRectangle CornerRadius="28"/>
                 </Setter>
-                <Setter Property="Shadow"> <!-- Keeping original shadow, can be tweaked if needed -->
+                <Setter Property="Shadow">
+                    <!-- Keeping original shadow, can be tweaked if needed -->
                     <Setter.Value>
-                        <Shadow Brush="Black" Opacity="0.2" Offset="2,2" Radius="5"/>
+                        <Shadow Brush="Black"
+                                Opacity="0.2"
+                                Offset="2,2"
+                                Radius="5"/>
                     </Setter.Value>
                 </Setter>
             </Style>
 
             <!-- Input Entry Style (for the Entry control itself) - Colors adapted for dark theme -->
-            <Style x:Key="InputEntryStyle" TargetType="Entry">
-                <Setter Property="FontSize" Value="16"/>
-                <Setter Property="PlaceholderColor" Value="#A0FFFFFF"/> <!-- Lighter placeholder for dark background -->
-                <Setter Property="TextColor" Value="White"/> <!-- Input text color -->
-                <Setter Property="VerticalOptions" Value="Center"/>
-                <Setter Property="BackgroundColor" Value="Transparent"/> <!-- Entry itself is transparent -->
-                <Setter Property="Margin" Value="0"/>
-                <Setter Property="HeightRequest" Value="30"/>
+            <Style x:Key="InputEntryStyle"
+                   TargetType="Entry">
+                <Setter Property="FontSize"
+                        Value="16"/>
+                <Setter Property="PlaceholderColor"
+                        Value="#A0FFFFFF"/>
+                <!-- Lighter placeholder for dark background -->
+                <Setter Property="TextColor"
+                        Value="White"/>
+                <!-- Input text color -->
+                <Setter Property="VerticalOptions"
+                        Value="Center"/>
+                <Setter Property="BackgroundColor"
+                        Value="Transparent"/>
+                <!-- Entry itself is transparent -->
+                <Setter Property="Margin"
+                        Value="0"/>
+                <Setter Property="HeightRequest"
+                        Value="30"/>
             </Style>
 
             <!-- Primary Action Button Style - Adapted from MainPage's blue "Log In" button -->
-            <Style x:Key="PrimaryActionButtonStyle" TargetType="Button">
-                <Setter Property="FontSize" Value="18"/>
-                <Setter Property="FontAttributes" Value="Bold"/>
-                <Setter Property="TextColor" Value="White"/>
-                <Setter Property="Padding" Value="15"/>
-                <Setter Property="Margin" Value="12,20,12,12"/>
-                <Setter Property="HeightRequest" Value="55"/>
-                <Setter Property="CornerRadius" Value="28"/>
-                <Setter Property="Shadow"> <!-- Shadow from MainPage's CustomButtonStyle (can be adjusted) -->
+            <Style x:Key="PrimaryActionButtonStyle"
+                   TargetType="Button">
+                <Setter Property="FontSize"
+                        Value="18"/>
+                <Setter Property="FontAttributes"
+                        Value="Bold"/>
+                <Setter Property="TextColor"
+                        Value="White"/>
+                <Setter Property="Padding"
+                        Value="15"/>
+                <Setter Property="Margin"
+                        Value="12,20,12,12"/>
+                <Setter Property="HeightRequest"
+                        Value="55"/>
+                <Setter Property="CornerRadius"
+                        Value="28"/>
+                <Setter Property="Shadow">
+                    <!-- Shadow from MainPage's CustomButtonStyle (can be adjusted) -->
                     <Setter.Value>
-                        <Shadow Brush="Black" Opacity="0.5" Offset="4,4"/>
+                        <Shadow Brush="Black"
+                                Opacity="0.5"
+                                Offset="4,4"/>
                     </Setter.Value>
                 </Setter>
-                <Setter Property="BackgroundColor" Value="#0056b3"/> <!-- Blue from MainPage's Log In button -->
+                <Setter Property="BackgroundColor"
+                        Value="#0056b3"/>
+                <!-- Blue from MainPage's Log In button -->
                 <!-- <Setter Property="BorderColor" Value="White"/> Optional, if you want a white border like MainPage buttons -->
                 <!-- <Setter Property="BorderWidth" Value="2"/> -->
                 <Setter Property="VisualStateManager.VisualStateGroups">
                     <VisualStateGroupList>
                         <VisualStateGroup x:Name="CommonStates">
-                            <VisualState x:Name="Normal" />
+                            <VisualState x:Name="Normal"/>
                             <VisualState x:Name="Pressed">
                                 <VisualState.Setters>
-                                    <Setter Property="BackgroundColor" Value="#004085"/> <!-- Darker blue for pressed -->
-                                    <Setter Property="Scale" Value="0.98" />
+                                    <Setter Property="BackgroundColor"
+                                            Value="#004085"/>
+                                    <!-- Darker blue for pressed -->
+                                    <Setter Property="Scale"
+                                            Value="0.98"/>
                                 </VisualState.Setters>
                             </VisualState>
                             <VisualState x:Name="Disabled">
                                 <VisualState.Setters>
-                                    <Setter Property="Background" Value="#555555"/> <!-- Dark gray for disabled -->
-                                    <Setter Property="Opacity" Value="0.7"/>
-                                    <Setter Property="TextColor" Value="#AAAAAA"/> <!-- Light gray text for disabled -->
+                                    <Setter Property="Background"
+                                            Value="#555555"/>
+                                    <!-- Dark gray for disabled -->
+                                    <Setter Property="Opacity"
+                                            Value="0.7"/>
+                                    <Setter Property="TextColor"
+                                            Value="#AAAAAA"/>
+                                    <!-- Light gray text for disabled -->
                                 </VisualState.Setters>
                             </VisualState>
                         </VisualStateGroup>
@@ -97,20 +153,33 @@
             </Style>
 
             <!-- Link Text Style - Color adapted for dark theme -->
-            <Style x:Key="LinkTextStyle" TargetType="Label">
-                <Setter Property="TextColor" Value="#ADD8E6"/> <!-- Light blue, common for links on dark -->
-                <Setter Property="HorizontalOptions" Value="Center"/>
-                <Setter Property="FontSize" Value="14"/>
-                <Setter Property="TextDecorations" Value="Underline"/>
+            <Style x:Key="LinkTextStyle"
+                   TargetType="Label">
+                <Setter Property="TextColor"
+                        Value="#ADD8E6"/>
+                <!-- Light blue, common for links on dark -->
+                <Setter Property="HorizontalOptions"
+                        Value="Center"/>
+                <Setter Property="FontSize"
+                        Value="14"/>
+                <Setter Property="TextDecorations"
+                        Value="Underline"/>
             </Style>
 
             <!-- Icon Style for Path - Color adapted for dark theme -->
-            <Style x:Key="IconPathStyle" TargetType="Path">
-                <Setter Property="Fill" Value="White"/> <!-- White icons for visibility -->
-                <Setter Property="VerticalOptions" Value="Center"/>
-                <Setter Property="HorizontalOptions" Value="Center"/>
-                <Setter Property="HeightRequest" Value="20"/>
-                <Setter Property="WidthRequest" Value="20"/>
+            <Style x:Key="IconPathStyle"
+                   TargetType="Path">
+                <Setter Property="Fill"
+                        Value="White"/>
+                <!-- White icons for visibility -->
+                <Setter Property="VerticalOptions"
+                        Value="Center"/>
+                <Setter Property="HorizontalOptions"
+                        Value="Center"/>
+                <Setter Property="HeightRequest"
+                        Value="20"/>
+                <Setter Property="WidthRequest"
+                        Value="20"/>
             </Style>
 
         </ResourceDictionary>
@@ -121,33 +190,49 @@
         <StaticResource Key="PageGradientBackground"/>
     </ContentPage.Background>
     <ScrollView>
-        <VerticalStackLayout Padding="20" Spacing="20">
+        <VerticalStackLayout Padding="20"
+                             Spacing="20">
 
-            <Label Text="Edit User Info" Style="{StaticResource Headline}" />
+            <Label Text="Edit User Info"
+                   Style="{StaticResource Headline}"/>
 
             <!-- Full Name -->
             <Border Style="{StaticResource InputEntryBorderStyle}">
-                <Entry x:Name="Fullname" Text="{Binding FullName}"  Placeholder="Full Name" Style="{StaticResource InputEntryStyle}" />
+                <Entry x:Name="Fullname"
+                       Text="{Binding FullName}"
+                       Placeholder="Full Name"
+                       Style="{StaticResource InputEntryStyle}"/>
             </Border>
 
             <!-- Email -->
             <Border Style="{StaticResource InputEntryBorderStyle}">
-                <Entry x:Name="Email" Text="{Binding Email}" Placeholder="Email" Style="{StaticResource InputEntryStyle}" />
+                <Entry x:Name="Email"
+                       Text="{Binding Email}"
+                       Placeholder="Email"
+                       Style="{StaticResource InputEntryStyle}"/>
             </Border>
 
             <!-- Phone Number -->
             <Border Style="{StaticResource InputEntryBorderStyle}">
-                <Entry x:Name="PhoneNumber"  Text="{Binding PhoneNumber}" Placeholder="Phone Number" Style="{StaticResource InputEntryStyle}" />
+                <Entry x:Name="PhoneNumber"
+                       Text="{Binding PhoneNumber}"
+                       Placeholder="Phone Number"
+                       Style="{StaticResource InputEntryStyle}"/>
             </Border>
 
             <!-- Age -->
             <Border Style="{StaticResource InputEntryBorderStyle}">
-                <Entry x:Name="Age"  Text="{Binding Age}" Placeholder="Age" Keyboard="Numeric" Style="{StaticResource InputEntryStyle}" />
+                <Entry x:Name="Age"
+                       Text="{Binding Age}"
+                       Placeholder="Age"
+                       Keyboard="Numeric"
+                       Style="{StaticResource InputEntryStyle}"/>
             </Border>
 
-             <!-- Gender Selection -->
+            <!-- Gender Selection -->
             <Border Style="{StaticResource InputEntryBorderStyle}">
-                <Picker x:Name="Gender"  Style="{StaticResource InputEntryStyle}">
+                <Picker x:Name="Gender"
+                        Style="{StaticResource InputEntryStyle}">
                     <Picker.Items>
                         <x:String>Male</x:String>
                         <x:String>Female</x:String>
@@ -157,27 +242,30 @@
             </Border>
 
 
-             <!-- Fitness Goal Selection -->
+            <!-- Fitness Goal Selection -->
             <Border Style="{StaticResource InputEntryBorderStyle}">
-                <Picker x:Name="FitnessGoal" Style="{StaticResource InputEntryStyle}">
+                <Picker x:Name="FitnessGoal"
+                        Style="{StaticResource InputEntryStyle}">
                     <Picker.Items>
-                        <x:String>Lose Weight</x:String>
-                        <x:String>Build Muscle</x:String>
-                        <x:String>Increase Strength</x:String>
-                        <x:String>General Fitness</x:String>
+                        <x:String>Admin</x:String>
+                        <x:String>Customer</x:String>
+                        <x:String>Trainer</x:String>
                     </Picker.Items>
                 </Picker>
             </Border>
 
             <!-- Medical Condition -->
             <Border Style="{StaticResource InputEntryBorderStyle}">
-                <Entry x:Name="MedicalCondition"  Text="{Binding MedicalCondition}" Placeholder="Medical Condition" Style="{StaticResource InputEntryStyle}" />
+                <Entry x:Name="MedicalCondition"
+                       Text="{Binding MedicalCondition}"
+                       Placeholder="Medical Condition"
+                       Style="{StaticResource InputEntryStyle}"/>
             </Border>
 
             <!-- Save Button -->
             <Button Text="Save Changes"
                     Style="{StaticResource PrimaryActionButtonStyle}"
-                    Clicked="OnSaveClicked" />
+                    Clicked="OnSaveClicked"/>
 
         </VerticalStackLayout>
     </ScrollView>

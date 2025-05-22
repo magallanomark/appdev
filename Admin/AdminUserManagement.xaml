@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Saha"
              x:Class="Saha.Admin.AdminUserManagement"
-             x:DataType="local:Admin.AdminUserManagement"
              BackgroundColor="Black">
     <!-- 
         Ensure x:Class="Saha.LoginPage" correctly matches your namespace and class name.
@@ -97,27 +96,20 @@
             <Style x:Key="PrimaryActionButtonStyle"
                    TargetType="Button">
                 <Setter Property="FontSize"
-                        Value="18"/>
+                        Value="11"/>
                 <Setter Property="FontAttributes"
-                        Value="Bold"/>
+                        Value="None"/>
                 <Setter Property="TextColor"
                         Value="White"/>
                 <Setter Property="Padding"
-                        Value="15"/>
+                        Value="10"/>
                 <Setter Property="Margin"
                         Value="12,20,12,12"/>
                 <Setter Property="HeightRequest"
-                        Value="55"/>
+                        Value="30"/>
                 <Setter Property="CornerRadius"
-                        Value="28"/>
-                <Setter Property="Shadow">
-                    <!-- Shadow from MainPage's CustomButtonStyle (can be adjusted) -->
-                    <Setter.Value>
-                        <Shadow Brush="Black"
-                                Opacity="0.5"
-                                Offset="4,4"/>
-                    </Setter.Value>
-                </Setter>
+                        Value="5"/>
+                
                 <Setter Property="BackgroundColor"
                         Value="#0056b3"/>
                 <!-- Blue from MainPage's Log In button -->
@@ -199,18 +191,8 @@
               Padding="15"
               BackgroundColor="Transparent"
               VerticalOptions="Start">
-            <Label Text="SAHA System"
-                   FontSize="20"
-                   FontAttributes="Bold"
-                   TextColor="White"
-                   VerticalOptions="Center"
-                   HorizontalOptions="Start"/>
-            <Button Text="Logout"
-                    Style="{StaticResource PrimaryActionButtonStyle}"
-                    Clicked="OnLogoutClicked"
-                    VerticalOptions="Center"
-                    BackgroundColor="#D9534F"
-                    HorizontalOptions="End"/>
+            
+            
         </Grid>
 
         <!-- Main Content Area -->
@@ -225,39 +207,49 @@
                       ColumnSpacing="10">
 
                     <!-- Card for Request -->
-                    <Frame CornerRadius="15"
+                    <Frame CornerRadius="10"
                            Padding="20"
                            Margin="0,10"
                            HasShadow="True"
+                           BorderColor="#116673"
+                           VerticalOptions="Center"
                            BackgroundColor="#1A596E"
                            Grid.Column="0">
                         <StackLayout>
                             <Label Text="Request"
                                    TextColor="White"
-                                   FontSize="22"
+                                   FontSize="15"
                                    HorizontalOptions="Center"/>
-                            <Button Text="View Requests"
+                            <Button Text="View"
+                                    Margin="0,10,0,0"
+                                    FontSize="11"
                                     TextColor="White"
+                                    CornerRadius="5"
                                     BackgroundColor="#0056b3"
                                     Clicked="OnViewRequestsClicked"/>
                         </StackLayout>
                     </Frame>
 
                     <!-- Card for Add -->
-                    <Frame CornerRadius="15"
+                    <Frame CornerRadius="10"
                            Padding="20"
                            Margin="0,10"
                            HasShadow="True"
-                           BackgroundColor="#00807E"
+                            BorderColor="#116673"
+                           VerticalOptions="Center"
+                           BackgroundColor="#1a596e"
                            Grid.Column="1">
                         <StackLayout>
-                            <Label Text="VIew Users"
+                            <Label Text="Users"
                                    TextColor="White"
-                                   FontSize="22"
+                                   FontSize="15"
                                    HorizontalOptions="Center"/>
                             <Button Text="View"
+                                    Margin="0,10,0,0"
+                                    FontSize="11"
+                                    CornerRadius="5"
                                     TextColor="White"
-                                    BackgroundColor="#0056b3"
+                                    BackgroundColor="#ffb827"
                                     Clicked="OnViewUserClicked"/>
                         </StackLayout>
                     </Frame>

@@ -1,7 +1,196 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\MobileApp\\Maui\\Saha\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|d:\\mobileapp\\maui\\saha\\customer\\customerprogram.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|solutionrelative:customer\\customerprogram.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|d:\\mobileapp\\maui\\saha\\trainor\\trainerattendancepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|solutionrelative:trainor\\trainerattendancepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|d:\\mobileapp\\maui\\saha\\customer\\customerdashboard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|solutionrelative:customer\\customerdashboard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|d:\\mobileapp\\maui\\saha\\models\\userprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|solutionrelative:models\\userprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|d:\\mobileapp\\maui\\saha\\models\\attendancerecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|solutionrelative:models\\attendancerecord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|d:\\mobileapp\\maui\\saha\\customer\\customerprogram.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|solutionrelative:customer\\customerprogram.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|d:\\mobileapp\\maui\\saha\\viewmodel\\customerviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|solutionrelative:viewmodel\\customerviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|d:\\mobileapp\\maui\\saha\\customer\\customerdashboard.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|solutionrelative:customer\\customerdashboard.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|d:\\mobileapp\\maui\\saha\\viewmodel\\trainordashboardviewmodel .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|solutionrelative:viewmodel\\trainordashboardviewmodel .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\MobileApp\\Maui\\Saha\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\Platforms\\Windows\\App.g.i.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\Platforms\\Windows\\App.g.i.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|d:\\mobileapp\\maui\\saha\\services\\sqliteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|solutionrelative:services\\sqliteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|d:\\mobileapp\\maui\\saha\\trainor\\trainoruserprogram.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|solutionrelative:trainor\\trainoruserprogram.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|d:\\mobileapp\\maui\\saha\\models\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|solutionrelative:models\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|d:\\mobileapp\\maui\\saha\\services\\usersession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|solutionrelative:services\\usersession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|d:\\mobileapp\\maui\\saha\\services\\rolesession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|solutionrelative:services\\rolesession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|d:\\mobileapp\\maui\\saha\\services\\userstore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|solutionrelative:services\\userstore.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|d:\\mobileapp\\maui\\saha\\trainor\\trainerattendancepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|solutionrelative:trainor\\trainerattendancepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|d:\\mobileapp\\maui\\saha\\models\\programmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|solutionrelative:models\\programmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|d:\\mobileapp\\maui\\saha\\trainor\\trainoruserprogram.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|solutionrelative:trainor\\trainoruserprogram.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|d:\\mobileapp\\maui\\saha\\trainor\\trainordashboard.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|solutionrelative:trainor\\trainordashboard.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|d:\\mobileapp\\maui\\saha\\trainor\\trainordashboard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|solutionrelative:trainor\\trainordashboard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|d:\\mobileapp\\maui\\saha\\models\\requestusermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|solutionrelative:models\\requestusermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|d:\\mobileapp\\maui\\saha\\modals\\updateuserpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|solutionrelative:modals\\updateuserpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|d:\\mobileapp\\maui\\saha\\models\\programwithtrainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|solutionrelative:models\\programwithtrainer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|d:\\mobileapp\\maui\\saha\\appshell.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|solutionrelative:appshell.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|d:\\mobileapp\\maui\\saha\\admin\\adminprogram.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|solutionrelative:admin\\adminprogram.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|d:\\mobileapp\\maui\\saha\\modals\\requestusers.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|solutionrelative:modals\\requestusers.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|d:\\mobileapp\\maui\\saha\\modals\\requestusers.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|solutionrelative:modals\\requestusers.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|d:\\mobileapp\\maui\\saha\\viewmodel\\programviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|solutionrelative:viewmodel\\programviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|d:\\mobileapp\\maui\\saha\\admin\\adminuserprogram.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|solutionrelative:admin\\adminuserprogram.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|d:\\mobileapp\\maui\\saha\\admin\\adminuserprogramreviewed.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|solutionrelative:admin\\adminuserprogramreviewed.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|d:\\mobileapp\\maui\\saha\\admin\\adminuserprogramreviewed.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|solutionrelative:admin\\adminuserprogramreviewed.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|d:\\mobileapp\\maui\\saha\\modals\\programdetailspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|solutionrelative:modals\\programdetailspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|d:\\mobileapp\\maui\\saha\\admin\\adminuserprogram.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|solutionrelative:admin\\adminuserprogram.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|d:\\mobileapp\\maui\\saha\\admin\\adminusermanagement.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|solutionrelative:admin\\adminusermanagement.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|d:\\mobileapp\\maui\\saha\\admin\\admindashboardpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|solutionrelative:admin\\admindashboardpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|d:\\mobileapp\\maui\\saha\\logout.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|solutionrelative:logout.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|d:\\mobileapp\\maui\\saha\\loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|solutionrelative:loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|d:\\mobileapp\\maui\\saha\\admin\\adminprogram.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|solutionrelative:admin\\adminprogram.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|d:\\mobileapp\\maui\\saha\\admin\\adminusermanagement.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|solutionrelative:admin\\adminusermanagement.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|d:\\mobileapp\\maui\\saha\\logout.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|solutionrelative:logout.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|d:\\mobileapp\\maui\\saha\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|d:\\mobileapp\\maui\\saha\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|solutionrelative:appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|d:\\mobileapp\\maui\\saha\\modals\\viewuserpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|solutionrelative:modals\\viewuserpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|d:\\mobileapp\\maui\\saha\\modals\\addprogram.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|solutionrelative:modals\\addprogram.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|d:\\mobileapp\\maui\\saha\\guestviewpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|solutionrelative:guestviewpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|d:\\mobileapp\\maui\\saha\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{D78100A3-F98B-2EB9-CD93-B7F8778AF31F}|Saha.csproj|solutionrelative:loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +198,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -18,6 +207,595 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserProgram.cs",
+              "DocumentMoniker": "D:\\MobileApp\\Maui\\Saha\\Models\\UserProgram.cs",
+              "RelativeDocumentMoniker": "Models\\UserProgram.cs",
+              "ToolTip": "D:\\MobileApp\\Maui\\Saha\\Models\\UserProgram.cs",
+              "RelativeToolTip": "Models\\UserProgram.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T23:55:25.887Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TrainerAttendancePage.xaml.cs",
+              "DocumentMoniker": "D:\\MobileApp\\Maui\\Saha\\Trainor\\TrainerAttendancePage.xaml.cs",
+              "RelativeDocumentMoniker": "Trainor\\TrainerAttendancePage.xaml.cs",
+              "ToolTip": "D:\\MobileApp\\Maui\\Saha\\Trainor\\TrainerAttendancePage.xaml.cs",
+              "RelativeToolTip": "Trainor\\TrainerAttendancePage.xaml.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACEAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T06:06:30.7Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CustomerProgram.xaml",
+              "DocumentMoniker": "D:\\MobileApp\\Maui\\Saha\\Customer\\CustomerProgram.xaml",
+              "RelativeDocumentMoniker": "Customer\\CustomerProgram.xaml",
+              "ToolTip": "D:\\MobileApp\\Maui\\Saha\\Customer\\CustomerProgram.xaml",
+              "RelativeToolTip": "Customer\\CustomerProgram.xaml",
+              "ViewState": "AgIAABsBAAAAAAAAAAAqwB0BAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-21T18:18:47.364Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CustomerDashboard.xaml",
+              "DocumentMoniker": "D:\\MobileApp\\Maui\\Saha\\Customer\\CustomerDashboard.xaml",
+              "RelativeDocumentMoniker": "Customer\\CustomerDashboard.xaml",
+              "ToolTip": "D:\\MobileApp\\Maui\\Saha\\Customer\\CustomerDashboard.xaml",
+              "RelativeToolTip": "Customer\\CustomerDashboard.xaml",
+              "ViewState": "AgIAAEQBAAAAAAAAAAAAAJwBAABcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-21T18:19:07.347Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AttendanceRecord.cs",
+              "DocumentMoniker": "D:\\MobileApp\\Maui\\Saha\\Models\\AttendanceRecord.cs",
+              "RelativeDocumentMoniker": "Models\\AttendanceRecord.cs",
+              "ToolTip": "D:\\MobileApp\\Maui\\Saha\\Models\\AttendanceRecord.cs",
+              "RelativeToolTip": "Models\\AttendanceRecord.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAcwBoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T06:36:09.683Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CustomerProgram.xaml.cs",
+              "DocumentMoniker": "D:\\MobileApp\\Maui\\Saha\\Customer\\CustomerProgram.xaml.cs",
+              "RelativeDocumentMoniker": "Customer\\CustomerProgram.xaml.cs",
+              "ToolTip": "D:\\MobileApp\\Maui\\Saha\\Customer\\CustomerProgram.xaml.cs",
+              "RelativeToolTip": "Customer\\CustomerProgram.xaml.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAcwBsAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T04:29:46.471Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CustomerViewModels.cs",
+              "DocumentMoniker": "D:\\MobileApp\\Maui\\Saha\\ViewModel\\CustomerViewModels.cs",
+              "RelativeDocumentMoniker": "ViewModel\\CustomerViewModels.cs",
+              "ToolTip": "D:\\MobileApp\\Maui\\Saha\\ViewModel\\CustomerViewModels.cs",
+              "RelativeToolTip": "ViewModel\\CustomerViewModels.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAABwAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T04:30:28.014Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CustomerDashboard.xaml.cs",
+              "DocumentMoniker": "D:\\MobileApp\\Maui\\Saha\\Customer\\CustomerDashboard.xaml.cs",
+              "RelativeDocumentMoniker": "Customer\\CustomerDashboard.xaml.cs",
+              "ToolTip": "D:\\MobileApp\\Maui\\Saha\\Customer\\CustomerDashboard.xaml.cs",
+              "RelativeToolTip": "Customer\\CustomerDashboard.xaml.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAABwAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T17:20:36.684Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "TrainorDashboardViewModel .cs",
+              "DocumentMoniker": "D:\\MobileApp\\Maui\\Saha\\ViewModel\\TrainorDashboardViewModel .cs",
+              "RelativeDocumentMoniker": "ViewModel\\TrainorDashboardViewModel .cs",
+              "ToolTip": "D:\\MobileApp\\Maui\\Saha\\ViewModel\\TrainorDashboardViewModel .cs",
+              "RelativeToolTip": "ViewModel\\TrainorDashboardViewModel .cs",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAAAEsAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T03:49:06.171Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "App.g.i.cs",
+              "DocumentMoniker": "D:\\MobileApp\\Maui\\Saha\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\Platforms\\Windows\\App.g.i.cs",
+              "RelativeDocumentMoniker": "obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\Platforms\\Windows\\App.g.i.cs",
+              "ToolTip": "D:\\MobileApp\\Maui\\Saha\\obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\Platforms\\Windows\\App.g.i.cs",
+              "RelativeToolTip": "obj\\Debug\\net9.0-windows10.0.19041.0\\win10-x64\\Platforms\\Windows\\App.g.i.cs",
+              "ViewState": "AgIAADgAAAAAAAAAAAAMwEQAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T09:32:07.348Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "SQLiteService.cs",
+              "DocumentMoniker": "D:\\MobileApp\\Maui\\Saha\\Services\\SQLiteService.cs",
+              "RelativeDocumentMoniker": "Services\\SQLiteService.cs",
+              "ToolTip": "D:\\MobileApp\\Maui\\Saha\\Services\\SQLiteService.cs",
+              "RelativeToolTip": "Services\\SQLiteService.cs",
+              "ViewState": "AgIAALAAAAAAAAAAAAAMwLkAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T23:53:45.455Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "TrainorUserProgram.xaml",
+              "DocumentMoniker": "D:\\MobileApp\\Maui\\Saha\\Trainor\\TrainorUserProgram.xaml",
+              "RelativeDocumentMoniker": "Trainor\\TrainorUserProgram.xaml",
+              "ToolTip": "D:\\MobileApp\\Maui\\Saha\\Trainor\\TrainorUserProgram.xaml",
+              "RelativeToolTip": "Trainor\\TrainorUserProgram.xaml",
+              "ViewState": "AgIAAB0BAAAAAAAAAAAAACgBAABrAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-22T01:17:35.594Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "UserModel.cs",
+              "DocumentMoniker": "D:\\MobileApp\\Maui\\Saha\\Models\\UserModel.cs",
+              "RelativeDocumentMoniker": "Models\\UserModel.cs",
+              "ToolTip": "D:\\MobileApp\\Maui\\Saha\\Models\\UserModel.cs",
+              "RelativeToolTip": "Models\\UserModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T09:40:53.3Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "UserStore.cs",
+              "DocumentMoniker": "D:\\MobileApp\\Maui\\Saha\\Services\\UserStore.cs",
+              "RelativeDocumentMoniker": "Services\\UserStore.cs",
+              "ToolTip": "D:\\MobileApp\\Maui\\Saha\\Services\\UserStore.cs",
+              "RelativeToolTip": "Services\\UserStore.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T08:34:22.236Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "UserSession.cs",
+              "DocumentMoniker": "D:\\MobileApp\\Maui\\Saha\\Services\\UserSession.cs",
+              "RelativeDocumentMoniker": "Services\\UserSession.cs",
+              "ToolTip": "D:\\MobileApp\\Maui\\Saha\\Services\\UserSession.cs",
+              "RelativeToolTip": "Services\\UserSession.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T08:54:03.733Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "TrainerAttendancePage.xaml",
+              "DocumentMoniker": "D:\\MobileApp\\Maui\\Saha\\Trainor\\TrainerAttendancePage.xaml",
+              "RelativeDocumentMoniker": "Trainor\\TrainerAttendancePage.xaml",
+              "ToolTip": "D:\\MobileApp\\Maui\\Saha\\Trainor\\TrainerAttendancePage.xaml",
+              "RelativeToolTip": "Trainor\\TrainerAttendancePage.xaml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAsAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-22T04:51:39Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "RoleSession.cs",
+              "DocumentMoniker": "D:\\MobileApp\\Maui\\Saha\\Services\\RoleSession.cs",
+              "RelativeDocumentMoniker": "Services\\RoleSession.cs",
+              "ToolTip": "D:\\MobileApp\\Maui\\Saha\\Services\\RoleSession.cs",
+              "RelativeToolTip": "Services\\RoleSession.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T08:53:59.484Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ProgramModel.cs",
+              "DocumentMoniker": "D:\\MobileApp\\Maui\\Saha\\Models\\ProgramModel.cs",
+              "RelativeDocumentMoniker": "Models\\ProgramModel.cs",
+              "ToolTip": "D:\\MobileApp\\Maui\\Saha\\Models\\ProgramModel.cs",
+              "RelativeToolTip": "Models\\ProgramModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T04:17:29.866Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "TrainorUserProgram.xaml.cs",
+              "DocumentMoniker": "D:\\MobileApp\\Maui\\Saha\\Trainor\\TrainorUserProgram.xaml.cs",
+              "RelativeDocumentMoniker": "Trainor\\TrainorUserProgram.xaml.cs",
+              "ToolTip": "D:\\MobileApp\\Maui\\Saha\\Trainor\\TrainorUserProgram.xaml.cs",
+              "RelativeToolTip": "Trainor\\TrainorUserProgram.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T05:40:34.147Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "TrainorDashboard.xaml.cs",
+              "DocumentMoniker": "D:\\MobileApp\\Maui\\Saha\\Trainor\\TrainorDashboard.xaml.cs",
+              "RelativeDocumentMoniker": "Trainor\\TrainorDashboard.xaml.cs",
+              "ToolTip": "D:\\MobileApp\\Maui\\Saha\\Trainor\\TrainorDashboard.xaml.cs",
+              "RelativeToolTip": "Trainor\\TrainorDashboard.xaml.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAAC4AAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T03:54:27.053Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "TrainorDashboard.xaml",
+              "DocumentMoniker": "D:\\MobileApp\\Maui\\Saha\\Trainor\\TrainorDashboard.xaml",
+              "RelativeDocumentMoniker": "Trainor\\TrainorDashboard.xaml",
+              "ToolTip": "D:\\MobileApp\\Maui\\Saha\\Trainor\\TrainorDashboard.xaml",
+              "RelativeToolTip": "Trainor\\TrainorDashboard.xaml",
+              "ViewState": "AgIAAI0AAAAAAAAAAAAAAFIAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-22T01:13:03.572Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "RequestUserModel.cs",
+              "DocumentMoniker": "D:\\MobileApp\\Maui\\Saha\\Models\\RequestUserModel.cs",
+              "RelativeDocumentMoniker": "Models\\RequestUserModel.cs",
+              "ToolTip": "D:\\MobileApp\\Maui\\Saha\\Models\\RequestUserModel.cs",
+              "RelativeToolTip": "Models\\RequestUserModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T19:00:28.048Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "UpdateUserPage.xaml",
+              "DocumentMoniker": "D:\\MobileApp\\Maui\\Saha\\Modals\\UpdateUserPage.xaml",
+              "RelativeDocumentMoniker": "Modals\\UpdateUserPage.xaml",
+              "ToolTip": "D:\\MobileApp\\Maui\\Saha\\Modals\\UpdateUserPage.xaml",
+              "RelativeToolTip": "Modals\\UpdateUserPage.xaml",
+              "ViewState": "AgIAAMwAAAAAAAAAAAAAANsAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-22T04:31:37.77Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "ProgramWithTrainer.cs",
+              "DocumentMoniker": "D:\\MobileApp\\Maui\\Saha\\Models\\ProgramWithTrainer.cs",
+              "RelativeDocumentMoniker": "Models\\ProgramWithTrainer.cs",
+              "ToolTip": "D:\\MobileApp\\Maui\\Saha\\Models\\ProgramWithTrainer.cs",
+              "RelativeToolTip": "Models\\ProgramWithTrainer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T04:19:59.704Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "AppShell.xaml.cs",
+              "DocumentMoniker": "D:\\MobileApp\\Maui\\Saha\\AppShell.xaml.cs",
+              "RelativeDocumentMoniker": "AppShell.xaml.cs",
+              "ToolTip": "D:\\MobileApp\\Maui\\Saha\\AppShell.xaml.cs",
+              "RelativeToolTip": "AppShell.xaml.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABcAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T00:26:27.208Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "AdminProgram.xaml",
+              "DocumentMoniker": "D:\\MobileApp\\Maui\\Saha\\Admin\\AdminProgram.xaml",
+              "RelativeDocumentMoniker": "Admin\\AdminProgram.xaml",
+              "ToolTip": "D:\\MobileApp\\Maui\\Saha\\Admin\\AdminProgram.xaml",
+              "RelativeToolTip": "Admin\\AdminProgram.xaml",
+              "ViewState": "AgIAAJAAAAAAAAAAAAAmwJwAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-21T14:45:20.65Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "RequestUsers.xaml.cs",
+              "DocumentMoniker": "D:\\MobileApp\\Maui\\Saha\\Modals\\RequestUsers.xaml.cs",
+              "RelativeDocumentMoniker": "Modals\\RequestUsers.xaml.cs",
+              "ToolTip": "D:\\MobileApp\\Maui\\Saha\\Modals\\RequestUsers.xaml.cs",
+              "RelativeToolTip": "Modals\\RequestUsers.xaml.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAowBoAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T18:50:04.531Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "RequestUsers.xaml",
+              "DocumentMoniker": "D:\\MobileApp\\Maui\\Saha\\Modals\\RequestUsers.xaml",
+              "RelativeDocumentMoniker": "Modals\\RequestUsers.xaml",
+              "ToolTip": "D:\\MobileApp\\Maui\\Saha\\Modals\\RequestUsers.xaml",
+              "RelativeToolTip": "Modals\\RequestUsers.xaml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACMAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-21T18:08:00.348Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "ProgramViewModel.cs",
+              "DocumentMoniker": "D:\\MobileApp\\Maui\\Saha\\ViewModel\\ProgramViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModel\\ProgramViewModel.cs",
+              "ToolTip": "D:\\MobileApp\\Maui\\Saha\\ViewModel\\ProgramViewModel.cs",
+              "RelativeToolTip": "ViewModel\\ProgramViewModel.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAADwAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T23:52:48.878Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "AdminUserProgramReviewed.xaml",
+              "DocumentMoniker": "D:\\MobileApp\\Maui\\Saha\\Admin\\AdminUserProgramReviewed.xaml",
+              "RelativeDocumentMoniker": "Admin\\AdminUserProgramReviewed.xaml",
+              "ToolTip": "D:\\MobileApp\\Maui\\Saha\\Admin\\AdminUserProgramReviewed.xaml",
+              "RelativeToolTip": "Admin\\AdminUserProgramReviewed.xaml",
+              "ViewState": "AgIAABsBAAAAAAAAAAAUwCYBAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-21T18:01:30.03Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "AdminUserProgram.xaml",
+              "DocumentMoniker": "D:\\MobileApp\\Maui\\Saha\\Admin\\AdminUserProgram.xaml",
+              "RelativeDocumentMoniker": "Admin\\AdminUserProgram.xaml",
+              "ToolTip": "D:\\MobileApp\\Maui\\Saha\\Admin\\AdminUserProgram.xaml",
+              "RelativeToolTip": "Admin\\AdminUserProgram.xaml",
+              "ViewState": "AgIAAPgAAAAAAAAAAAAmwPwAAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-21T15:14:33.939Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "AdminUserProgramReviewed.xaml.cs",
+              "DocumentMoniker": "D:\\MobileApp\\Maui\\Saha\\Admin\\AdminUserProgramReviewed.xaml.cs",
+              "RelativeDocumentMoniker": "Admin\\AdminUserProgramReviewed.xaml.cs",
+              "ToolTip": "D:\\MobileApp\\Maui\\Saha\\Admin\\AdminUserProgramReviewed.xaml.cs",
+              "RelativeToolTip": "Admin\\AdminUserProgramReviewed.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T17:08:37.336Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "ProgramDetailsPage.xaml",
+              "DocumentMoniker": "D:\\MobileApp\\Maui\\Saha\\Modals\\ProgramDetailsPage.xaml",
+              "RelativeDocumentMoniker": "Modals\\ProgramDetailsPage.xaml",
+              "ToolTip": "D:\\MobileApp\\Maui\\Saha\\Modals\\ProgramDetailsPage.xaml",
+              "RelativeToolTip": "Modals\\ProgramDetailsPage.xaml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-21T18:18:33.286Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "AdminUserProgram.xaml.cs",
+              "DocumentMoniker": "D:\\MobileApp\\Maui\\Saha\\Admin\\AdminUserProgram.xaml.cs",
+              "RelativeDocumentMoniker": "Admin\\AdminUserProgram.xaml.cs",
+              "ToolTip": "D:\\MobileApp\\Maui\\Saha\\Admin\\AdminUserProgram.xaml.cs",
+              "RelativeToolTip": "Admin\\AdminUserProgram.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T17:06:24.621Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "AdminUserManagement.xaml",
+              "DocumentMoniker": "D:\\MobileApp\\Maui\\Saha\\Admin\\AdminUserManagement.xaml",
+              "RelativeDocumentMoniker": "Admin\\AdminUserManagement.xaml",
+              "ToolTip": "D:\\MobileApp\\Maui\\Saha\\Admin\\AdminUserManagement.xaml",
+              "RelativeToolTip": "Admin\\AdminUserManagement.xaml",
+              "ViewState": "AgIAALoAAAAAAAAAAAAAAMIAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-21T14:40:55.01Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "AdminDashboardPage.xaml",
+              "DocumentMoniker": "D:\\MobileApp\\Maui\\Saha\\Admin\\AdminDashboardPage.xaml",
+              "RelativeDocumentMoniker": "Admin\\AdminDashboardPage.xaml",
+              "ToolTip": "D:\\MobileApp\\Maui\\Saha\\Admin\\AdminDashboardPage.xaml",
+              "RelativeToolTip": "Admin\\AdminDashboardPage.xaml",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAADIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-21T14:41:30.176Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "AdminProgram.xaml.cs",
+              "DocumentMoniker": "D:\\MobileApp\\Maui\\Saha\\Admin\\AdminProgram.xaml.cs",
+              "RelativeDocumentMoniker": "Admin\\AdminProgram.xaml.cs",
+              "ToolTip": "D:\\MobileApp\\Maui\\Saha\\Admin\\AdminProgram.xaml.cs",
+              "RelativeToolTip": "Admin\\AdminProgram.xaml.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T17:08:30.085Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "LoginPage.xaml.cs",
+              "DocumentMoniker": "D:\\MobileApp\\Maui\\Saha\\LoginPage.xaml.cs",
+              "RelativeDocumentMoniker": "LoginPage.xaml.cs",
+              "ToolTip": "D:\\MobileApp\\Maui\\Saha\\LoginPage.xaml.cs",
+              "RelativeToolTip": "LoginPage.xaml.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T17:24:54.971Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "Logout.xaml.cs",
+              "DocumentMoniker": "D:\\MobileApp\\Maui\\Saha\\Logout.xaml.cs",
+              "RelativeDocumentMoniker": "Logout.xaml.cs",
+              "ToolTip": "D:\\MobileApp\\Maui\\Saha\\Logout.xaml.cs",
+              "RelativeToolTip": "Logout.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T17:07:56.537Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "AdminUserManagement.xaml.cs",
+              "DocumentMoniker": "D:\\MobileApp\\Maui\\Saha\\Admin\\AdminUserManagement.xaml.cs",
+              "RelativeDocumentMoniker": "Admin\\AdminUserManagement.xaml.cs",
+              "ToolTip": "D:\\MobileApp\\Maui\\Saha\\Admin\\AdminUserManagement.xaml.cs",
+              "RelativeToolTip": "Admin\\AdminUserManagement.xaml.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAACwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T17:07:12.342Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "Logout.xaml",
+              "DocumentMoniker": "D:\\MobileApp\\Maui\\Saha\\Logout.xaml",
+              "RelativeDocumentMoniker": "Logout.xaml",
+              "ToolTip": "D:\\MobileApp\\Maui\\Saha\\Logout.xaml",
+              "RelativeToolTip": "Logout.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-21T17:05:58.216Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "App.xaml",
+              "DocumentMoniker": "D:\\MobileApp\\Maui\\Saha\\App.xaml",
+              "RelativeDocumentMoniker": "App.xaml",
+              "ToolTip": "D:\\MobileApp\\Maui\\Saha\\App.xaml",
+              "RelativeToolTip": "App.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-21T16:58:20.798Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "AppShell.xaml",
+              "DocumentMoniker": "D:\\MobileApp\\Maui\\Saha\\AppShell.xaml",
+              "RelativeDocumentMoniker": "AppShell.xaml",
+              "ToolTip": "D:\\MobileApp\\Maui\\Saha\\AppShell.xaml",
+              "RelativeToolTip": "AppShell.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-21T16:58:17.175Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "ViewUserPage.xaml",
+              "DocumentMoniker": "D:\\MobileApp\\Maui\\Saha\\Modals\\ViewUserPage.xaml",
+              "RelativeDocumentMoniker": "Modals\\ViewUserPage.xaml",
+              "ToolTip": "D:\\MobileApp\\Maui\\Saha\\Modals\\ViewUserPage.xaml",
+              "RelativeToolTip": "Modals\\ViewUserPage.xaml",
+              "ViewState": "AgIAAPkAAAAAAAAAAAAAAMUAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-21T16:33:18.536Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "AddProgram.xaml.cs",
+              "DocumentMoniker": "D:\\MobileApp\\Maui\\Saha\\Modals\\AddProgram.xaml.cs",
+              "RelativeDocumentMoniker": "Modals\\AddProgram.xaml.cs",
+              "ToolTip": "D:\\MobileApp\\Maui\\Saha\\Modals\\AddProgram.xaml.cs",
+              "RelativeToolTip": "Modals\\AddProgram.xaml.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAApwDUAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T14:59:40.896Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "GuestViewPage.xaml",
+              "DocumentMoniker": "D:\\MobileApp\\Maui\\Saha\\GuestViewPage.xaml",
+              "RelativeDocumentMoniker": "GuestViewPage.xaml",
+              "ToolTip": "D:\\MobileApp\\Maui\\Saha\\GuestViewPage.xaml",
+              "RelativeToolTip": "GuestViewPage.xaml",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAAF8AAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-21T14:32:46.746Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "LoginPage.xaml",
+              "DocumentMoniker": "D:\\MobileApp\\Maui\\Saha\\LoginPage.xaml",
+              "RelativeDocumentMoniker": "LoginPage.xaml",
+              "ToolTip": "D:\\MobileApp\\Maui\\Saha\\LoginPage.xaml",
+              "RelativeToolTip": "LoginPage.xaml",
+              "ViewState": "AgIAADcAAAAAAAAAAAAAAKcAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-21T14:31:59.142Z"
             }
           ]
         }

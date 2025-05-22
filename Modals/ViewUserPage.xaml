@@ -195,7 +195,7 @@
                                      Spacing="10">
 
                         <!-- Header Row -->
-                        <Grid ColumnDefinitions="2*,2*,2*,1*,1*,2*,2*,2*"
+                        <Grid ColumnDefinitions="2*,2*,2*"
                               Padding="10"
                               BackgroundColor="#333">
                                 <Label Text="Name"
@@ -208,26 +208,7 @@
                                        TextColor="White"
                                        FontAttributes="Bold"
                                        FontSize="14"/>
-                                <Label Text="Phone"
-                                       Grid.Column="2"
-                                       TextColor="White"
-                                       FontAttributes="Bold"
-                                       FontSize="14"/>
-                                <Label Text="Age"
-                                       Grid.Column="3"
-                                       TextColor="White"
-                                       FontAttributes="Bold"
-                                       FontSize="14"/>
-                                <Label Text="Gender"
-                                       Grid.Column="4"
-                                       TextColor="White"
-                                       FontAttributes="Bold"
-                                       FontSize="14"/>
-                                <Label Text="Role"
-                                       Grid.Column="5"
-                                       TextColor="White"
-                                       FontAttributes="Bold"
-                                       FontSize="14"/>
+                                
                                 <Label Text="Action"
                                        Grid.Column="6"
                                        Grid.ColumnSpan="2"
@@ -238,74 +219,60 @@
 
 
                         <!-- CollectionView Rows -->
-                        <CollectionView ItemsSource="{Binding AcceptedUsers}">
-                                <CollectionView.ItemTemplate>
-                                        <DataTemplate>
-                                                <Grid ColumnDefinitions="2*,2*,2*,1*,1*,2*,2*,2*"
-                                                      Padding="8"
-                                                      BackgroundColor="#1A1A2E"
-                                                      Margin="0,1">
+            <CollectionView ItemsSource="{Binding AcceptedUsers}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid ColumnDefinitions="2*,3*,3*"
+                          Padding="8"
+                          BackgroundColor="#1A1A2E"
+                          Margin="0,1">
 
-                                                        <Label Text="{Binding FullName}"
-                                                               Grid.Column="0"
-                                                               TextColor="White"
-                                                               FontSize="11"/>
-                                                        <Label Text="{Binding Email}"
-                                                               Grid.Column="1"
-                                                               TextColor="White"
-                                                               FontSize="11"/>
-                                                        <Label Text="{Binding PhoneNumber}"
-                                                               Grid.Column="2"
-                                                               TextColor="White"
-                                                               FontSize="11"/>
-                                                        <Label Text="{Binding Age}"
-                                                               Grid.Column="3"
-                                                               TextColor="White"
-                                                               FontSize="11"/>
-                                                        <Label Text="{Binding Gender}"
-                                                               Grid.Column="4"
-                                                               TextColor="White"
-                                                               FontSize="11"/>
-                                                        <Label Text="{Binding Role}"
-                                                               Grid.Column="5"
-                                                               TextColor="White"
-                                                               FontSize="11"/>
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer 
+                                    Command="{Binding Source={x:Reference ViewUser}, Path=BindingContext.RowTappedCommand}" 
+                                    CommandParameter="{Binding}" />
+                            </Grid.GestureRecognizers>
 
-                                                        <!-- Buttons properly aligned under Action header -->
-                                                        <HorizontalStackLayout Grid.Column="6"
-                                                                               Grid.ColumnSpan="2"
-                                                                               Spacing="4"
-                                                                               HorizontalOptions="Fill"
-                                                                               VerticalOptions="Center">
-                                                                <Button Text="Update"
-                                                                        FontSize="10"
-                                                                        Padding="6,3"
-                                                                        BackgroundColor="#FFDF8728"
-                                                                        TextColor="White"
-                                                                        CornerRadius="10"
-                                                                        HorizontalOptions="FillAndExpand"
-                                                                        Command="{Binding Source={x:Reference ViewUser}, Path=BindingContext.EditCommand}"
-                                                                        CommandParameter="{Binding}"/>
-                                                                <Button Text="Delete"
-                                                                        FontSize="10"
-                                                                        Padding="6,3"
-                                                                        BackgroundColor="#FF3B3B"
-                                                                        TextColor="White"
-                                                                        CornerRadius="10"
-                                                                        HorizontalOptions="FillAndExpand"
-                                                                        Command="{Binding Source={x:Reference ViewUser}, Path=BindingContext.DeleteCommand}"
-                                                                        CommandParameter="{Binding}"/>
-                                                        </HorizontalStackLayout>
+                            <Label Text="{Binding FullName}"
+                               Grid.Column="0"
+                               TextColor="White"
+                               FontSize="11"/>
+                            <Label Text="{Binding Email}"
+                               Grid.Column="1"
+                               TextColor="White"
+                               FontSize="11"/>
 
-                                                </Grid>
+                            <HorizontalStackLayout Grid.Column="2"
+                                       Spacing="4"
+                                       HorizontalOptions="Fill"
+                                       VerticalOptions="Center">
+                                <Button Text="Update"
+                                    FontSize="10"
+                                    Padding="6,3"
+                                    BackgroundColor="#FFDF8728"
+                                    TextColor="White"
+                                    CornerRadius="10"
+                                    HorizontalOptions="FillAndExpand"
+                                    Command="{Binding Source={x:Reference ViewUser}, Path=BindingContext.EditCommand}"
+                                    CommandParameter="{Binding}"/>
+                                <Button Text="Delete"
+                                    FontSize="10"
+                                    Padding="6,3"
+                                    BackgroundColor="#FF3B3B"
+                                    TextColor="White"
+                                    CornerRadius="10"
+                                    HorizontalOptions="FillAndExpand"
+                                    Command="{Binding Source={x:Reference ViewUser}, Path=BindingContext.DeleteCommand}"
+                                    CommandParameter="{Binding}"/>
+                            </HorizontalStackLayout>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
 
 
-                                        </DataTemplate>
-                                </CollectionView.ItemTemplate>
-                        </CollectionView>
 
-
-                </VerticalStackLayout>
+        </VerticalStackLayout>
         </ScrollView>
 
 

@@ -29,11 +29,11 @@
                         <Style x:Key="Headline"
                                TargetType="Label">
                                 <Setter Property="FontSize"
-                                        Value="36"/>
+                                        Value="15"/>
                                 <Setter Property="FontAttributes"
                                         Value="Bold"/>
                                 <Setter Property="HorizontalOptions"
-                                        Value="Center"/>
+                                        Value="Start"/>
                                 <Setter Property="TextColor"
                                         Value="White"/>
                                 <!-- MainPage Headline TextColor -->
@@ -195,133 +195,67 @@
               ColumnDefinitions="*">
 
                 <!-- Header -->
-                <Grid BackgroundColor="Transparent"
-                      Padding="10"
-                      Row="0"
-                      Column="0">
-                        <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="Auto"/>
-                        </Grid.ColumnDefinitions>
-
-                        <!-- Header Title -->
-                        <Label Text="Saha System"
-                               TextColor="White"
-                               FontAttributes="Bold"
-                               FontSize="18"
-                               VerticalOptions="Center"
-                               Grid.Column="0"/>
-
-                        <!-- Logout Button -->
-                        <Button Text="Logout"
-                                TextColor="White"
-                                BackgroundColor="#D9534F"
-                                Clicked="OnLogoutClicked"
-                                VerticalOptions="Center"
-                                Grid.Column="1"/>
-                </Grid>
+                
 
                 <!-- Main Content Area -->
-                <ScrollView Grid.Row="1"
-                            Padding="10"
-                            VerticalOptions="FillAndExpand"
-                            Grid.Column="0">
-                        <VerticalStackLayout Padding="25,40"
-                                             Spacing="18">
+                <Grid Grid.Row="1" Grid.Column="0" Padding="10">
+    <CollectionView ItemsSource="{Binding AssignedPrograms}"
+                    ItemsLayout="VerticalList"
+                    Margin="0,10,0,30">
+        <CollectionView.Header>
+            <Label Text="My Assigned Programs"
+                   Style="{StaticResource Headline}"
+                   Margin="15,20,15,10"/>
+        </CollectionView.Header>
 
-                                <!-- Label for heading -->
-                                <Label Text="My Assigned Programs"
-                                       Style="{StaticResource Headline}"/>
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <Frame CornerRadius="12"
+                       Padding="15"
+                       Margin="15,0,15,15"
+                       BackgroundColor="#1A596E"
+                       HasShadow="True"
+                       BorderColor="#0056b3">
 
-                                <!-- Assigned Programs List as Cards -->
-                                <CollectionView ItemsSource="{Binding AssignedPrograms}"
-                                                Margin="0,0,0,30"
-                                                ItemsLayout="VerticalList">
+                    <VerticalStackLayout Spacing="10">
 
-                                        <CollectionView.ItemTemplate>
-                                                <DataTemplate>
-                                                        <Frame CornerRadius="12"
-                                                               Padding="15"
-                                                               Margin="0,0,0,15"
-                                                               BackgroundColor="#1A596E"
-                                                               HasShadow="True"
-                                                               BorderColor="#0056b3">
+                        <!-- Program Name -->
+                        <Grid ColumnSpacing="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Program Name:"
+                                   TextColor="#A0C4FF"
+                                   FontAttributes="Bold"
+                                   Grid.Column="0"/>
+                            <Label Text="{Binding Name}"
+                                   TextColor="White"
+                                   Grid.Column="1"/>
+                        </Grid>
 
-                                                                <VerticalStackLayout Spacing="10">
+                        <!-- Description -->
+                        <Grid ColumnSpacing="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Text="Description:"
+                                   TextColor="#A0C4FF"
+                                   FontAttributes="Bold"
+                                   Grid.Column="0"/>
+                            <Label Text="{Binding Description}"
+                                   TextColor="White"
+                                   Grid.Column="1"/>
+                        </Grid>
 
-                                                                        <!-- Program Name -->
-                                                                        <Grid ColumnSpacing="5">
-                                                                                <Grid.ColumnDefinitions>
-                                                                                        <ColumnDefinition Width="Auto"/>
-                                                                                        <ColumnDefinition Width="*"/>
-                                                                                </Grid.ColumnDefinitions>
-                                                                                <Label Text="Program Name:"
-                                                                                       TextColor="#A0C4FF"
-                                                                                       FontAttributes="Bold"
-                                                                                       Grid.Column="0"/>
-                                                                                <Label Text="{Binding Name}"
-                                                                                       TextColor="White"
-                                                                                       Grid.Column="1"/>
-                                                                        </Grid>
+                    </VerticalStackLayout>
+                </Frame>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+</Grid>
 
-                                                                        <!-- Description -->
-                                                                        <Grid ColumnSpacing="5">
-                                                                                <Grid.ColumnDefinitions>
-                                                                                        <ColumnDefinition Width="Auto"/>
-                                                                                        <ColumnDefinition Width="*"/>
-                                                                                </Grid.ColumnDefinitions>
-                                                                                <Label Text="Description:"
-                                                                                       TextColor="#A0C4FF"
-                                                                                       FontAttributes="Bold"
-                                                                                       Grid.Column="0"/>
-                                                                                <Label Text="{Binding Description}"
-                                                                                       TextColor="White"
-                                                                                       Grid.Column="1"/>
-                                                                        </Grid>
-
-
-                                                                        <!-- Schedule -->
-                                                                        <!-- <Grid ColumnSpacing="5">
-                                                                                <Grid.ColumnDefinitions>
-                                                                                        <ColumnDefinition Width="Auto"/>
-                                                                                        <ColumnDefinition Width="*"/>
-                                                                                </Grid.ColumnDefinitions>
-                                                                                <Label Text="Schedule:"
-                                                                                       TextColor="#A0C4FF"
-                                                                                       FontAttributes="Bold"
-                                                                                       Grid.Column="0"/>
-                                                                                <Label Text="{Binding Schedule}"
-                                                                                       TextColor="White"
-                                                                                       Grid.Column="1"/>
-                                                                        </Grid>
-
-                                                                        <StackLayout>
-                                                                                <Label Text="Progress:"
-                                                                                       TextColor="#A0C4FF"
-                                                                                       FontSize="14"
-                                                                                       Margin="0,5,0,0"/>
-                                                                                <ProgressBar Progress="0.5"
-                                                                                             ProgressColor="#00FF7F"
-                                                                                             BackgroundColor="#555"
-                                                                                             HeightRequest="10"
-                                                                                             Margin="0,0,0,5"/>
-                                                                                <Label Text="{Binding Progress, StringFormat='{}{0:P0}'}"
-                                                                                       TextColor="White"
-                                                                                       FontSize="12"
-                                                                                       HorizontalOptions="End"/>
-                                                                        </StackLayout> -->
-
-
-
-
-                                                                </VerticalStackLayout>
-                                                        </Frame>
-                                                </DataTemplate>
-                                        </CollectionView.ItemTemplate>
-                                </CollectionView>
-
-                        </VerticalStackLayout>
-                </ScrollView>
 
 
 

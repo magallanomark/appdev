@@ -870,16 +870,6 @@ D:\MobileApp\Maui\Saha\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\pri.resfil
 D:\MobileApp\Maui\Saha\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\qualifiers.txt
 D:\MobileApp\Maui\Saha\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\qualifiers.txt.intermediate
 D:\MobileApp\Maui\Saha\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\MultipleQualifiersPerDimensionFound.txt
-D:\MobileApp\Maui\Saha\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\logomakiSplashScreen.scale-100.png
-D:\MobileApp\Maui\Saha\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\logomakiSplashScreen.scale-125.png
-D:\MobileApp\Maui\Saha\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\logomakiSplashScreen.scale-150.png
-D:\MobileApp\Maui\Saha\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\logomakiSplashScreen.scale-200.png
-D:\MobileApp\Maui\Saha\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\logomakiSplashScreen.scale-400.png
-D:\MobileApp\Maui\Saha\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\sp\logomakiSplashScreen.scale-100.png
-D:\MobileApp\Maui\Saha\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\sp\logomakiSplashScreen.scale-125.png
-D:\MobileApp\Maui\Saha\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\sp\logomakiSplashScreen.scale-150.png
-D:\MobileApp\Maui\Saha\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\sp\logomakiSplashScreen.scale-200.png
-D:\MobileApp\Maui\Saha\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\sp\logomakiSplashScreen.scale-400.png
 D:\MobileApp\Maui\Saha\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\appiconLargeTile.scale-400.png
 D:\MobileApp\Maui\Saha\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\appiconLargeTile.scale-200.png
 D:\MobileApp\Maui\Saha\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\appiconLargeTile.scale-150.png

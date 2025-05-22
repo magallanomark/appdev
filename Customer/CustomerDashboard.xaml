@@ -205,66 +205,67 @@
                         </Grid.ColumnDefinitions>
 
                         <!-- Header Title -->
-                        <Label Text="Saha System"
+                        <Label Text="Available Programs"
                                TextColor="White"
                                FontAttributes="Bold"
                                FontSize="18"
                                VerticalOptions="Center"
                                Grid.Column="0"/>
 
-                        <!-- Logout Button -->
-                        <Button Text="Logout"
-                                TextColor="White"
-                                BackgroundColor="#D9534F"
-                                Clicked="OnLogoutClicked"
-                                VerticalOptions="Center"
-                                Grid.Column="1"/>
+                      
                 </Grid>
 
                 <!-- Main Content Area -->
-                <ScrollView Grid.Row="1"
-                            Padding="10"
-                            VerticalOptions="FillAndExpand"
-                            Grid.Column="0">
-                        <CollectionView ItemsSource="{Binding Programs}"
-                                        Margin="0,0,0,30"
-                                        ItemsLayout="VerticalGrid, 2">
-                                <CollectionView.ItemTemplate>
-                                        <DataTemplate>
-                                                <Frame CornerRadius="10"
-                                                       Padding="15"
-                                                       Margin="10"
-                                                       BackgroundColor="White"
-                                                       HasShadow="True">
-                                                        <Frame.GestureRecognizers>
-                                                                <PointerGestureRecognizer PointerEntered="OnHomePointerEntered"
-                                                                                          PointerExited="OnHomePointerExited"/>
-                                                                <TapGestureRecognizer
-                                                                        Tapped="OnProgramTapped"
-                                                                        CommandParameter="{Binding}"/>
-                                                        </Frame.GestureRecognizers>
+                <!-- Main Content Area -->
+                    <CollectionView Grid.Row="1"
+                                    Grid.Column="0"
+                                    ItemsSource="{Binding Programs}"
+                                    ItemsLayout="VerticalGrid, 1"
+                                    Margin="10,0,10,30"
+                                    SelectionMode="None">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Frame CornerRadius="16"
+                                       Padding="16"
+                                       Margin="8"
+                                       BackgroundColor="#FFFFFF"
+                                       HasShadow="True"
+                                       BorderColor="#E0E0E0">
 
-                                                        <VerticalStackLayout>
-                                                                <Label Text="{Binding Name}"
-                                                                       FontAttributes="Bold"
-                                                                       FontSize="20"
-                                                                       TextColor="#FF514805"/>
-                                                                <Label Text="{Binding Description}"
-                                                                       FontSize="14"
-                                                                       TextColor="#FFBAA72E"/>
-                                                                <Label Text="Price:"
-                                                                       FontAttributes="Bold"
-                                                                       FontSize="14"
-                                                                       TextColor="Black"/>
-                                                                <Label Text="{Binding Price, StringFormat='₱{0:N0}'}"
-                                                                       FontSize="13"
-                                                                       TextColor="Black"/>
-                                                        </VerticalStackLayout>
-                                                </Frame>
-                                        </DataTemplate>
-                                </CollectionView.ItemTemplate>
-                        </CollectionView>
-                </ScrollView>
+                                    <Frame.GestureRecognizers>
+                                        <PointerGestureRecognizer PointerEntered="OnHomePointerEntered"
+                                                                  PointerExited="OnHomePointerExited" />
+                                        <TapGestureRecognizer Tapped="OnProgramTapped"
+                                                              CommandParameter="{Binding}" />
+                                    </Frame.GestureRecognizers>
+
+                                    <VerticalStackLayout Spacing="8">
+                                        <Label Text="{Binding Name}"
+                                               FontAttributes="Bold"
+                                               FontSize="18"
+                                               TextColor="#1A1A1A" />
+
+                                        <Label Text="{Binding Description}"
+                                               FontSize="13"
+                                               TextColor="#444444"
+                                               LineBreakMode="TailTruncation"
+                                               MaxLines="2" />
+
+                                        <HorizontalStackLayout Spacing="4">
+                                            <Label Text="Price:"
+                                                   FontSize="13"
+                                                   FontAttributes="Bold"
+                                                   TextColor="#555555" />
+                                            <Label Text="{Binding Price, StringFormat='₱{0:N0}'}"
+                                                   FontSize="13"
+                                                   TextColor="#2E7D32" />
+                                        </HorizontalStackLayout>
+                                    </VerticalStackLayout>
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+
 
                 <!-- Popup Overlay -->
                 <Grid x:Name="PopupOverlay"
